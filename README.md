@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ia-marketing — Personal Agent Website
 
 A production-ready Angular 19 static site for a dual-role professional: licensed **insurance agent** and **real estate sales associate**. Fully configurable via a single JSON file, deployable to GitHub Pages.
@@ -186,3 +187,7 @@ The form constructs a `mailto:` link with all fields pre-filled and opens the us
 **Subject format:** `Enquiry: {type} — {name}`
 
 To change the recipient, update `email` in `app.config.json`.
+=======
+# florarcilla.github.io
+My personal website
+>>>>>>> 3fcdf2ded6496ae707a02e6c89c5fb7eacc7badd
