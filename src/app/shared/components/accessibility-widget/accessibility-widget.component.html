@@ -1,0 +1,72 @@
+<!-- src/app/shared/components/accessibility-widget/accessibility-widget.component.html -->
+<div class="a11y-widget">
+
+  <button
+    class="a11y-widget__toggle"
+    type="button"
+    (click)="togglePanel()"
+    [attr.aria-pressed]="panelOpen()"
+    [attr.aria-label]="panelOpen() ? ui.closeMenu : ui.openMenu"
+    aria-haspopup="true"
+  >
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M19.07 4.93a10 10 0 0 1 1.41 13.54M4.93 4.93a10 10 0 0 0-1.41 13.54M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/>
+    </svg>
+  </button>
+
+  @if (panelOpen()) {
+    <div class="a11y-widget__panel" role="dialog" [attr.aria-label]="ui.label">
+
+      <!-- Color Scheme -->
+      <p class="a11y-widget__section-label">{{ ui.label }}</p>
+
+      <div class="a11y-widget__group">
+        <div class="seg-control" role="group" aria-label="Color scheme">
+          @for (t of themes; track t.value) {
+            <button
+              class="seg-control__btn"
+              type="button"
+              [class.seg-control__btn--active]="theme() === t.value"
+              [attr.aria-pressed]="theme() === t.value"
+              (click)="setTheme(t.value)"
+            >{{ getLabel(t.labelKey) }}</button>
+          }
+        </div>
+      </div>
+
+      <!-- Text Size -->
+      <div class="a11y-widget__group">
+        <div class="seg-control" role="group" aria-label="Text size">
+          @for (f of fontSizes; track f.value) {
+            <button
+              class="seg-control__btn"
+              type="button"
+              [class.seg-control__btn--active]="fontSize() === f.value"
+              [attr.aria-pressed]="fontSize() === f.value"
+              (click)="setFontSize(f.value)"
+            >{{ getLabel(f.labelKey) }}</button>
+          }
+        </div>
+      </div>
+
+      <!-- High Contrast -->
+      <div class="a11y-widget__group">
+        <button
+          class="a11y-widget__toggle-option"
+          type="button"
+          [class.a11y-widget__toggle-option--active]="contrast() === 'high'"
+          [attr.aria-pressed]="contrast() === 'high'"
+          (click)="toggleContrast()"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor" stroke="none"/>
+          </svg>
+          {{ ui.highContrast }}
+        </button>
+      </div>
+
+    </div>
+  }
+</div>

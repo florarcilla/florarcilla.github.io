@@ -1,0 +1,159 @@
+// src/styles/_tokens.scss
+
+@use 'vars' as *;
+@forward 'vars';
+
+// ─── Light mode ───────────────────────────────────────────────────────────────
+:root {
+  // Purple palette
+  --color-primary:       #7459ca;
+  --color-primary-dark:  #5c42b0;
+  --color-primary-light: #f0ebff;
+  // Accent: dark burnt-orange — passes WCAG AA 4.5:1 against white (#ffffff) at ~5.8:1
+  --color-accent:        #9c520d;
+  --color-accent-dark:   #7e4209;
+
+  --color-surface:        #ffffff;
+  --color-surface-alt:    #f5f7fa;
+  --color-surface-raised: #ffffff;
+  --color-border:         #dde2e9;
+
+  --color-text:         #1a1f2e;
+  --color-text-muted:   #5a6477;
+  --color-text-inverse: #ffffff;
+
+  --color-success: #1a7f4b;
+  --color-error:   #c0392b;
+  --color-star:    #f5a623;
+
+  // Shadows as custom props so high-contrast can zero them
+  --shadow-card:       0 1px 4px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.08);
+  --shadow-card-hover: 0 4px 12px rgba(0,0,0,.10), 0 8px 24px rgba(0,0,0,.10);
+
+  // Font size base (overridden by data-font-size)
+  --font-size-base: #{$font-size-base};
+
+  --header-height:      72px;
+  --container-max:      1200px;
+  --container-padding:  #{$space-6};
+}
+
+// ─── Dark mode (explicit) ─────────────────────────────────────────────────────
+[data-theme='dark'] {
+  --color-primary:       #9b7fda;
+  --color-primary-dark:  #b098e8;
+  --color-primary-light: #2a1d4a;
+  --color-accent:        #e8934a;
+  --color-accent-dark:   #f5a96a;
+
+  --color-surface:        #141820;
+  --color-surface-alt:    #1c2130;
+  --color-surface-raised: #242a3a;
+  --color-border:         #2e3650;
+
+  --color-text:         #e8ecf4;
+  --color-text-muted:   #8b98b4;
+  --color-text-inverse: #141820;
+
+  --color-success: #34c472;
+  --color-error:   #e06b5f;
+}
+
+// ─── Auto dark mode (follows OS preference when no explicit theme is set) ─────
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme='light']):not([data-theme='dark']) {
+    --color-primary:       #9b7fda;
+    --color-primary-dark:  #b098e8;
+    --color-primary-light: #2a1d4a;
+    --color-accent:        #e8934a;
+    --color-accent-dark:   #f5a96a;
+
+    --color-surface:        #141820;
+    --color-surface-alt:    #1c2130;
+    --color-surface-raised: #242a3a;
+    --color-border:         #2e3650;
+
+    --color-text:         #e8ecf4;
+    --color-text-muted:   #8b98b4;
+    --color-text-inverse: #141820;
+
+    --color-success: #34c472;
+    --color-error:   #e06b5f;
+  }
+}
+
+// ─── High contrast (light base) ───────────────────────────────────────────────
+[data-contrast='high'] {
+  --color-primary:        #4a2e9c;
+  --color-primary-dark:   #3a2080;
+  --color-primary-light:  #e0d8f8;
+  --color-text:           #000000;
+  --color-text-muted:     #111111;
+  --color-surface:        #ffffff;
+  --color-surface-alt:    #efefef;
+  --color-surface-raised: #ffffff;
+  --color-border:         #000000;
+  --shadow-card:          none;
+  --shadow-card-hover:    none;
+}
+
+[data-contrast='high'][data-theme='dark'],
+[data-contrast='high']:not([data-theme='light']):not([data-theme='dark']) {
+  --color-primary:        #c0a8f0;
+  --color-primary-dark:   #d4bef8;
+  --color-primary-light:  #1a0f38;
+  --color-text:           #ffffff;
+  --color-text-muted:     #eeeeee;
+  --color-surface:        #000000;
+  --color-surface-alt:    #111111;
+  --color-surface-raised: #0a0a0a;
+  --color-border:         #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-contrast='high']:not([data-theme='light']):not([data-theme='dark']) {
+    --color-primary:        #c0a8f0;
+    --color-primary-dark:   #d4bef8;
+    --color-primary-light:  #1a0f38;
+    --color-text:           #ffffff;
+    --color-text-muted:     #eeeeee;
+    --color-surface:        #000000;
+    --color-surface-alt:    #111111;
+    --color-surface-raised: #0a0a0a;
+    --color-border:         #ffffff;
+  }
+}
+
+// Thicker borders & no shadows in high contrast (global)
+[data-contrast='high'] {
+  * { box-shadow: none !important; text-shadow: none !important; }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline-width: 4px;
+  }
+}
+
+// ─── Font size modes ──────────────────────────────────────────────────────────
+[data-font-size='small'] {
+  --font-size-base: #{$font-size-sm};
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.1rem; }
+}
+
+[data-font-size='large'] {
+  --font-size-base: 20px;
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 1.9rem; }
+  h3 { font-size: 1.5rem; }
+}
+
+// ─── Default heading scale ────────────────────────────────────────────────────
+h1 { font-size: clamp(2rem, 5vw, 2.75rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); }
+h4 { font-size: 1.1rem; }

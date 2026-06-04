@@ -1,0 +1,52 @@
+<!-- src/app/shared/components/testimonial-card/testimonial-card.component.html -->
+<article class="testimonial-card">
+  <div class="testimonial-card__header">
+
+    @if (!avatarError) {
+      <img
+        [src]="testimonial.avatarUrl"
+        [alt]="testimonial.avatarAlt"
+        width="48"
+        height="48"
+        class="testimonial-card__avatar"
+        loading="lazy"
+        (error)="onAvatarError()"
+      />
+    } @else {
+      <!-- Initials avatar: generated from name, deterministic flat colour -->
+      <svg
+        class="testimonial-card__avatar testimonial-card__avatar--initials"
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <circle cx="24" cy="24" r="24" [attr.fill]="avatarBg" />
+        <text
+          x="24" y="24"
+          text-anchor="middle"
+          dominant-baseline="central"
+          font-family="system-ui, -apple-system, sans-serif"
+          font-weight="700"
+          font-size="16"
+          [attr.fill]="avatarFg"
+        >{{ initials }}</text>
+      </svg>
+    }
+
+    <div class="testimonial-card__meta">
+      <p class="testimonial-card__name">{{ testimonial.name }}</p>
+      <app-star-rating [rating]="testimonial.rating" />
+    </div>
+  </div>
+
+  <blockquote class="testimonial-card__text">
+    <p>{{ testimonial.text }}</p>
+  </blockquote>
+
+  @if (testimonial.date) {
+    <time class="testimonial-card__date">{{ testimonial.date }}</time>
+  }
+</article>

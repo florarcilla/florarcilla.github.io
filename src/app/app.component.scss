@@ -1,0 +1,25 @@
+// src/app/app.component.scss
+@use 'vars' as *;
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: $space-4;
+  z-index: 9999;
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  padding: $space-3 $space-5;
+  border-radius: 0 0 $radius-btn $radius-btn;
+  font-weight: 600;
+  transition: top $transition-fast;
+
+  &:focus {
+    top: 0;
+    text-decoration: none;
+  }
+}
+
+main {
+  min-height: calc(100vh - var(--header-height) - 280px);
+  outline: none;
+}

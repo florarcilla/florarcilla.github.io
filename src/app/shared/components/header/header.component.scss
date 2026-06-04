@@ -1,0 +1,222 @@
+// src/app/shared/components/header/header.component.scss
+@use 'vars' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid transparent;
+  transition: border-color $transition-base, box-shadow $transition-base, background-color $transition-base;
+
+  &--scrolled {
+    border-color: var(--color-border);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: $space-4;
+  }
+
+  // ── Burger — hidden on desktop, leftmost on mobile ───────────────────────────
+  &__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: $space-2;
+    border-radius: $radius-btn;
+    flex-shrink: 0;
+    order: -1;
+
+    &:hover { background-color: var(--color-surface-alt); }
+  }
+
+  // ── Logo — colour handled globally in src/styles/_logo.scss ─────────────────
+  &__logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo-svg {
+    height: 44px;
+    width: auto;
+    display: block;
+  }
+
+  // ── Nav ──────────────────────────────────────────────────────────────────────
+  &__nav {
+    flex: 1;
+
+    ul {
+      display: flex;
+      gap: $space-2;
+      align-items: center;
+    }
+
+    a {
+      display: block;
+      padding: $space-2 $space-4;
+      border-radius: $radius-btn;
+      color: var(--color-text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color $transition-fast, background-color $transition-fast;
+
+      &:hover {
+        color: var(--color-primary);
+        background-color: var(--color-primary-light);
+        text-decoration: none;
+      }
+
+      &.is-active {
+        color: var(--color-primary);
+        font-weight: 600;
+      }
+    }
+  }
+
+  // ── Drawer lang: hidden on desktop, shown only inside mobile nav ─────────────
+  // (display controlled by .drawer-lang styles in mobile breakpoint below)
+
+  // ── Right-side actions ───────────────────────────────────────────────────────
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  &__cta {
+    font-size: 0.9rem;
+    padding: $space-2 $space-5;
+    white-space: nowrap;
+  }
+
+  // ── Overlay ──────────────────────────────────────────────────────────────────
+  &__overlay {
+    position: fixed;
+    inset: var(--header-height) 0 0 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 99;
+  }
+}
+
+// Logo colours handled globally in src/styles/_logo.scss
+
+// ── Drawer lang section: hidden on desktop ────────────────────────────────────
+.drawer-lang { display: none; }
+
+// ── Language toggle (desktop strip in header__actions) ────────────────────────
+.lang-toggle {
+  display: flex;
+  border: 1.5px solid var(--color-border);
+  border-radius: $radius-btn;
+  overflow: hidden;
+
+  &__btn {
+    padding: $space-1 $space-3;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    letter-spacing: 0.04em;
+    transition: background-color $transition-fast, color $transition-fast;
+    border-radius: 0;
+
+    & + & { border-left: 1.5px solid var(--color-border); }
+
+    &:hover {
+      background-color: var(--color-primary-light);
+      color: var(--color-primary);
+    }
+
+    &--active {
+      background-color: var(--color-primary);
+      color: var(--color-text-inverse);
+
+      &:hover {
+        background-color: var(--color-primary-dark);
+        color: var(--color-text-inverse);
+      }
+    }
+  }
+}
+
+// ── Burger bars ───────────────────────────────────────────────────────────────
+.burger-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: 2px;
+  transition: transform $transition-fast, opacity $transition-fast;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Mobile breakpoint
+// ─────────────────────────────────────────────────────────────────────────────
+@media (max-width: #{$bp-md - 1px}) {
+
+  .header {
+    &__burger { display: flex; }
+
+    &__nav {
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      bottom: 0;
+      width: min(320px, 85vw);
+      background-color: var(--color-surface);
+      border-right: 1px solid var(--color-border);
+      z-index: 100;
+      transform: translateX(-100%);
+      transition: transform $transition-base;
+      // flex column: nav links fill top, lang toggle pins to bottom-right
+      display: flex;
+      flex-direction: column;
+      padding: $space-6;
+
+      &--open { transform: translateX(0); }
+
+      ul {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      a {
+        font-size: 1.1rem;
+        padding: $space-4;
+      }
+    }
+  }
+
+  // Desktop lang toggle: hidden on mobile
+  .lang-toggle--desktop { display: none; }
+
+  // Drawer lang section: separator + bottom-right placement
+  .drawer-lang {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;  // push toggle to the right
+    gap: $space-3;
+    margin-top: auto;       // push to bottom of flex column
+    padding-top: $space-6;
+    border-top: 1px solid var(--color-border);
+
+    &__label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+    }
+  }
+}

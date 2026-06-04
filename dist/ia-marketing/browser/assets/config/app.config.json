@@ -1,0 +1,168 @@
+{
+  "agentName": "FLOR ARCILLA",
+  "nickname": "Flor",
+  "tagline": "Your Trusted Partner in Life insurance & Real estate",
+  "profilePictureUrl": "assets/images/agent-profile.jpg",
+  "profilePictureAlt": "Flor Arcilla, licensed insurance agent and real estate sales associate",
+  "secondaryProfilePictureUrl": "assets/images/agent-office.jpg",
+  "secondaryProfilePictureAlt": "Flor Arcilla at her office",
+  "logoUrl": "assets/images/logo.svg",
+  "logoAlt": "Flor Arcilla – Insurance & Real Estate",
+  "bio": "With over 15 years of experience serving families and investors across the region, I combine deep insurance expertise with a sharp eye for real estate opportunities. Whether you are protecting what matters most or finding your next home or investment property, I am here to guide you every step of the way.",
+  "richTextAbout": "<p>I started my career in financial services because I believe that security and smart investment go hand in hand. After a decade in insurance—helping families protect their income, health, and future—I expanded into real estate, where I now help buyers, sellers, and investors make confident decisions in any market.</p><p>My dual licence is more than a credential. It means I can sit across the table from you and see your situation through two lenses at once: what do you need to protect today, and how can your property work harder for your tomorrow?</p><p>Outside the office, I volunteer with a local housing-assistance non-profit and serve as a mentor for newly licenced agents in our district. Family comes first—I am a proud parent of two and an avid weekend hiker.</p>",
+  "email": "fongarcilla@gmail.com",
+  "phone": "+639055584891",
+  "whatsappNumber": "+639055584891",
+  "facebookMessengerUrl": "https://m.me/mariasantosagent",
+  "linkedinUrl": "https://linkedin.com/in/mariasantosagent",
+  "instagramUrl": "https://instagram.com/mariasantosagent",
+  "facebookUrl": "https://www.facebook.com/profile.php?id=100081236867085",
+  "licences": [
+    "Licensed Insurance Agent – State Licence #INS-2008-44821",
+    "Real Estate Sales Associate – State Licence #RE-2014-77302",
+    "Certified Financial Planner (CFP®) – FPSB",
+    "Accredited Buyer's Representative (ABR®) – NAR"
+  ],
+  "servicesPageHero": {
+    "heading": "Services Tailored to Your Life",
+    "subCopy": "From safeguarding your family's future to finding the perfect property, every service I offer is built around your unique goals."
+  },
+  "services": [
+    {
+      "id": "life-insurance",
+      "title": "Life Insurance",
+      "imageUrl": "assets/images/service-life-insurance.jpg",
+      "imageAlt": "Family protected by life insurance",
+      "description": "Term, whole, and universal life policies designed to replace income, cover debts, and leave a legacy—tailored to your budget and life stage.",
+      "type": "insurance"
+    },
+    {
+      "id": "health-insurance",
+      "title": "Health Insurance",
+      "imageUrl": "assets/images/service-health-insurance.jpg",
+      "imageAlt": "Health insurance consultation",
+      "description": "Individual, family, and group health plans that balance premium cost against coverage depth. I compare dozens of carriers so you do not have to.",
+      "type": "insurance"
+    },
+    {
+      "id": "home-insurance",
+      "title": "Home & Property Insurance",
+      "imageUrl": "assets/images/service-home-insurance.jpg",
+      "imageAlt": "Home protected by insurance",
+      "description": "Homeowner, landlord, and renter policies that cover structure, contents, and liability—ensuring your biggest asset is always protected.",
+      "type": "insurance"
+    },
+    {
+      "id": "auto-insurance",
+      "title": "Auto Insurance",
+      "imageUrl": "assets/images/service-auto-insurance.jpg",
+      "imageAlt": "Car covered by auto insurance",
+      "description": "Comprehensive, collision, and liability coverage for personal and commercial vehicles, with multi-policy discounts when bundled.",
+      "type": "insurance"
+    },
+    {
+      "id": "home-buying",
+      "title": "Home Buying",
+      "imageUrl": "assets/images/service-home-buying.jpg",
+      "imageAlt": "Happy couple receiving home keys",
+      "description": "From pre-offer strategy through closing day, I represent buyers with market analysis, negotiation expertise, and step-by-step guidance.",
+      "type": "realestate"
+    },
+    {
+      "id": "home-selling",
+      "title": "Home Selling",
+      "imageUrl": "assets/images/service-home-selling.jpg",
+      "imageAlt": "Sold home with real estate sign",
+      "description": "Pricing strategy, professional marketing, open-house coordination, and skilled negotiation to maximise your sale price and minimise days on market.",
+      "type": "realestate"
+    },
+    {
+      "id": "investment-property",
+      "title": "Investment Property",
+      "imageUrl": "assets/images/service-investment-property.jpg",
+      "imageAlt": "Investment property building",
+      "description": "Identify income-producing properties with strong cap rates. I analyse cash flow, appreciation potential, and insurance costs in one unified review.",
+      "type": "realestate"
+    },
+    {
+      "id": "relocation",
+      "title": "Relocation Services",
+      "imageUrl": "assets/images/service-relocation.jpg",
+      "imageAlt": "Family relocating to a new home",
+      "description": "Moving to or from the area? I provide neighbourhood insights, school ratings, commute analysis, and a full transition plan including insurance transfer.",
+      "type": "realestate"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "t1",
+      "name": "James & Patricia Holloway",
+      "avatarUrl": "assets/images/avatar-holloway.jpg",
+      "avatarAlt": "James and Patricia Holloway",
+      "rating": 5,
+      "text": "Mia helped us buy our first home and set up life insurance in the same month. Having one trusted professional coordinate both saved us so much stress. She anticipated every question before we even thought to ask it.",
+      "date": "March 2025"
+    },
+    {
+      "id": "t2",
+      "name": "Robert Chen",
+      "avatarUrl": "assets/images/avatar-chen.jpg",
+      "avatarAlt": "Robert Chen",
+      "rating": 5,
+      "text": "I came to Maria purely for investment property advice. She not only found me a fantastic duplex below asking price, but flagged that my existing landlord policy had a major coverage gap. Saved me thousands twice over.",
+      "date": "January 2025"
+    },
+    {
+      "id": "t3",
+      "name": "Sandra Reyes",
+      "avatarUrl": "assets/images/avatar-reyes.jpg",
+      "avatarAlt": "Sandra Reyes",
+      "rating": 5,
+      "text": "After my divorce I needed to restructure everything—health plan, life cover, and sell the family home. Maria handled it all with empathy and professionalism. I never felt like just a transaction.",
+      "date": "November 2024"
+    },
+    {
+      "id": "t4",
+      "name": "David & Fiona Park",
+      "avatarUrl": "assets/images/avatar-park.jpg",
+      "avatarAlt": "David and Fiona Park",
+      "rating": 4,
+      "text": "Very knowledgeable on both the real estate and insurance sides. Maria helped us sell our condo and roll the proceeds into a new whole-life policy as part of our retirement plan. Responsive and thorough.",
+      "date": "September 2024"
+    },
+    {
+      "id": "t5",
+      "name": "Angela Torres",
+      "avatarUrl": "assets/images/avatar-torres.jpg",
+      "avatarAlt": "Angela Torres",
+      "rating": 5,
+      "text": "I was relocating from out of state and felt completely overwhelmed. Mia sent me a personalised neighbourhood comparison, arranged virtual tours, and had my home insurance quote ready on closing day. Incredible service.",
+      "date": "July 2024"
+    },
+    {
+      "id": "t6",
+      "name": "Michael Osei",
+      "avatarUrl": "assets/images/avatar-osei.jpg",
+      "avatarAlt": "Michael Osei",
+      "rating": 5,
+      "text": "Maria helped our small business get group health coverage for six employees at a price we could actually afford. Clear, honest, no pressure. We have already referred three colleagues.",
+      "date": "May 2024"
+    }
+  ],
+  "footerLinks": [
+    { "label": "Home", "href": "/" },
+    { "label": "Services", "href": "/services" },
+    { "label": "About", "href": "/about" },
+    { "label": "Enquire", "href": "/enquire" },
+    { "label": "Privacy Policy", "href": "/privacy" },
+    { "label": "Disclaimer", "href": "/disclaimer" }
+  ],
+  "copyrightText": "© 2026 Maria Santos. All rights reserved.",
+  "enquiryFormIntro": "Ready to take the next step? Fill in the form below and I will respond within one business day.",
+  "homeContactSectionHeading": "Let's Talk",
+  "homeContactSectionCopy": "Have a quick question or ready to get started? Reach out in whatever way suits you best.",
+  "metaDefaults": {
+    "title": "Maria Santos – Insurance Agent & Real Estate Sales Associate",
+    "description": "Maria Santos helps families and investors protect what matters and grow their wealth through tailored insurance solutions and expert real estate guidance."
+  }
+}

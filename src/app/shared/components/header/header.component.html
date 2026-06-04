@@ -1,0 +1,95 @@
+<!-- src/app/shared/components/header/header.component.html -->
+<header class="header" [class.header--scrolled]="scrolled()">
+  <div class="container header__inner">
+
+    <!-- ── Burger (leftmost on mobile) ──────────────────────────────────────── -->
+    <button
+      class="header__burger"
+      type="button"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="primary-nav"
+      aria-label="Toggle navigation menu"
+      (click)="toggleMenu()"
+    >
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+    </button>
+
+    <!-- ── Logo ─────────────────────────────────────────────────────────────── -->
+    <a class="header__logo" routerLink="/" (click)="closeMenu()" [attr.aria-label]="config.agentName + ' – Home'">
+      <svg class="header__logo-svg" viewBox="0 0 600 200" width="108" height="36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <text
+          x="300" y="158"
+          text-anchor="middle"
+          font-family="'Playfair Display', 'Georgia', 'Times New Roman', serif"
+          font-weight="900"
+          font-size="140"
+          letter-spacing="-4"
+          fill="currentColor"
+        >Flor<tspan class="logo-dot" fill="currentColor">.</tspan></text>
+      </svg>
+    </a>
+
+    <!-- ── Primary nav + mobile drawer lang toggle ───────────────────────────── -->
+    <nav id="primary-nav" class="header__nav" aria-label="Primary navigation" [class.header__nav--open]="menuOpen()">
+      <ul role="list">
+        <li>
+          <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">{{ ui.nav.home }}</a>
+        </li>
+        <li>
+          <a routerLink="/services" routerLinkActive="is-active" (click)="closeMenu()">{{ ui.nav.services }}</a>
+        </li>
+        <li>
+          <a routerLink="/about" routerLinkActive="is-active" (click)="closeMenu()">{{ ui.nav.about }}</a>
+        </li>
+        <li>
+          <a routerLink="/gallery" routerLinkActive="is-active" (click)="closeMenu()">{{ ui.nav.gallery }}</a>
+        </li>
+      </ul>
+
+      <!-- Only rendered (visible) in mobile drawer via CSS -->
+      <div class="drawer-lang" role="group" [attr.aria-label]="'Language: ' + langService.current.toUpperCase()">
+        <span class="drawer-lang__label">Language</span>
+        <div class="lang-toggle">
+          @for (lang of langs; track lang.code) {
+            <button
+              class="lang-toggle__btn"
+              type="button"
+              [class.lang-toggle__btn--active]="langService.current === lang.code"
+              [attr.aria-pressed]="langService.current === lang.code"
+              [attr.aria-label]="'Switch to ' + lang.label"
+              (click)="switchLang(lang.code)"
+            >{{ lang.label }}</button>
+          }
+        </div>
+      </div>
+    </nav>
+
+    <!-- ── Right-side actions ────────────────────────────────────────────────── -->
+    <div class="header__actions">
+      <!-- Desktop-only lang toggle (hidden on mobile via .lang-toggle--desktop) -->
+      <div class="lang-toggle lang-toggle--desktop" role="group" [attr.aria-label]="'Language: ' + langService.current.toUpperCase()">
+        @for (lang of langs; track lang.code) {
+          <button
+            class="lang-toggle__btn"
+            type="button"
+            [class.lang-toggle__btn--active]="langService.current === lang.code"
+            [attr.aria-pressed]="langService.current === lang.code"
+            [attr.aria-label]="'Switch to ' + lang.label"
+            (click)="switchLang(lang.code)"
+          >{{ lang.label }}</button>
+        }
+      </div>
+
+      <a class="btn btn--accent header__cta" routerLink="/enquire" (click)="closeMenu()">
+        {{ ui.nav.bookConsultation }}
+      </a>
+    </div>
+
+  </div>
+
+  @if (menuOpen()) {
+    <div class="header__overlay" (click)="closeMenu()" aria-hidden="true"></div>
+  }
+</header>

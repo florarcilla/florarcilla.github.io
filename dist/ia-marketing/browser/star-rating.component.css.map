@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/shared/components/star-rating/star-rating.component.scss"],
+  "sourcesContent": ["// src/app/shared/components/star-rating/star-rating.component.scss\n@use 'vars' as *;\n\n.star-rating {\n  display: inline-flex;\n  gap: 2px;\n  align-items: center;\n}\n\n.star {\n  fill: var(--color-border);\n  stroke: var(--color-border);\n  stroke-width: 1.5;\n  flex-shrink: 0;\n\n  &--filled {\n    fill: var(--color-star);\n    stroke: var(--color-star);\n  }\n}\n"],
+  "mappings": ";AAGA,CAAA;AACE,WAAA;AACA,OAAA;AACA,eAAA;;AAGF,CAAA;AACE,QAAA,IAAA;AACA,UAAA,IAAA;AACA,gBAAA;AACA,eAAA;;AAEA,CAAA;AACE,QAAA,IAAA;AACA,UAAA,IAAA;;",
+  "names": []
+}

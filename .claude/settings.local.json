@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"C:\\\\X\\\\ia-marketing\" -ErrorAction SilentlyContinue; if \\(-not \\(Test-Path \"C:\\\\X\\\\ia-marketing\"\\)\\) { New-Item -ItemType Directory -Path \"C:\\\\X\\\\ia-marketing\" -Force })",
+      "PowerShell(Move-Item \"C:\\\\X\\\\ia-marketing\\\\src\\\\app\\\\main.ts\" \"C:\\\\X\\\\ia-marketing\\\\src\\\\main.ts\" -Force)",
+      "Bash(npx ng *)",
+      "Bash(node scripts/generate-gallery-manifest.js)"
+    ]
+  }
+}

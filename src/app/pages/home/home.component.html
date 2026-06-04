@@ -1,0 +1,69 @@
+<!-- src/app/pages/home/home.component.html -->
+
+<section class="hero section" aria-labelledby="hero-heading">
+  <div class="container hero__inner">
+
+    <div class="hero__text">
+      <p class="hero__eyebrow">{{ ui.hero.roleLabel }}</p>
+      <h1 id="hero-heading" class="hero__name">{{ config.agentName }}</h1>
+      @if (config.nickname) {
+        <p class="hero__nickname">"{{ config.nickname }}"</p>
+      }
+      <p class="hero__tagline">{{ config.tagline }}</p>
+      <p class="hero__bio">{{ config.bio }}</p>
+      <div class="hero__actions">
+        <a class="btn btn--accent" routerLink="/enquire">{{ ui.hero.ctaPrimary }}</a>
+        <a class="btn btn--outline" routerLink="/services">{{ ui.hero.ctaSecondary }}</a>
+      </div>
+    </div>
+
+    <div class="hero__photo-wrap">
+      <!--
+        Static src="..." is in the HTML from first byte so Lighthouse (and the browser)
+        can discover and preload the LCP image before JS runs.
+        Angular's [src] binding updates it if the config ever differs, but the default
+        is already correct so there is no visual flash.
+        The matching <link rel="preload"> in index.html tells the browser to fetch it
+        at the highest priority in parallel with the JS bundle.
+      -->
+      <img
+        src="assets/images/flor_banner.jpg"
+        [src]="config.profilePictureUrl"
+        [attr.alt]="config.profilePictureAlt"
+        width="480"
+        height="560"
+        class="hero__photo"
+        fetchpriority="high"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+
+  </div>
+</section>
+
+<section class="testimonials section section--alt" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <h2 id="testimonials-heading" class="section-heading">{{ ui.testimonials.heading }}</h2>
+    <div class="testimonials__grid">
+      @for (testimonial of config.testimonials; track testimonial.id) {
+        <app-testimonial-card [testimonial]="testimonial" />
+      }
+    </div>
+  </div>
+</section>
+
+<section class="contact-section section" aria-labelledby="contact-heading">
+  <div class="container contact-section__inner">
+    <div class="contact-section__intro">
+      <h2 id="contact-heading">{{ config.homeContactSectionHeading }}</h2>
+      <p>{{ config.homeContactSectionCopy }}</p>
+    </div>
+    <div class="contact-section__form">
+      <app-enquiry-form defaultType="general" />
+    </div>
+    <div class="contact-section__bar">
+      <app-quick-contact-bar />
+    </div>
+  </div>
+</section>

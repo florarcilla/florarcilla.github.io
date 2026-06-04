@@ -1,0 +1,120 @@
+// src/app/pages/about/about.component.scss
+@use 'vars' as *;
+
+.about-hero {
+  &__inner {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: $space-16;
+    align-items: start;
+
+    @media (max-width: $bp-md) {
+      grid-template-columns: 1fr;
+      gap: $space-10;
+    }
+  }
+
+  &__eyebrow {
+    font-size: $font-size-sm;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: $space-2;
+  }
+
+  h1 {
+    margin-bottom: $space-6;
+  }
+
+  &__rich-text {
+    color: var(--color-text-muted);
+    line-height: $line-height-base;
+
+    p + p {
+      margin-top: $space-5;
+    }
+
+    p {
+      font-size: 1.05rem;
+    }
+  }
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: $space-8;
+    position: sticky;
+    top: calc(var(--header-height) + #{$space-6});
+
+    @media (max-width: $bp-md) {
+      position: static;
+      order: -1;
+    }
+  }
+
+  &__photo-wrap {
+    border-radius: $radius-card;
+    overflow: hidden;
+    aspect-ratio: 5 / 6;
+    background-color: var(--color-surface-alt);
+  }
+
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+}
+
+.about-credentials {
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: $radius-card;
+  padding: $space-6;
+
+  &__heading {
+    font-size: 1rem;
+    margin-bottom: $space-4;
+    color: var(--color-text);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $space-3;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: $space-3;
+    font-size: $font-size-sm;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  &__check {
+    color: var(--color-success);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+}
+
+.section--alt {
+  background-color: var(--color-surface-alt);
+}
+
+.about-contact {
+  h2 {
+    margin-bottom: $space-4;
+  }
+
+  &__copy {
+    color: var(--color-text-muted);
+    margin-bottom: $space-8;
+    max-width: 56ch;
+    line-height: $line-height-base;
+  }
+}

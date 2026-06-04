@@ -1,0 +1,124 @@
+// src/app/shared/components/accessibility-widget/accessibility-widget.component.scss
+@use 'vars' as *;
+
+.a11y-widget {
+  position: fixed;
+  bottom: $space-6;
+  left: $space-6;
+  z-index: 200;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  gap: $space-2;
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--color-surface-raised);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+    transition: color $transition-fast, background-color $transition-fast;
+
+    &:hover {
+      color: var(--color-primary);
+      background-color: var(--color-primary-light);
+    }
+  }
+
+  &__panel {
+    background-color: var(--color-surface-raised);
+    border: 1px solid var(--color-border);
+    border-radius: $radius-card;
+    box-shadow: var(--shadow-card-hover);
+    padding: $space-4;
+    min-width: 210px;
+    display: flex;
+    flex-direction: column;
+    gap: $space-3;
+  }
+
+  &__section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+  }
+
+  &__toggle-option {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    width: 100%;
+    padding: $space-2 $space-3;
+    border-radius: $radius-btn;
+    font-size: $font-size-sm;
+    font-weight: 500;
+    color: var(--color-text);
+    border: 1.5px solid var(--color-border);
+    background-color: var(--color-surface-alt);
+    transition: background-color $transition-fast, color $transition-fast, border-color $transition-fast;
+
+    &:hover {
+      background-color: var(--color-primary-light);
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
+    &--active {
+      background-color: var(--color-primary);
+      color: var(--color-text-inverse);
+      border-color: var(--color-primary);
+
+      &:hover {
+        background-color: var(--color-primary-dark);
+        color: var(--color-text-inverse);
+        border-color: var(--color-primary-dark);
+      }
+    }
+  }
+}
+
+// ─── Segmented control ────────────────────────────────────────────────────────
+.seg-control {
+  display: flex;
+  border: 1.5px solid var(--color-border);
+  border-radius: $radius-btn;
+  overflow: hidden;
+
+  &__btn {
+    flex: 1;
+    padding: $space-2 $space-2;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    background-color: var(--color-surface-alt);
+    transition: background-color $transition-fast, color $transition-fast;
+    border-radius: 0;
+
+    & + & {
+      border-left: 1.5px solid var(--color-border);
+    }
+
+    &:hover:not(&--active) {
+      background-color: var(--color-primary-light);
+      color: var(--color-primary);
+    }
+
+    &--active {
+      background-color: var(--color-primary);
+      color: var(--color-text-inverse);
+    }
+  }
+}

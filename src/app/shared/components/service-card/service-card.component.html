@@ -1,0 +1,48 @@
+<!-- src/app/shared/components/service-card/service-card.component.html -->
+<article class="service-card">
+  <div class="service-card__image-wrap">
+
+    @if (!imageError) {
+      <img
+        [src]="service.imageUrl"
+        [alt]="service.imageAlt"
+        class="service-card__image"
+        loading="lazy"
+        (error)="onImageError()"
+      />
+    } @else {
+      <!-- Placeholder shown when image URL is missing or broken -->
+      <div class="service-card__placeholder" aria-hidden="true">
+        <svg class="service-card__placeholder-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <text
+            x="300" y="158"
+            text-anchor="middle"
+            font-family="'Playfair Display', 'Georgia', 'Times New Roman', serif"
+            font-weight="900"
+            font-size="140"
+            letter-spacing="-4"
+            fill="currentColor"
+          >Flor<tspan class="logo-dot" fill="currentColor">.</tspan></text>
+        </svg>
+      </div>
+    }
+
+    <span class="service-card__badge service-card__badge--{{ service.type }}">
+      {{ service.type === 'insurance' ? ui.insuranceBadge : ui.realestateBadge }}
+    </span>
+  </div>
+
+  <div class="service-card__body">
+    <h3 class="service-card__title">{{ service.title }}</h3>
+    <p class="service-card__desc">{{ service.description }}</p>
+    <a class="service-card__cta"
+       [routerLink]="['/enquire']"
+       [queryParams]="{ type: service.type }"
+       [attr.aria-label]="ui.enquireButton + ' ' + service.title">
+      {{ ui.enquireButton }}
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </a>
+  </div>
+</article>

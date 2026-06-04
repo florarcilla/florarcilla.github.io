@@ -1,0 +1,214 @@
+<!-- src/app/pages/gallery/gallery.component.html -->
+
+<div class="gallery-page section">
+  <div class="container">
+
+    <!-- ── Page header ──────────────────────────────────────────────────────── -->
+    <header class="gallery-page__header">
+      <h1>{{ ui.heading }}</h1>
+      <p class="gallery-page__sub">{{ ui.subheading }}</p>
+    </header>
+
+    <!-- ── Filter bar ───────────────────────────────────────────────────────── -->
+    <div class="gallery-filters" role="group" aria-label="Gallery filters">
+
+      <div class="gallery-filters__group">
+        <label class="gallery-filters__label" for="filter-type">{{ ui.filterType }}</label>
+        <div class="gallery-filters__select-wrap">
+          <select id="filter-type" class="gallery-filters__select"
+                  [value]="filterType()"
+                  (change)="setType($any($event.target).value)">
+            <option value="all">{{ ui.allTypes }}</option>
+            <option value="general">{{ ui.sections.general }}</option>
+            <option value="insurance">{{ ui.sections.insurance }}</option>
+            <option value="realestate">{{ ui.sections.realestate }}</option>
+          </select>
+          <svg class="gallery-filters__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="gallery-filters__group">
+        <label class="gallery-filters__label" for="filter-year">{{ ui.filterYear }}</label>
+        <div class="gallery-filters__select-wrap">
+          <select id="filter-year" class="gallery-filters__select"
+                  [value]="filterYear()"
+                  (change)="setYear($any($event.target).value)">
+            <option value="all">{{ ui.allYears }}</option>
+            @for (y of availableYears(); track y) {
+              <option [value]="y">{{ y }}</option>
+            }
+          </select>
+          <svg class="gallery-filters__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── Loading / empty states ──────────────────────────────────────────── -->
+    @if (loading()) {
+      <div class="gallery-skeleton">
+        @for (_ of [1,2,3,4,5,6,8,9]; track $index) {
+          <div class="gallery-skeleton__cell"></div>
+        }
+      </div>
+    } @else if (sections().length === 0) {
+      <p class="gallery-page__empty">{{ ui.noItems }}</p>
+    }
+
+    @for (section of sections(); track trackSection($index, section)) {
+      <section class="gallery-section" [attr.aria-labelledby]="'section-' + section.type">
+
+        <!-- Section heading -->
+        <h2 class="gallery-section__heading" [id]="'section-' + section.type">
+          <span class="gallery-section__badge gallery-section__badge--{{ section.type }}"></span>
+          {{ section.label }}
+        </h2>
+
+        @for (yearGroup of section.years; track trackYear($index, yearGroup)) {
+          <div class="gallery-year">
+
+            <!-- Year label -->
+            <h3 class="gallery-year__label">{{ yearGroup.year }}</h3>
+
+            @for (monthGroup of yearGroup.months; track trackMonth($index, monthGroup)) {
+              <div class="gallery-month">
+
+                <!-- Month label -->
+                <h4 class="gallery-month__label">{{ monthGroup.label }}</h4>
+
+                <!-- Thumbnail grid -->
+                <div class="gallery-grid" role="list">
+                  @for (item of monthGroup.items; track trackItem($index, item)) {
+                    <button
+                      class="gallery-thumb"
+                      type="button"
+                      role="listitem"
+                      [attr.aria-label]="item.alt"
+                      (click)="openLightbox(item)"
+                    >
+                      @if (item.isVideo) {
+                        <video class="gallery-thumb__media" [src]="item.path"
+                               preload="metadata" muted playsinline aria-hidden="true">
+                        </video>
+                        <span class="gallery-thumb__play" aria-hidden="true">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z"/>
+                          </svg>
+                        </span>
+                      } @else if (erroredPaths().has(item.path)) {
+                        <span class="gallery-thumb__placeholder" aria-hidden="true">
+                          <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+                            <text x="300" y="158" text-anchor="middle"
+                                  font-family="'Playfair Display','Georgia',serif"
+                                  font-weight="900" font-size="140" letter-spacing="-4"
+                                  fill="currentColor">Flor<tspan class="logo-dot">.</tspan></text>
+                          </svg>
+                        </span>
+                      } @else {
+                        <img class="gallery-thumb__media" [src]="item.path" [alt]="item.alt"
+                             loading="lazy" decoding="async"
+                             (error)="markError(item.path)" />
+                      }
+                    </button>
+                  }
+                </div>
+
+              </div>
+            }
+          </div>
+        }
+
+      </section>
+    }
+
+  </div>
+</div>
+
+<!-- ── Lightbox ─────────────────────────────────────────────────────────────── -->
+@if (lightboxOpen() && lightboxItem(); as item) {
+  <div
+    class="lightbox"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="item.alt"
+    (click)="closeLightbox()"
+  >
+    <!-- Media area (stops propagation) -->
+    <div class="lightbox__stage" (click)="$event.stopPropagation()">
+
+      @if (item.isVideo) {
+        <video class="lightbox__media" [src]="item.path"
+               autoplay controls playsinline [attr.aria-label]="item.alt">
+        </video>
+      } @else if (erroredPaths().has(item.path)) {
+        <span class="lightbox__placeholder" aria-hidden="true">
+          <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+            <text x="300" y="158" text-anchor="middle"
+                  font-family="'Playfair Display','Georgia',serif"
+                  font-weight="900" font-size="140" letter-spacing="-4"
+                  fill="currentColor">Flor<tspan class="logo-dot">.</tspan></text>
+          </svg>
+        </span>
+      } @else {
+        <img class="lightbox__media" [src]="item.path" [alt]="item.alt"
+             (error)="markError(item.path)" />
+      }
+
+    </div>
+
+    <!-- Controls -->
+    <div class="lightbox__controls" (click)="$event.stopPropagation()">
+
+      <!-- Prev -->
+      <button class="lightbox__btn lightbox__btn--nav" type="button"
+              [attr.aria-label]="ui.lightbox.prev" (click)="prev()">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+
+      <!-- Counter -->
+      <span class="lightbox__counter" aria-live="polite">
+        {{ lightboxIndex() + 1 }} / {{ flatItems().length }}
+      </span>
+
+      <!-- Next -->
+      <button class="lightbox__btn lightbox__btn--nav" type="button"
+              [attr.aria-label]="ui.lightbox.next" (click)="next()">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+
+      <!-- Download -->
+      <button class="lightbox__btn lightbox__btn--action" type="button"
+              [attr.aria-label]="ui.lightbox.download" (click)="downloadCurrent()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+      </button>
+
+      <!-- Close -->
+      <button class="lightbox__btn lightbox__btn--close" type="button"
+              [attr.aria-label]="ui.lightbox.close" (click)="closeLightbox()">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+}

@@ -1,0 +1,140 @@
+// src/app/pages/services/services.component.scss
+@use 'vars' as *;
+
+.services-hero {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+
+  // ── Banner image (right side, masked left-to-right) ───────────────────────
+  // Sits at z-index 0 — behind the gradient overlay and the text content.
+  &__banner {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    // Image is transparent on the left and gradually becomes opaque on the right.
+    // The exact stop points control how wide the blend zone is.
+    mask-image: linear-gradient(to right, transparent 20%, black 65%);
+    -webkit-mask-image: linear-gradient(to right, transparent 20%, black 65%);
+  }
+
+  // ── Gradient overlay (z-index 1, on top of image) ─────────────────────────
+  // Two stacked layers:
+  //   1. Surface colour cover  — keeps the left side fully readable
+  //   2. Brand tint            — adds the configurable colour punch on top
+  // Both fade to transparent toward the right, revealing the image.
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      // Brand tint (configurable via --hero-gradient)
+      linear-gradient(
+        to right,
+        var(--hero-gradient, rgba(116, 89, 202, 0.10)) 0%,
+        transparent 58%
+      ),
+      // Surface colour cover — ensures text contrast regardless of image
+      linear-gradient(
+        to right,
+        var(--color-surface) 0%,
+        var(--color-surface) 22%,
+        transparent 62%
+      );
+  }
+
+  // ── Text content (z-index 2 — above image and gradient) ──────────────────
+  &__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+  }
+
+  h1 {
+    margin-bottom: $space-4;
+  }
+
+  &__sub {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    line-height: $line-height-base;
+  }
+
+  // ── Mobile: hide banner image, show gradient only ─────────────────────────
+  // Text fills the full width on mobile — image behind it hurts readability.
+  @media (max-width: $bp-md) {
+    &__banner {
+      display: none;
+    }
+
+    &::before {
+      background: linear-gradient(
+        to right,
+        var(--hero-gradient, rgba(116, 89, 202, 0.10)),
+        transparent
+      );
+    }
+  }
+}
+
+.section--alt {
+  background-color: var(--color-surface-alt);
+}
+
+.services-category {
+  & + & {
+    margin-top: $space-16;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    margin-bottom: $space-8;
+    padding-bottom: $space-4;
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: $radius-btn;
+    flex-shrink: 0;
+
+    &--insurance {
+      background-color: var(--color-primary-light);
+      color: var(--color-primary);
+    }
+
+    &--realestate {
+      background-color: color-mix(in srgb, var(--color-accent) 12%, transparent);
+      color: var(--color-accent);
+    }
+  }
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-6;
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $bp-sm) {
+    grid-template-columns: 1fr;
+  }
+}

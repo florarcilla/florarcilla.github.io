@@ -1,0 +1,20 @@
+// src/app/shared/components/star-rating/star-rating.component.scss
+@use 'vars' as *;
+
+.star-rating {
+  display: inline-flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.star {
+  fill: var(--color-border);
+  stroke: var(--color-border);
+  stroke-width: 1.5;
+  flex-shrink: 0;
+
+  &--filled {
+    fill: var(--color-star);
+    stroke: var(--color-star);
+  }
+}

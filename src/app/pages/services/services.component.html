@@ -1,0 +1,72 @@
+<!-- src/app/pages/services/services.component.html -->
+
+<section
+  class="services-hero section"
+  aria-labelledby="services-hero-heading"
+  [style.--hero-gradient]="config.servicesPageHero.gradientColor ?? 'rgba(116,89,202,0.10)'"
+>
+  @if (config.servicesPageHero.bannerImageUrl) {
+    <!--
+      Decorative banner — aria-hidden so screen readers skip it.
+      CSS mask fades it from transparent (left) to opaque (right).
+      The ::before gradient overlay blends the left colour into the image.
+    -->
+    <img
+      class="services-hero__banner"
+      [src]="config.servicesPageHero.bannerImageUrl"
+      alt=""
+      aria-hidden="true"
+      role="presentation"
+      loading="eager"
+      decoding="async"
+    />
+  }
+
+  <div class="container services-hero__inner">
+    <h1 id="services-hero-heading" [innerHTML]="config.servicesPageHero.heading"></h1>
+    <p class="services-hero__sub">{{ config.servicesPageHero.subCopy }}</p>
+  </div>
+</section>
+
+<section class="services-grid-section section section--alt" aria-label="All services">
+  <div class="container">
+
+    <div class="services-category">
+      <h2 class="services-category__heading">
+        <span class="services-category__icon services-category__icon--insurance" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </span>
+        {{ ui.services.insuranceCategory }}
+      </h2>
+      <div class="services-grid">
+        @for (service of config.services; track service.id) {
+          @if (service.type === 'insurance') {
+            <app-service-card [service]="service" />
+          }
+        }
+      </div>
+    </div>
+
+    <div class="services-category">
+      <h2 class="services-category__heading">
+        <span class="services-category__icon services-category__icon--realestate" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </span>
+        {{ ui.services.realestateCategory }}
+      </h2>
+      <div class="services-grid">
+        @for (service of config.services; track service.id) {
+          @if (service.type === 'realestate') {
+            <app-service-card [service]="service" />
+          }
+        }
+      </div>
+    </div>
+
+  </div>
+</section>

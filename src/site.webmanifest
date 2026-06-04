@@ -1,0 +1,15 @@
+{
+  "name": "Flor D. Arcilla – Insurance & Real Estate",
+  "short_name": "Flor Arcilla",
+  "description": "Licensed Insurance Agent (PruLife UK) and Real Estate Sales Associate (ProFriends) serving Filipino families and OFWs across the Philippines.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7459ca",
+  "lang": "en-PH",
+  "icons": [
+    { "src": "assets/images/flor_logo.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/images/flor_logo.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/images/flor_logo.svg", "sizes": "any",     "type": "image/svg+xml", "purpose": "maskable any" }
+  ]
+}

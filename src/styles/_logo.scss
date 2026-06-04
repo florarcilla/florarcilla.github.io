@@ -1,0 +1,69 @@
+// src/styles/_logo.scss
+// Global (unscoped) rules for the inline SVG logo.
+// Must live here — NOT in component SCSS — because Angular's emulated view
+// encapsulation appends [_ngcontent-xxx] to component selectors, which prevents
+// them from reliably matching SVG child elements like <text> and <tspan>.
+
+// ── Base: near-black text, purple dot ────────────────────────────────────────
+.header__logo,
+.footer__logo {
+  color: #1a1a1a;
+
+  // CSS fill wins over SVG presentation attributes; inherited by <tspan> children.
+  text { fill: currentColor; }
+
+  // "." — always the brand purple, distinct from the wordmark
+  .logo-dot { fill: #7459ca; }
+}
+
+// ── Explicit dark theme ───────────────────────────────────────────────────────
+[data-theme='dark'] {
+  .header__logo,
+  .footer__logo {
+    color: #f0f0f0;           // near-white wordmark
+
+    .logo-dot { fill: #9b7fda; } // lighter purple so it pops on dark backgrounds
+  }
+}
+
+// ── Gallery thumbnail placeholder (same colour rules as logo) ─────────────────
+.gallery-thumb__placeholder {
+  color: #1a1a1a;
+  .logo-dot { fill: #7459ca; }
+}
+[data-theme='dark'] .gallery-thumb__placeholder {
+  color: #f0f0f0;
+  .logo-dot { fill: #9b7fda; }
+}
+
+// ── Service card placeholder (same colour rules as logo) ──────────────────────
+.service-card__placeholder {
+  color: #1a1a1a;
+  text { fill: currentColor; }
+  .logo-dot { fill: #7459ca; }
+}
+[data-theme='dark'] .service-card__placeholder {
+  color: #f0f0f0;
+  text { fill: currentColor; }
+  .logo-dot { fill: #9b7fda; }
+}
+
+// ── Auto dark mode (respects prefers-color-scheme when theme = "auto") ─────────
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme='light']):not([data-theme='dark']) {
+    .header__logo,
+    .footer__logo {
+      color: #f0f0f0;
+      .logo-dot { fill: #9b7fda; }
+    }
+    .gallery-thumb__placeholder {
+      color: #f0f0f0;
+      .logo-dot { fill: #9b7fda; }
+    }
+    .service-card__placeholder {
+      color: #f0f0f0;
+      text { fill: currentColor; }
+      .logo-dot { fill: #9b7fda; }
+    }
+  }
+}

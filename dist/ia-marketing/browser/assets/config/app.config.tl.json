@@ -1,0 +1,339 @@
+{
+  "agentName": "Flor D. Arcilla",
+  "nickname": "Flor",
+  "tagline": "Ang Iyong Mapagkakatiwalaang Kasosyo sa Insurance at Real Estate",
+  "profilePictureUrl": "assets/images/flor_banner.jpg",
+  "profilePictureAlt": "Si Flor Arcilla, lisensyadong ahente ng insurance at sales associate sa real estate",
+  "secondaryProfilePictureUrl": "assets/images/agent-office.jpg",
+  "secondaryProfilePictureAlt": "Si Flor Arcilla sa kanyang opisina",
+  "logoUrl": "assets/images/logo.svg",
+  "logoAlt": "Flor Arcilla – Insurance at Real Estate",
+  "bio": "Sa mahigit 10 taon ng karanasan sa paglilingkod sa mga pamilya at mamumuhunan sa buong rehiyon, pinagsasama ko ang malalim na kaalaman sa insurance at matalas na pagtingin sa mga oportunidad sa real estate. Maging ito man ay ang pagprotekta sa pinakamahalagang bagay para sa iyo o ang paghahanap ng iyong susunod na tahanan o investment property, nandito ako upang gabayan ka sa bawat hakbang.",
+  "richTextAbout": "<p>Nagsimula ako sa financial services dahil totoo akong naniniwala na ang proteksyon at matalinong investment ay dapat magkasama at hindi kailangang pumili ng isa lang.</p><p>Mahigit isang dekada na akong tumutulong sa mga pamilyang ma-secure ang kanilang kita, kalusugan, at kinabukasan. At ngayon, bilang licensed din sa real estate, kaya ko na ring tulungan kang mahanap ang bahay o property na angkop sa lifestyle at budget mo.</p><p>Para sa akin, hindi ito basta trabaho lang. Outside work? Health muna. Sa tuwing may time, nag lalakad lakad ako sa weekends para mag-recharge!</p>",
+  "email": "fongarcilla@gmail.com",
+  "phone": "+639055584891",
+  "whatsappNumber": "639055584891",
+  "facebookMessengerUrl": "https://m.me/florarcilla",
+  "linkedinUrl": "https://linkedin.com/in/florarcilla",
+  "instagramUrl": "https://instagram.com/florarcilla",
+  "facebookUrl": "https://www.facebook.com/profile.php?id=100081236867085",
+  "licences": [
+    "Licensed Insurance Agent Since 2020 – PRULife UK License #70111974",
+    "Real Estate Sales Associate Since 2019 – License #RE-2014-77302"
+  ],
+  "servicesPageHero": {
+    "heading": "Mga Serbisyong Angkop sa Iyong Buhay",
+    "subCopy": "Nandito ka man o nasa abroad, tutulungan kitang protektahan ang iyong pamilya at makamit ang dream home mo sa tamang plano, tamang lugar, at isang mapagkakatiwalaang katuwang sa bawat hakbang."
+  },
+  "services": [
+    {
+      "id": "traditional-insurance",
+      "title": "Traditional Insurance",
+      "imageUrl": "assets/images/service-health-insurance.jpg",
+      "imageAlt": "Traditional health insurance coverage",
+      "description": "Pangalagaan ang mga taong mahalaga sa iyo sa pamamagitan ng term, whole life, at endowment plans na nagbibigay ng maaasahang proteksyon. Maging para sa short-term na pangangailangan o panghabambuhay na seguridad — may plano para sa bawat yugto ng iyong buhay, na may opsyon na i-customize habang nagbabago ang sitwasyon mo.",
+      "type": "insurance"
+    },
+    {
+      "id": "insurance-with-envestment",
+      "title": "Insurance With Investment",
+      "imageUrl": "assets/images/service-life-insurance.jpg",
+      "imageAlt": "Insurance with investment growth",
+      "description": "Hindi na kailangang pumili sa pagitan ng proteksyon at paglago ng pera. Sa VUL (variable unit-linked) plans, bahagi ng binabayad mo ay napupunta sa insurance coverage, at bahagi naman ay ini-invest — para lumagaki ang pera mo habang protektado ka. Perpekto para sa pagiipon para sa edukasyon ng anak, retirement, o anumang malaking financial goal.",
+      "type": "insurance"
+    },
+    {
+      "id": "health-insurance",
+      "title": "Health Insurance",
+      "imageUrl": "assets/images/service-home-insurance.jpg",
+      "imageAlt": "Health insurance coverage for individuals and families",
+      "description": "Huwag hayaang maging hadlang ang gastos sa iyong pagpapagaling. Ang health insurance ay sumasaklaw sa hospitalization, kritikal na sakit tulad ng cancer, heart attack, at stroke — para ikaw at ang iyong pamilya ay hindi mabibigo sa pinansiyal na bahagi ng kalusugan. Mayroon ding mga plano na pwedeng i-share sa mga miyembro ng pamilya.",
+      "type": "insurance"
+    },
+    {
+      "id": "pre-selling",
+      "title": "Pre-Selling Properties",
+      "imageUrl": "assets/images/service-pre-selling.jpg",
+      "imageAlt": "Blueprint and scale model of a pre-selling property",
+      "description": "Mag-invest nang maaga at ma-lock in ang pinakamababang presyo bago pa matapos ang property. Ang pre-selling ay nagbibigay ng mas abot-kayang bayad, flexible na payment terms, at malaking tsansa na lumago ang halaga ng investment mo pagdating ng turnover. Gagabayan kita mula sa pagpili ng unit hanggang sa reservation at pagbili.",
+      "type": "realestate"
+    },
+    {
+      "id": "ready-for-occupancy",
+      "title": "Ready For Occupancy (RFO)",
+      "imageUrl": "assets/images/service-rfo.jpg",
+      "imageAlt": "Move-in ready house and lot",
+      "description": "Gusto mo bang makalipat agad? Ang RFO properties ay tapos na itayo at handa nang i-turnover — walang hintayan, walang abala. Tutulungan kita mahanap ang house and lot o condo unit na akma sa budget, lifestyle, at lokasyong gusto mo para makapagsimula ka agad ng bagong kabanata.",
+      "type": "realestate"
+    },
+    {
+      "id": "home-buying",
+      "title": "Home Buying Assistance",
+      "imageUrl": "assets/images/service-home-buying.jpg",
+      "imageAlt": "Happy couple receiving home keys",
+      "description": "Ang pagbili ng bahay ay isa sa pinakamalaking desisyon sa buhay — at hindi mo kailangang harapin ito nang mag-isa. Mula sa paghanap ng tamang property at pag-compute ng monthly amortization, hanggang sa pag-process ng bank o Pag-IBIG financing, nandito ako sa bawat hakbang para makapagdesisyon ka nang may kumpiyansa.",
+      "type": "realestate"
+    },
+    {
+      "id": "property-investment",
+      "title": "Property Investment",
+      "imageUrl": "assets/images/service-investment.jpg",
+      "imageAlt": "Growing real estate investment portfolio",
+      "description": "Ang real estate ay isa sa pinaka-maaasahang paraan ng pag-invest sa Pilipinas. Kung gusto mong mag-buy and hold, kumita sa rental, o palakasin ang iyong portfolio, tutulungan kita mahanap ang mga lugar at proyekto na may mataas na potensyal na paglago — kasama na ang mga integrated township ng ProFriends.",
+      "type": "realestate"
+    },
+    {
+      "id": "ofw-property-buying",
+      "title": "OFW Property Assistance",
+      "imageUrl": "assets/images/service-ofw.jpg",
+      "imageAlt": "OFW family buying property remotely",
+      "description": "Kahit nasa abroad ka, pwede ka pa ring mag-invest ng property dito sa Pinas. Espesyalista ako sa pagtulong sa mga OFW na mag-reserve ng property nang remote — mula sa virtual tripping at online reservation, hanggang sa pag-process ng Pag-IBIG OFW loan at pakikipag-coordinate sa iyong pamilya dito.",
+      "type": "realestate"
+    },
+    {
+      "id": "financing-assistance",
+      "title": "Financing & Loan Assistance",
+      "imageUrl": "assets/images/service-financing.jpg",
+      "imageAlt": "Loan documents and financial planning",
+      "description": "Hindi sigurado kung anong payment scheme ang pinaka-angkop sa iyo? Tutulungan kita ikumpara ang lahat ng opsyon — Pag-IBIG Fund (HDMF), bank financing, o in-house installment. Aasikasuhin ko ang mga requirements, loan application, at computations para hindi ka na mag-alala sa financial side ng pagbili.",
+      "type": "realestate"
+    },
+    {
+      "id": "property-tripping",
+      "title": "Property Tripping",
+      "imageUrl": "assets/images/service-tripping.jpg",
+      "imageAlt": "Clients touring a property site",
+      "description": "Mas maganda ang makita muna bago pumirma. Mag-aayos ako ng on-site o virtual property tour para maranasan mo mismo ang komunidad at makita ang aktwal na unit o lote bago ka magdesisyon. Mula sa Lancaster New City sa Cavite hanggang mga proyekto sa Iloilo — anumang araw, kahit weekend.",
+      "type": "realestate"
+    },
+    {
+      "id": "after-sales-support",
+      "title": "After-Sales Support",
+      "imageUrl": "assets/images/service-after-sales.jpg",
+      "imageAlt": "Agent assisting homeowner with documents",
+      "description": "Hindi natatapos ang trabaho ko sa benta. Patuloy kitang tutulungan pagkatapos ng purchase — mula sa pag-follow up ng turnover schedule at paglipat ng titulo, hanggang sa pakikipag-coordinate sa ProFriends property management para sa repairs, community concerns, at account updates sa buyer's portal.",
+      "type": "realestate"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "t1",
+      "name": "James & Patricia Holloway",
+      "avatarUrl": "assets/images/avatar-holloway.jpg",
+      "avatarAlt": "James at Patricia Holloway",
+      "rating": 5,
+      "text": "Tinulungan kami ni Flor na bilhin ang aming unang tahanan at mag-set up ng life insurance sa parehong buwan. Ang pagkakaroon ng isang mapagkakatiwalaang propesyonal na nag-koordina ng dalawa ay nakatipid sa amin ng napakaraming stress.",
+      "date": "Marso 2025"
+    },
+    {
+      "id": "t2",
+      "name": "Robert Chen",
+      "avatarUrl": "assets/images/avatar-chen.jpg",
+      "avatarAlt": "Robert Chen",
+      "rating": 5,
+      "text": "Pumunta ako kay Flor para sa payo sa investment property. Hindi lang niya nahanap ang isang magandang ari-arian sa ibaba ng hinihingi, kundi natuklasan din niya ang isang malaking kakulangan sa aking patakaran. Nakatipid ako ng libu-libo nang dalawang beses.",
+      "date": "Enero 2025"
+    },
+    {
+      "id": "t3",
+      "name": "Sandra Reyes",
+      "avatarUrl": "assets/images/avatar-reyes.jpg",
+      "avatarAlt": "Sandra Reyes",
+      "rating": 5,
+      "text": "Pagkatapos ng aking diborsyo kailangan kong baguhin ang lahat—planong pangkalusugan, seguro sa buhay, at ibenta ang tahanan ng pamilya. Pinangalagaan ni Flor ang lahat nang may empatiya at propesyonalismo.",
+      "date": "Nobyembre 2024"
+    },
+    {
+      "id": "t4",
+      "name": "David & Fiona Park",
+      "avatarUrl": "assets/images/avatar-park.jpg",
+      "avatarAlt": "David at Fiona Park",
+      "rating": 4,
+      "text": "Napaka-kaalaman sa parehong real estate at insurance. Tinulungan kami ni Flor na ibenta ang aming condo at gamitin ang kita para sa isang bagong whole-life policy bilang bahagi ng aming plano sa pagreretiro.",
+      "date": "Setyembre 2024"
+    },
+    {
+      "id": "t5",
+      "name": "Angela Torres",
+      "avatarUrl": "assets/images/avatar-torres.jpg",
+      "avatarAlt": "Angela Torres",
+      "rating": 5,
+      "text": "Lumilipat ako mula sa ibang lugar at napakalaking gulo ko. Nagpadala si Flor ng personalisadong pagkukumpara ng kapitbahayan at handa na ang aking quote sa home insurance sa araw ng pagsasara. Kahanga-hangang serbisyo.",
+      "date": "Hulyo 2024"
+    },
+    {
+      "id": "t6",
+      "name": "Michael Osei",
+      "avatarUrl": "assets/images/avatar-osei.jpg",
+      "avatarAlt": "Michael Osei",
+      "rating": 5,
+      "text": "Tinulungan kami ni Flor na makakuha ng group health coverage para sa anim na empleyado sa presyong kaya naming bayaran. Malinaw, tapat, walang pressure. Nagrekomenda na kami ng tatlong kasamahan.",
+      "date": "Mayo 2024"
+    }
+  ],
+  "footerLinks": [
+    { "label": "Home", "href": "/" },
+    { "label": "Mga Serbisyo", "href": "/services" },
+    { "label": "Tungkol Sa Akin", "href": "/about" },
+    { "label": "Gallery", "href": "/gallery" },
+    { "label": "Makipag-ugnayan", "href": "/enquire" }
+  ],
+  "copyrightText": "© 2026 Flor. Lahat ng karapatan ay nakalaan.",
+  "enquiryFormIntro": "Libre lang naman ang mag-inquire. Punan mo lang ang form para makapag-usap tayo at malaman kung anong plano ang pinaka-angkop sa iyo.",
+  "homeContactSectionHeading": "Mag Usap Tayo",
+  "homeContactSectionCopy": "May mabilis na tanong o handa nang magsimula? Makipag-ugnayan sa akin sa paraang pinaka-maginhawa para sa iyo.",
+  "siteUrl": "https://florarcilla.com",
+  "twitterHandle": "@florarcilla",
+  "keywords": [
+    "insurance sa Pilipinas", "life insurance Pilipino", "ahente ng insurance Pilipinas",
+    "PruLife UK", "PRU Life UK ahente", "insurance para sa OFW",
+    "VUL insurance Pilipinas", "paano mag-invest sa insurance",
+    "real estate Pilipinas", "bahay at lupa Pilipinas", "affordable condo Pilipinas",
+    "ProFriends properties", "ProFriends real estate",
+    "Pasalo property Pilipinas", "paano mag-Pasalo ng bahay",
+    "pre-selling condo Pilipinas", "RFO properties Pilipinas",
+    "OFW property investment", "OFW bahay Pilipinas", "Pag-IBIG loan OFW",
+    "paano bumili ng bahay sa Pilipinas", "mamuhunan sa real estate Pilipinas",
+    "Flor Arcilla", "Flor Arcilla insurance real estate"
+  ],
+  "seoPages": {
+    "home": {
+      "title": "Flor D. Arcilla – Insurance at Real Estate Agent sa Pilipinas",
+      "description": "Gusto mong mag-invest pero di alam kung saan magsisimula? Si Flor D. Arcilla, licensed PruLife UK agent at ProFriends real estate associate, tutulong sa'yo — may insurance ka man o bahay ang hanap mo."
+    },
+    "services": {
+      "title": "Mga Serbisyo – Insurance at Real Estate – Flor D. Arcilla",
+      "description": "Life insurance, VUL, health insurance, pre-selling properties, RFO homes, tulong sa OFW housing loan, Pag-IBIG, at ProFriends real estate. Isa lang ang kailangan mo — si Flor."
+    },
+    "about": {
+      "title": "Sino si Flor D. Arcilla? – Insurance at Real Estate Agent Pilipinas",
+      "description": "Si Flor D. Arcilla ay licensed PruLife UK agent at ProFriends real estate associate. Mahigit 10 taon na siyang tumutulong sa mga Pilipino at OFW na mag-invest ng tama."
+    },
+    "enquire": {
+      "title": "Makipag-usap kay Flor – Insurance at Real Estate Consultation",
+      "description": "May tanong ka ba? Libre lang! I-message si Flor D. Arcilla para sa libreng consultation tungkol sa insurance, VUL, bahay, o property investment. Fast reply guaranteed."
+    },
+    "gallery": {
+      "title": "Gallery – Mga Tagumpay at Alaala – Flor D. Arcilla",
+      "description": "Tingnan ang mga milestone, client wins, at property closings ni Flor D. Arcilla sa buong Pilipinas."
+    }
+  },
+  "metaDefaults": {
+    "title": "Flor D. Arcilla – Insurance Agent at Real Estate Sales Associate Pilipinas",
+    "description": "Tulungan ka ni Flor D. Arcilla na protektahan ang iyong pamilya sa pamamagitan ng PruLife UK insurance at mag-invest sa real estate sa buong Pilipinas."
+  },
+  "ui": {
+    "nav": {
+      "gallery": "Gallery",
+      "home": "Home",
+      "services": "Mga Serbisyo",
+      "about": "Tungkol Sa Akin",
+      "bookConsultation": "Mag-book ng Konsultasyon"
+    },
+    "hero": {
+      "roleLabel": "Ahente ng Insurance at Real Estate Sales Associate",
+      "ctaPrimary": "Mag-book ng Konsultasyon",
+      "ctaSecondary": "Tingnan ang Mga Serbisyo"
+    },
+    "testimonials": {
+      "heading": "Sinabi ng Mga Kliyente"
+    },
+    "services": {
+      "enquireButton": "Magtanong",
+      "insuranceBadge": "Insurance",
+      "realestateBadge": "Real Estate",
+      "insuranceCategory": "Insurance",
+      "realestateCategory": "Real Estate"
+    },
+    "about": {
+      "sectionLabel": "Tungkol Sa Akin",
+      "credentialsHeading": "Mga Lisensya at Kredensyal",
+      "contactHeading": "Makipag-ugnayan",
+      "contactCopy": "Ang pinakamahusay na pag-uusap ay nagsisimula sa isang simpleng kumusta. Makipag-ugnayan sa akin sa paraang pinaka-maginhawa para sa iyo."
+    },
+    "enquire": {
+      "heading": "Makipag-ugnayan Tayo",
+      "formLabels": {
+        "fullName": "Buong Pangalan",
+        "email": "Email Address",
+        "phone": "Numero ng Telepono",
+        "phoneOptional": "(opsyonal)",
+        "enquiryType": "Uri ng Katanungan",
+        "message": "Mensahe",
+        "required": "kinakailangan",
+        "submit": "Magpadala ng Katanungan"
+      },
+      "enquiryTypes": {
+        "general": "Pangkalahatang Katanungan",
+        "insurance": "Insurance",
+        "realestate": "Real Estate"
+      },
+      "validation": {
+        "nameRequired": "Kinakailangan ang buong pangalan.",
+        "nameMinLength": "Ang pangalan ay dapat na hindi bababa sa 2 character.",
+        "emailRequired": "Kinakailangan ang email address.",
+        "emailInvalid": "Mangyaring maglagay ng wastong email address.",
+        "phoneInvalid": "Mangyaring maglagay ng wastong numero ng telepono.",
+        "messageRequired": "Kinakailangan ang mensahe.",
+        "messageMinLength": "Ang mensahe ay dapat na hindi bababa sa 10 character.",
+        "messageMaxLength": "Ang mensahe ay hindi maaaring lumampas sa 2000 character.",
+        "formError": "Mangyaring punan nang tama ang lahat ng kinakailangang field."
+      },
+      "success": {
+        "heading": "Naipadala na ang iyong katanungan!",
+        "body": "Nabuksan ang iyong email client na may pre-filled na mensahe. Mangyaring ipadala ito upang makumpleto ang iyong katanungan. Sasagutin kita sa loob ng isang araw ng negosyo.",
+        "reset": "Magpadala ng Isa Pang Katanungan"
+      }
+    },
+    "quickContact": {
+      "whatsapp": "WhatsApp",
+      "messenger": "Messenger",
+      "call": "Tumawag"
+    },
+    "accessibility": {
+      "openMenu": "Buksan ang menu ng accessibility",
+      "closeMenu": "Isara ang menu ng accessibility",
+      "label": "Accessibility",
+      "lightMode": "Maliwanag",
+      "darkMode": "Madilim",
+      "autoTheme": "Awtomatiko",
+      "smallText": "Maliit",
+      "defaultText": "Default",
+      "largeText": "Malaki",
+      "highContrast": "Mataas na Contrast"
+    },
+    "whatsappModal": {
+      "title": "Paano kita matutulungan?",
+      "subtitle": "Pumili ng paksa at magbubukas ako ng pre-filled na mensahe sa WhatsApp.",
+      "insurance": "Seguro sa Buhay at Kalusugan",
+      "realestate": "Real Estate",
+      "cancel": "Kanselahin",
+      "messageInsurance": "Kumusta po Flor! Interesado po ako sa inyong mga serbisyo sa Life at Health Insurance. Maaari po ba kayong magbigay ng karagdagang impormasyon?",
+      "messageRealestate": "Kumusta po Flor! Interesado po ako sa inyong mga serbisyo sa Real Estate. Maaari po ba kayong magbigay ng karagdagang impormasyon?"
+    },
+    "gallery": {
+      "heading": "Gallery",
+      "subheading": "Mga tagumpay at alaala",
+      "filterType": "Uri",
+      "filterYear": "Taon",
+      "allTypes": "Lahat",
+      "allYears": "Lahat ng Taon",
+      "sections": {
+        "general": "Pangkalahatan",
+        "insurance": "Insurance",
+        "realestate": "Real Estate"
+      },
+      "lightbox": {
+        "close": "Isara",
+        "prev": "Nakaraan",
+        "next": "Susunod",
+        "download": "I-download"
+      },
+      "noItems": "Walang larawan para sa mga napiling filter."
+    },
+    "footer": {
+      "quickLinksHeading": "Mabilis na Mga Link",
+      "contactHeading": "Makipag-ugnayan"
+    }
+  }
+}
