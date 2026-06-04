@@ -10,7 +10,7 @@
     "start:prod": "node scripts/generate-gallery-manifest.js && ng serve --configuration=production",
     "prebuild": "node scripts/generate-gallery-manifest.js",
     "build": "ng build",
-    "build:gh": "node scripts/generate-gallery-manifest.js && ng build --base-href /ia-marketing/",
+    "build:gh": "node scripts/generate-gallery-manifest.js && ng build --base-href /",
     "watch": "ng build --watch --configuration development"
   },
   "private": true,

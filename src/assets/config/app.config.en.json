@@ -2,14 +2,14 @@
   "agentName": "Flor D. Arcilla",
   "nickname": "Flor",
   "tagline": "Your Trusted Partner in Life Insurance & Real Estate",
-  "profilePictureUrl": "assets/images/flor_banner.jpg",
+  "profilePictureUrl": "assets/images/flor_banner.webp",
   "profilePictureAlt": "Flor Arcilla, licensed insurance agent and real estate sales associate",
-  "secondaryProfilePictureUrl": "assets/images/flor_arcilla_office.jpg",
+  "secondaryProfilePictureUrl": "assets/images/flor_arcilla_office.webp",
   "secondaryProfilePictureAlt": "Flor Arcilla at her office",
   "logoUrl": "assets/images/logo.svg",
-  "logoAlt": "Flor Arcilla – Insurance & Real Estate",
+  "logoAlt": "Flor Arcilla - Insurance & Real Estate",
   "bio": "With over 10 years of experience serving families and investors across the region, I combine deep insurance expertise with a sharp eye for real estate opportunities. Whether you are protecting what matters most or finding your next home or investment property, I am here to guide you every step of the way.",
-  "richTextAbout": "<p>I started my career in financial services because I believe that security and smart investment go hand in hand. After a decade in insurance—helping families protect their income, health, and future, I expanded into real estate, where I now help buyers, sellers, and investors make confident decisions in any market.</p><p>My dual licence is more than a credential. It means I can sit across the table from you and see your situation through two lenses at once: what do you need to protect today, and how can your property work harder for your tomorrow?</p><p>Outside the office, I volunteer with a local housing-assistance non-profit and serve as a mentor for newly licenced agents in our district. Healthy living comes first, hence I am an avid exercise enthusiast.</p>",
+  "richTextAbout": "<p>I started my career in financial services because I believe that security and smart investment go hand in hand. After a decade in insurance-helping families protect their income, health, and future, I expanded into real estate, where I now help buyers, sellers, and investors make confident decisions in any market.</p><p>My dual licence is more than a credential. It means I can sit across the table from you and see your situation through two lenses at once: what do you need to protect today, and how can your property work harder for your tomorrow?</p><p>Outside the office, I volunteer with a local housing-assistance non-profit and serve as a mentor for newly licenced agents in our district. Healthy living comes first, hence I am an avid exercise enthusiast.</p>",
   "email": "fongarcilla@gmail.com",
   "phone": "+639055584891",
   "whatsappNumber": "639055584891",
@@ -18,36 +18,36 @@
   "instagramUrl": "https://instagram.com/florarcilla",
   "facebookUrl": "https://www.facebook.com/profile.php?id=100081236867085",
   "licences": [
-    "Licensed Insurance Agent Since 2020 – PRULife UK License #70111974",
+    "Licensed Insurance Agent Since 2020, PRULife UK License #70111974",
     "Real Estate Sales Associate Since 2019"
   ],
   "servicesPageHero": {
     "heading": "Protect What Matters. <br /> Own What You Deserve.",
     "subCopy": "Whether you're here or abroad, I will help you protect your family and own your dream home with the right plan, the right property, and a trusted partner by your side.",
     "gradientColor": "rgba(108, 68, 237, 0.28)",
-    "bannerImageUrl": "assets/images/flor_services_banner.jpg"
+    "bannerImageUrl": "assets/images/flor_services_banner.webp"
   },
   "services": [
     {
     "id": "traditional-insurance",
     "title": "Traditional Insurance",
-    "imageUrl": "assets/images/service-health-insurance.jpg",
+    "imageUrl": "assets/images/insurance-traditional.webp",
     "imageAlt": "Traditional health insurance coverage",
-    "description": "Protect the people who matter most with term, whole life, and endowment plans designed to give you solid, reliable coverage. Whether you need short-term financial protection or lifetime security, these plans ensure your loved ones are covered no matter what happens — with optional benefits you can customize as your life evolves.",
+    "description": "Protect the people who matter most with term, whole life, and endowment plans designed to give you solid, reliable coverage. Whether you need short-term financial protection or lifetime security, these plans ensure your loved ones are covered no matter what happens - with optional benefits you can customize as your life evolves.",
     "type": "insurance"
     },
     {
       "id": "insurance-with-envestment",
       "title": "Insurance With Investment",
-      "imageUrl": "assets/images/service-life-insurance.jpg",
+      "imageUrl": "assets/images/insurance-investment.webp",
       "imageAlt": "Insurance with investment growth",
-      "description": "Why choose between protection and growing your wealth? With variable unit-linked (VUL) plans, your premium is split between life insurance coverage and investment funds — so you stay protected while your money works toward your medium- to long-term financial goals. Ideal for building a fund for your family's future, your child's education, or your own retirement.",
+      "description": "Why choose between protection and growing your wealth? With variable unit-linked (VUL) plans, your premium is split between life insurance coverage and investment funds - so you stay protected while your money works toward your medium- to long-term financial goals. Ideal for building a fund for your family's future, your child's education, or your own retirement.",
       "type": "insurance"
     },
     {
       "id": "health-insurance",
       "title": "Health Insurance",
-      "imageUrl": "assets/images/service-home-insurance.jpg",
+      "imageUrl": "assets/images/health-insurance.webp",
       "imageAlt": "Health insurance coverage for individuals and families",
       "description": "Stay financially protected against the high cost of hospitalization, critical illness, and medical emergencies. With individual and family health plans covering cancer, heart attack, stroke, and more, you can focus on getting better instead of worrying about the bills. Plans can be shared across family members for broader protection.",
       "type": "insurance"
@@ -55,7 +55,7 @@
     {
       "id": "pre-selling",
       "title": "Pre-Selling Properties",
-      "imageUrl": "assets/images/service-pre-selling.jpg",
+      "imageUrl": "assets/images/real-estate-preselling.webp",
       "imageAlt": "Blueprint and scale model of a pre-selling property",
       "description": "Get in early and lock in the best price before a property is built. Pre-selling units offer lower introductory rates, flexible payment terms, and the opportunity to grow your investment as the property appreciates upon turnover. I guide you through unit selection, reservations, and the full buying process from day one.",
       "type": "realestate"
@@ -63,57 +63,57 @@
     {
       "id": "ready-for-occupancy",
       "title": "Ready For Occupancy (RFO)",
-      "imageUrl": "assets/images/service-rfo.jpg",
+      "imageUrl": "assets/images/real-estate-rfo.webp",
       "imageAlt": "Move-in ready house and lot",
-      "description": "Want to move in right away? RFO properties are fully built and ready for turnover — no waiting, no uncertainty. I help you find the right house and lot or condo unit that matches your budget, lifestyle, and location preferences so you can start your next chapter without delay.",
+      "description": "Want to move in right away? RFO properties are fully built and ready for turnover - no waiting, no uncertainty. I help you find the right house and lot or condo unit that matches your budget, lifestyle, and location preferences so you can start your next chapter without delay.",
       "type": "realestate"
     },
     {
       "id": "home-buying",
       "title": "Home Buying Assistance",
-      "imageUrl": "assets/images/service-home-buying.jpg",
+      "imageUrl": "assets/images/real-estate-home-buying.webp",
       "imageAlt": "Happy couple receiving home keys",
-      "description": "Buying your first home — or your next one — is a big deal, and you shouldn't have to figure it out alone. From finding the right property and computing for monthly amortization, to processing bank or Pag-IBIG financing, I walk you through every step so you can make a confident, informed decision.",
+      "description": "Buying your first home - or your next one - is a big deal, and you shouldn't have to figure it out alone. From finding the right property and computing for monthly amortization, to processing bank or Pag-IBIG financing, I walk you through every step so you can make a confident, informed decision.",
       "type": "realestate"
     },
     {
       "id": "property-investment",
       "title": "Property Investment",
-      "imageUrl": "assets/images/service-investment.jpg",
+      "imageUrl": "assets/images/real-estate-property-investment.webp",
       "imageAlt": "Growing real estate investment portfolio",
-      "description": "Real estate remains one of the most reliable investments in the Philippines. Whether you're looking to buy and hold, earn through rental income, or diversify your portfolio, I help you identify high-growth areas and properties with strong appreciation potential — including ProFriends' integrated township developments.",
+      "description": "Real estate remains one of the most reliable investments in the Philippines. Whether you're looking to buy and hold, earn through rental income, or diversify your portfolio, I help you identify high-growth areas and properties with strong appreciation potential - including ProFriends' integrated township developments.",
       "type": "realestate"
     },
     {
       "id": "ofw-property-buying",
       "title": "OFW Property Assistance",
-      "imageUrl": "assets/images/service-ofw.jpg",
+      "imageUrl": "assets/images/real-estate-ofw.webp",
       "imageAlt": "OFW family buying property remotely",
-      "description": "Living or working abroad doesn't have to stop you from investing back home. I specialize in helping OFWs secure their dream property remotely — from virtual tripping and online reservations to processing Pag-IBIG OFW loans and coordinating with family representatives here in the Philippines.",
+      "description": "Living or working abroad doesn't have to stop you from investing back home. I specialize in helping OFWs secure their dream property remotely - from virtual tripping and online reservations to processing Pag-IBIG OFW loans and coordinating with family representatives here in the Philippines.",
       "type": "realestate"
     },
     {
       "id": "financing-assistance",
       "title": "Financing & Loan Assistance",
-      "imageUrl": "assets/images/service-financing.jpg",
+      "imageUrl": "assets/images/real-estate-loan-application.webp",
       "imageAlt": "Loan documents and financial planning",
-      "description": "Not sure which payment scheme works best for you? I help you explore and compare all available options — Pag-IBIG Fund (HDMF), bank financing, or in-house installment plans. I assist with documentary requirements, loan applications, and computations so the financial side of your purchase is as smooth as possible.",
+      "description": "Not sure which payment scheme works best for you? I help you explore and compare all available options - Pag-IBIG Fund (HDMF), bank financing, or in-house installment plans. I assist with documentary requirements, loan applications, and computations so the financial side of your purchase is as smooth as possible.",
       "type": "realestate"
     },
     {
       "id": "property-tripping",
       "title": "Property Tripping",
-      "imageUrl": "assets/images/service-tripping.jpg",
+      "imageUrl": "assets/images/real-estate-tripping.webp",
       "imageAlt": "Clients touring a property site",
-      "description": "See it before you sign it. I arrange on-site and virtual property tours so you can experience the community, check the actual unit or lot, and feel confident in your decision. From Lancaster New City in Cavite to Profriends' Iloilo projects, I coordinate trips at your schedule — even on weekends.",
+      "description": "See it before you sign it. I arrange on-site and virtual property tours so you can experience the community, check the actual unit or lot, and feel confident in your decision. From Lancaster New City in Cavite to Profriends' Iloilo projects, I coordinate trips at your schedule - even on weekends.",
       "type": "realestate"
     },
     {
       "id": "after-sales-support",
       "title": "After-Sales Support",
-      "imageUrl": "assets/images/service-after-sales.jpg",
+      "imageUrl": "assets/images/real-estate-after-sales.webp",
       "imageAlt": "Agent assisting homeowner with documents",
-      "description": "My job doesn't end at the sale. I continue to assist you with post-purchase needs — from following up on turnover schedules and title transfers, to coordinating with ProFriends' property management for repairs, community concerns, and account updates through the buyer's portal.",
+      "description": "My job doesn't end at the sale. I continue to assist you with post-purchase needs - from following up on turnover schedules and title transfers, to coordinating with ProFriends' property management for repairs, community concerns, and account updates through the buyer's portal.",
       "type": "realestate"
     }
   ],
@@ -142,7 +142,7 @@
       "avatarUrl": "",
       "avatarAlt": "Anonymous client",
       "rating": 5,
-      "text": "After my divorce I needed to restructure everything—health plan, life cover, and sell the family home. Flor handled it all with empathy and professionalism. I never felt like just a transaction.",
+      "text": "After my divorce I needed to restructure everything-health plan, life cover, and sell the family home. Flor handled it all with empathy and professionalism. I never felt like just a transaction.",
       "date": "November 2024"
     },
     {
@@ -204,28 +204,28 @@
   ],
   "seoPages": {
     "home": {
-      "title": "Flor D. Arcilla – Insurance Agent & Real Estate Sales Associate in the Philippines",
+      "title": "Flor D. Arcilla - Insurance Agent & Real Estate Sales Associate in the Philippines",
       "description": "Flor D. Arcilla is a licensed Insurance Agent (PruLife UK) and Real Estate Sales Associate (ProFriends) helping Filipino families and OFWs protect their future and invest in property across the Philippines."
     },
     "services": {
-      "title": "Insurance & Real Estate Services – Flor D. Arcilla Philippines",
-      "description": "Life insurance, VUL, health insurance (PruLife UK), pre-selling properties, RFO homes, OFW property assistance, Pag-IBIG loans, and ProFriends real estate — all in one trusted agent."
+      "title": "Insurance & Real Estate Services - Flor D. Arcilla Philippines",
+      "description": "Life insurance, VUL, health insurance (PruLife UK), pre-selling properties, RFO homes, OFW property assistance, Pag-IBIG loans, and ProFriends real estate - all in one trusted agent."
     },
     "about": {
-      "title": "About Flor D. Arcilla – Licensed Insurance & Real Estate Agent Philippines",
-      "description": "Meet Flor D. Arcilla — licensed PRULife UK insurance agent and ProFriends real estate associate with over 10 years helping Filipino families and OFWs build financial security and own property."
+      "title": "About Flor D. Arcilla - Licensed Insurance & Real Estate Agent Philippines",
+      "description": "Meet Flor D. Arcilla - licensed PRULife UK insurance agent and ProFriends real estate associate with over 10 years helping Filipino families and OFWs build financial security and own property."
     },
     "enquire": {
-      "title": "Book a Free Consultation – Flor D. Arcilla Insurance & Real Estate",
+      "title": "Book a Free Consultation - Flor D. Arcilla Insurance & Real Estate",
       "description": "Book a free consultation with Flor D. Arcilla. Get expert advice on life insurance, VUL plans, pre-selling properties, OFW housing loans, and more. Responds within one business day."
     },
     "gallery": {
-      "title": "Gallery – Milestones & Success Stories – Flor D. Arcilla",
+      "title": "Gallery - Milestones & Success Stories - Flor D. Arcilla",
       "description": "Browse real milestones, client wins, and property closings from Flor D. Arcilla's insurance and real estate practice across the Philippines."
     }
   },
   "metaDefaults": {
-    "title": "Flor D. Arcilla – Insurance Agent & Real Estate Sales Associate Philippines",
+    "title": "Flor D. Arcilla - Insurance Agent & Real Estate Sales Associate Philippines",
     "description": "Flor D. Arcilla helps Filipino families and OFWs protect their future with PruLife UK insurance and invest in real estate through ProFriends properties across the Philippines."
   },
   "ui": {

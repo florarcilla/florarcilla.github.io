@@ -9,6 +9,8 @@
 
   // ── Banner image (right side, masked left-to-right) ───────────────────────
   // Sits at z-index 0 — behind the gradient overlay and the text content.
+  // Kept at a natural brightness; the gradient cover + text-shadow carry
+  // readability so the image doesn't need to be crushed dark.
   &__banner {
     position: absolute;
     inset: 0;
@@ -19,17 +21,18 @@
     pointer-events: none;
     user-select: none;
     z-index: 0;
-    // Image is transparent on the left and gradually becomes opaque on the right.
-    // The exact stop points control how wide the blend zone is.
-    mask-image: linear-gradient(to right, transparent 20%, black 65%);
-    -webkit-mask-image: linear-gradient(to right, transparent 20%, black 65%);
+    filter: brightness(0.85);
+    // Image fades in from the left; stop points control the blend width.
+    mask-image: linear-gradient(to right, transparent 25%, black 62%);
+    -webkit-mask-image: linear-gradient(to right, transparent 25%, black 62%);
   }
 
   // ── Gradient overlay (z-index 1, on top of image) ─────────────────────────
   // Two stacked layers:
-  //   1. Surface colour cover  — keeps the left side fully readable
-  //   2. Brand tint            — adds the configurable colour punch on top
-  // Both fade to transparent toward the right, revealing the image.
+  //   1. Brand tint on the left  — configurable colour punch
+  //   2. Surface colour cover    — solid left band, fades right
+  // The surface cover is extended slightly further right so there is a
+  // generous fully-opaque zone behind the text block.
   &::before {
     content: '';
     position: absolute;
@@ -41,32 +44,39 @@
       linear-gradient(
         to right,
         var(--hero-gradient, rgba(116, 89, 202, 0.10)) 0%,
-        transparent 58%
+        transparent 55%
       ),
-      // Surface colour cover — ensures text contrast regardless of image
+      // Surface colour cover — wider solid band ensures full text contrast
       linear-gradient(
         to right,
         var(--color-surface) 0%,
-        var(--color-surface) 22%,
-        transparent 62%
+        var(--color-surface) 30%,
+        transparent 65%
       );
   }
 
   // ── Text content (z-index 2 — above image and gradient) ──────────────────
+  // margin-left (not padding-left) shifts the block right without overriding
+  // the .container's padding-inline gutter that handles mobile spacing.
   &__inner {
     position: relative;
     z-index: 2;
-    max-width: 680px;
+    max-width: 600px;
+    margin-left: $space-8;
   }
 
   h1 {
     margin-bottom: $space-4;
+    // Crisp shadow lifts the heading off any image bleed in the blend zone.
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
   }
 
   &__sub {
     font-size: 1.1rem;
-    color: var(--color-text-muted);
+    color: var(--color-text);
     line-height: $line-height-base;
+    // Subtle shadow keeps the subtitle readable if it sits near the blend edge.
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
   }
 
   // ── Mobile: hide banner image, show gradient only ─────────────────────────
@@ -74,6 +84,20 @@
   @media (max-width: $bp-md) {
     &__banner {
       display: none;
+    }
+
+    // Reset the desktop margin-left — the .container gutter handles spacing.
+    &__inner {
+      margin-left: 0;
+    }
+
+    &__sub {
+      color: var(--color-text-muted);
+      text-shadow: none;
+    }
+
+    h1 {
+      text-shadow: none;
     }
 
     &::before {
