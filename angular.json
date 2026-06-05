@@ -60,6 +60,11 @@
                 "glob": "google14463535070400e2.html",
                 "input": "src",
                 "output": ""
+              },
+              {
+                "glob": "CNAME",
+                "input": "src",
+                "output": ""
               }
             ],
             "styles": [
