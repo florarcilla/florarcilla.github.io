@@ -5,8 +5,10 @@ import { DOCUMENT } from '@angular/common';
 import { Lang } from '../../shared/models/config.model';
 
 export const SUPPORTED_LANGS: { code: Lang; label: string; htmlLang: string }[] = [
-  { code: 'en', label: 'English', htmlLang: 'en' },
-  { code: 'tl', label: 'Tagalog', htmlLang: 'tl' },
+  { code: 'en',  label: 'English', htmlLang: 'en' },
+  { code: 'tl',  label: 'Tagalog', htmlLang: 'tl' },
+  { code: 'ceb', label: 'Bisaya',  htmlLang: 'ceb' },
+  { code: 'zh',  label: '中文',    htmlLang: 'zh-CN' },
 ];
 
 @Injectable({ providedIn: 'root' })

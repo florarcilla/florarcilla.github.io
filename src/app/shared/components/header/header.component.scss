@@ -115,39 +115,37 @@
 // ── Drawer lang section: hidden on desktop ────────────────────────────────────
 .drawer-lang { display: none; }
 
-// ── Language toggle (desktop strip in header__actions) ────────────────────────
-.lang-toggle {
-  display: flex;
+// ── Language select dropdown ──────────────────────────────────────────────────
+// Used in both desktop header__actions and mobile drawer.
+.lang-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: $space-1 $space-8 $space-1 $space-3;
   border: 1.5px solid var(--color-border);
   border-radius: $radius-btn;
-  overflow: hidden;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  // Chevron arrow as inline SVG data-URI
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right $space-2 center;
+  background-size: 14px;
+  transition: border-color $transition-fast;
 
-  &__btn {
-    padding: $space-1 $space-3;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--color-text-muted);
-    letter-spacing: 0.04em;
-    transition: background-color $transition-fast, color $transition-fast;
-    border-radius: 0;
+  &:hover { border-color: var(--color-primary); }
 
-    & + & { border-left: 1.5px solid var(--color-border); }
-
-    &:hover {
-      background-color: var(--color-primary-light);
-      color: var(--color-primary);
-    }
-
-    &--active {
-      background-color: var(--color-primary);
-      color: var(--color-text-inverse);
-
-      &:hover {
-        background-color: var(--color-primary-dark);
-        color: var(--color-text-inverse);
-      }
-    }
+  &:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 1px;
+    border-color: var(--color-primary);
   }
+
+  // Desktop-only: hidden on mobile (the drawer select is used instead)
+  &--desktop { display: block; }
 }
 
 // ── Burger bars ───────────────────────────────────────────────────────────────
@@ -198,14 +196,13 @@
     }
   }
 
-  // Desktop lang toggle: hidden on mobile
-  .lang-toggle--desktop { display: none; }
+  // Desktop lang select: hidden on mobile
+  .lang-select--desktop { display: none; }
 
-  // Drawer lang section: separator + bottom-right placement
+  // Drawer lang section: separator + bottom placement
   .drawer-lang {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;  // push toggle to the right
     gap: $space-3;
     margin-top: auto;       // push to bottom of flex column
     padding-top: $space-6;
@@ -217,6 +214,36 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--color-text-muted);
+    }
+
+    &__buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $space-2;
+    }
+
+    &__btn {
+      padding: $space-2 $space-4;
+      border-radius: 100px;
+      border: 1.5px solid var(--color-border);
+      background-color: var(--color-surface-alt);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: border-color $transition-fast, background-color $transition-fast, color $transition-fast;
+
+      &:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+      }
+
+      &--active {
+        border-color: var(--color-primary);
+        background-color: var(--color-primary-light);
+        color: var(--color-primary);
+      }
     }
   }
 }

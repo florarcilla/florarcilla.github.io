@@ -1,6 +1,8 @@
 # CLAUDE.md — ia-marketing project context
 
 > Keep this file updated as the project evolves. It is the single source of truth for AI assistants continuing work on this codebase.
+>
+> **⚠️ MANDATORY: Before any context compaction, update this file.** Add all changed files to §17, update stale facts in any section, and tick off completed items in §15. Never let the file go stale — the next session depends on it.
 
 ---
 
@@ -13,7 +15,7 @@ A static Angular 19 SPA for **Flor D. Arcilla** — a dual-role professional:
 | Licensed Insurance Agent | PruLife UK (License #70111974, since 2020) |
 | Real Estate Sales Associate | ProFriends (License #RE-2014-77302, since 2019) |
 
-The site is hosted on **GitHub Pages** via `HashLocationStrategy`. All dynamic content is driven by two JSON config files (no backend, no API). The build output is fully static.
+The site is hosted on **GitHub Pages with a custom domain `florarcilla.com`** via `PathLocationStrategy`. All dynamic content is driven by JSON config files (no backend, no API). The build output is fully static.
 
 **Target audiences:** Filipino families locally and OFWs abroad looking for insurance or real estate investment.
 
@@ -21,14 +23,15 @@ The site is hosted on **GitHub Pages** via `HashLocationStrategy`. All dynamic c
 
 ## 2. Key constraints & decisions
 
-- **Never modify existing text content in `app.config.*.json`** — the agent is still writing copy. Only ADD new fields.
-- **No em dashes (`—`) in any user-facing strings** across the entire system. Use a regular hyphen-minus (`-`) or reword the sentence instead. This applies to config JSON values, HTML templates, TypeScript strings, and SCSS `content` properties.
+- **Never modify existing text content in `app.config.*.json`** — only ADD new fields unless explicitly asked to fix grammar/copy.
+- **No em dashes (`—`) in any user-facing strings** across the entire system. Use a regular hyphen-minus (`-`) or reword. This applies to config JSON values, HTML templates, TypeScript strings, and SCSS `content` properties.
 - **No backend / SSR** — everything must work as a static SPA.
-- **`HashLocationStrategy`** — all routes are `/#/route`. This affects canonical URLs, hreflang, and sitemap entries.
+- **`PathLocationStrategy`** — routes are `/route` (no hash). GitHub Pages SPA routing is handled by `404.html` + decode script in `index.html`. `segmentCount = 0` in `404.html` for custom domain.
 - **Angular emulated view encapsulation** — component SCSS gets `[_ngcontent-xxx]` scoping. SVG child elements (`<text>`, `<tspan>`) cannot be targeted from component SCSS. Global SCSS partials (`src/styles/`) are unscoped and must be used for SVG styling.
 - **Dart Sass 3** — use `@use`/`@forward`, never `@import`. SCSS variables live in `src/styles/_vars.scss`.
 - **Angular 19 signals** — prefer `signal()`, `computed()`, `@HostListener` over `Observable` chains where practical.
 - **Standalone components** — no NgModules; every component declares its own `imports: []`.
+- **`service-card` overflow** — `.service-card` must NOT have `overflow: hidden`. The tag overflow panel must escape the card. Image corner rounding is handled by `__image-zone` and `__image-wrap` border-radius.
 
 ---
 
@@ -39,16 +42,17 @@ src/
 ├── app/
 │   ├── app.component.ts          # Root: SEO init, JSON-LD injection, scroll-to-top
 │   ├── app.routes.ts             # 5 routes: /, /services, /about, /enquire, /gallery
-│   ├── app.config.ts             # provideRouter, provideHttpClient, HashLocationStrategy
+│   ├── app.config.ts             # provideRouter, provideHttpClient, PathLocationStrategy
 │   ├── core/services/
 │   │   ├── config.service.ts     # Loads app.config.{lang}.json via APP_INITIALIZER
-│   │   ├── seo.service.ts        # Updates all meta/OG/Twitter tags on NavigationEnd
-│   │   └── language.service.ts  # Manages EN/TL language switching
+│   │   ├── seo.service.ts        # Updates meta/OG/Twitter tags + fires GA4 page_view on NavigationEnd
+│   │   ├── language.service.ts   # Manages EN/TL/CEB/ZH language switching
+│   │   └── analytics.service.ts  # Centralised GA4 CTA event tracking (cta_click events)
 │   ├── pages/
 │   │   ├── home/
 │   │   ├── services/
 │   │   ├── about/
-│   │   ├── enquire/              # Includes <app-quick-contact-bar /> for WA/Messenger/Call
+│   │   ├── enquire/              # Includes <app-quick-contact-bar />, email modal
 │   │   └── gallery/             # Manifest-driven photo/video gallery
 │   └── shared/
 │       ├── components/
@@ -56,7 +60,7 @@ src/
 │       │   ├── footer/           # Email modal (service picker), social links, quick links
 │       │   ├── accessibility-widget/  # Theme/font/contrast panel, click-outside to close
 │       │   ├── quick-contact-bar/    # Fixed FABs on mobile (WhatsApp, Messenger, Call)
-│       │   ├── service-card/
+│       │   ├── service-card/         # Tags feature, __image-zone wrapper (no overflow:hidden on card)
 │       │   ├── testimonial-card/
 │       │   ├── star-rating/
 │       │   └── enquiry-form/
@@ -64,8 +68,10 @@ src/
 │           └── config.model.ts   # Full TypeScript types for AppConfig, UiStrings, etc.
 ├── assets/
 │   ├── config/
-│   │   ├── app.config.en.json    # English content
-│   │   └── app.config.tl.json   # Tagalog content
+│   │   ├── app.config.en.json    # English content (source of truth for translations)
+│   │   ├── app.config.tl.json   # Tagalog content
+│   │   ├── app.config.ceb.json  # Cebuano/Bisaya content
+│   │   └── app.config.zh.json   # Mandarin Chinese content
 │   └── gallery/                 # Media files + manifest.json (auto-generated)
 ├── styles/
 │   ├── styles.scss               # Entry: @use 'tokens'; @use 'reset'; @use 'logo';
@@ -73,10 +79,11 @@ src/
 │   ├── _tokens.scss              # CSS custom properties (--color-*, --shadow-*, etc.)
 │   ├── _reset.scss               # Base reset
 │   └── _logo.scss                # ⚠️ GLOBAL unscoped SVG logo color rules (see §6)
-├── index.html                    # Full static meta fallbacks, OG, Twitter, hreflang
+├── index.html                    # Full static meta fallbacks, OG, Twitter, hreflang, GA4 snippet
 ├── robots.txt                    # Allows 20+ crawlers, disallows assets/config/
-├── sitemap.xml                   # 5 URLs with hreflang alternates
+├── sitemap.xml                   # 5 URLs × 4 hreflang alternates (en, tl, ceb, zh-CN)
 └── site.webmanifest              # PWA manifest
+404.html                          # GitHub Pages SPA fallback (segmentCount=0 for custom domain)
 scripts/
 └── generate-gallery-manifest.js  # Pre-build: scans assets/gallery/, writes manifest.json
 ```
@@ -87,12 +94,22 @@ scripts/
 
 ### Location
 ```
-src/assets/config/app.config.en.json
+src/assets/config/app.config.en.json   ← source of truth for all translations
 src/assets/config/app.config.tl.json
+src/assets/config/app.config.ceb.json
+src/assets/config/app.config.zh.json
 ```
 
 ### How they load
 `ConfigService` fetches the correct file via `APP_INITIALIZER` based on `LanguageService.current` (persisted in `localStorage` as `'lang'`). After load, `this.configService.config` is the typed `AppConfig` object.
+
+### Supported languages
+| Code | Label | File |
+|------|-------|------|
+| `en` | English | `app.config.en.json` |
+| `tl` | Tagalog | `app.config.tl.json` |
+| `ceb` | Bisaya | `app.config.ceb.json` |
+| `zh` | 中文 | `app.config.zh.json` |
 
 ### Key top-level fields
 | Field | Purpose |
@@ -102,24 +119,28 @@ src/assets/config/app.config.tl.json
 | `phone` | +639055584891 |
 | `whatsappNumber` | 639055584891 (no +) |
 | `facebookMessengerUrl` | https://m.me/florarcilla |
-| `siteUrl` | Used for canonical/OG/hreflang URLs |
-| `twitterHandle` | Optional `@handle` |
+| `siteUrl` | https://florarcilla.com |
+| `twitterHandle` | `@florarcilla` |
 | `keywords` | Array of SEO keywords |
 | `seoPages` | Object with `home/services/about/enquire/gallery` → `{ title, description }` |
 | `ui` | All user-facing strings (see `UiStrings` interface) |
 | `ui.emailModal` | Pre-filled email modal strings (subjects + bodies per service type) |
 | `ui.gallery` | Gallery page UI strings |
 | `ui.whatsappModal` | WhatsApp service-picker modal strings |
+| `services[].tags` | Optional comma-separated tag labels shown as pills on card image |
 
-### ⚠️ Rule: never change existing text values
-Only **add new keys**. The agent is actively editing the copy.
+### ⚠️ Rules for config files
+- **`en.json` is the source of truth.** All other language files must mirror its structure and service IDs.
+- When adding new services to `en.json`, add translated equivalents to `tl`, `ceb`, and `zh` in the same array position.
+- **Never change**: `id`, `imageUrl`, `imageAlt`, `type`, `email`, `phone`, `whatsappNumber`, URLs, file paths, or HTML tags inside string values.
+- **Never add** fields that don't exist in the EN file.
 
 ---
 
 ## 5. Routing
 
 ```typescript
-// HashLocationStrategy — all URLs are /#/path
+// PathLocationStrategy — clean URLs (no hash)
 ''         → HomeComponent       (lazy)
 'services' → ServicesComponent   (lazy)
 'about'    → AboutComponent      (lazy)
@@ -127,6 +148,11 @@ Only **add new keys**. The agent is actively editing the copy.
 'gallery'  → GalleryComponent    (lazy)
 '**'       → redirectTo: ''
 ```
+
+### SPA routing on GitHub Pages
+- `404.html` at repo root intercepts unmatched paths, encodes them as `?p=/path`, redirects to `/?p=/path`
+- Decode script in `index.html` reads `?p=` and calls `history.replaceState` before Angular boots
+- **`segmentCount = 0`** — correct for custom domain (`florarcilla.com`). Use `1` only for GitHub project pages (`username.github.io/repo/`)
 
 ---
 
@@ -140,7 +166,7 @@ Only **add new keys**. The agent is actively editing the copy.
 </svg>
 ```
 
-**Why a global partial?**  
+**Why a global partial?**
 Angular's emulated encapsulation adds `[_ngcontent-xxx]` attributes to host elements but **not** to SVG child elements (`<text>`, `<tspan>`). Component SCSS rules like `text { fill: currentColor }` silently fail. The solution is `src/styles/_logo.scss` — a global unscoped partial imported via `styles.scss`.
 
 ```scss
@@ -180,20 +206,12 @@ Angular's emulated encapsulation adds `[_ngcontent-xxx]` attributes to host elem
 - `year`: 4-digit year, e.g. `2025`
 - `sequence_or_label`: optional, e.g. `01`, `award_ceremony` — used in alt text only
 
-**Examples:**
-```
-insurance_june_2025.jpg
-realestate_march_2025_01.jpg
-realestate_march_2025_02.jpg
-general_december_2024_teambuilding.jpg
-```
-
 ### Scripts
 ```bash
 npm run generate-gallery      # manual re-scan
 npm start                     # auto-runs manifest gen via prestart
 npm run build                 # auto-runs manifest gen via prebuild
-npm run build:gh              # GitHub Pages build with --base-href /ia-marketing/
+npm run build:gh              # production build for custom domain (--base-href /)
 ```
 
 ### Lightbox
@@ -202,80 +220,66 @@ npm run build:gh              # GitHub Pages build with --base-href /ia-marketin
 - `@HostListener('document:keydown')` in `GalleryComponent`
 - `ngOnDestroy()` restores `body.style.overflow`
 
-### Placeholder
-Failed/missing images show an inline SVG logo placeholder styled via `_logo.scss` (`.gallery-thumb__placeholder`).
-
 ---
 
 ## 8. SEO architecture
 
 ### Static fallbacks (`src/index.html`)
-All critical meta tags are hard-coded in `index.html` for bots that don't execute JS.
+All critical meta tags are hard-coded in `index.html` for bots that don't execute JS. Also contains the GA4 loader script (`G-HWV9P7HC36`).
 
 ### Dynamic updates (`SeoService`)
-On every `NavigationEnd`, `SeoService.applyMeta(pageKey)` sets:
-- `<title>`
-- `description`, `keywords`, `author`, `robots`, `theme-color`
-- Geo signals: `geo.region=PH`, `geo.country=Philippines`, `ICBM` coordinates
-- Open Graph: `og:type`, `og:title`, `og:description`, `og:url`, `og:image`, `og:locale`
-- Twitter Card: `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`
-- `<link rel="canonical">`
-- `<link rel="alternate" hreflang="en/tl/x-default">`
+On every `NavigationEnd`, fires:
+1. `applyMeta(pageKey)` — sets `<title>`, description, OG, Twitter, canonical, hreflang for all 4 languages
+2. `trackPageView(url)` — fires `gtag('event', 'page_view', {...})` for SPA navigation tracking
 
 ### JSON-LD (`AppComponent.injectJsonLd()`)
-Injected once on app init into `<head>` as `application/ld+json`. Schema `@graph` contains:
+Injected once on app init. Schema `@graph` contains:
 - `Person` + `ProfessionalService` (merged type)
 - `WebSite` with `SearchAction`
 - `BreadcrumbList` for all 5 pages
-
-### SEO page data
-```json
-"seoPages": {
-  "home":     { "title": "...", "description": "..." },
-  "services": { "title": "...", "description": "..." },
-  "about":    { "title": "...", "description": "..." },
-  "enquire":  { "title": "...", "description": "..." },
-  "gallery":  { "title": "...", "description": "..." }
-}
-```
 
 ### Other SEO files
 | File | Purpose |
 |------|---------|
 | `src/robots.txt` | Allows Googlebot, Bingbot, GPTBot, ClaudeBot, 15+ others; blocks `assets/config/` |
-| `src/sitemap.xml` | 5 URLs × 2 hreflang alternates (en + tl) |
+| `src/sitemap.xml` | 5 URLs × 4 hreflang alternates (en, tl, ceb, zh-CN) + x-default |
 | `src/site.webmanifest` | PWA manifest with brand purple `#7459ca` |
 
 ---
 
-## 9. Email modal (footer)
+## 9. Analytics — GA4 (G-HWV9P7HC36)
 
-When the user clicks the email address in the footer:
+### Setup
+- GA4 loader script in `src/index.html` (async, non-blocking)
+- `declare function gtag(...)` in `analytics.service.ts` for TypeScript
+
+### Page view tracking
+`SeoService.trackPageView()` fires on every `NavigationEnd` — treats SPA navigation as traditional page views in GA4.
+
+### CTA tracking
+All CTAs fire `cta_click` events via `AnalyticsService.trackCta()`. Parameters:
+- `cta_name` — e.g. "Book Consultation", "WhatsApp", "Enquire Now"
+- `cta_location` — e.g. "header", "hero", "service_card", "quick_contact", "footer", "whatsapp_modal", "email_modal", "enquiry_form", "enquire_page"
+- `cta_type` — `navigation` | `contact` | `social` | `enquiry`
+- `cta_detail` — optional extra context (service type, variant)
+
+**Never call `gtag()` directly from components.** Always inject and use `AnalyticsService`.
+
+---
+
+## 10. Email modal
+
+When the user clicks the email address in the footer or enquire page:
 1. A service-picker modal appears (same UX pattern as the WhatsApp modal)
 2. User picks "Insurance" or "Real Estate"
 3. A `mailto:` URL is built with pre-filled `subject` and `body` from `config.ui.emailModal`
 4. Opens in `_self` via `document.defaultView.open()`
 
-**Config keys needed** (both EN and TL):
-```json
-"ui": {
-  "emailModal": {
-    "title": "...",
-    "subtitle": "...",
-    "insurance": "...",
-    "realestate": "...",
-    "cancel": "...",
-    "subjectInsurance": "...",
-    "subjectRealestate": "...",
-    "bodyInsurance": "...",
-    "bodyRealestate": "..."
-  }
-}
-```
+Both `FooterComponent` and `EnquireComponent` have their own copy of this modal markup and `selectService()` logic.
 
 ---
 
-## 10. Accessibility widget
+## 11. Accessibility widget
 
 **Location:** `src/app/shared/components/accessibility-widget/`
 
@@ -294,39 +298,55 @@ When the user clicks the email address in the footer:
 
 ---
 
-## 11. Header navigation
+## 12. Header navigation
 
 ### Mobile layout
 - Burger button on the **left** (leftmost item in the bar)
-- "Book Consultation" CTA always visible in the sticky top bar
-- Language selector lives **only inside the mobile drawer** (bottom-right, with top border separator)
+- "Enquire Now!" CTA always visible in the sticky top bar
+- Language selector is **pill buttons** inside the mobile drawer (bottom, with top border separator) — NOT a `<select>` dropdown (avoids viewport overflow issue)
 - Drawer slides in from the **left**
 
 ### Desktop layout
-- Full horizontal nav: Home · Services · Gallery · About · Book Consultation
-- Language selector in top bar (right side)
+- Full horizontal nav: Home · Services · Gallery · About · Enquire Now!
+- Language selector `<select>` in top bar (right side)
 - No burger
 
-### Language toggle
-Two separate elements in the HTML with different CSS classes:
-- `.lang-toggle--desktop` — hidden on mobile, shown on desktop
-- `.drawer-lang` — hidden on desktop, shown at bottom of mobile drawer
-
-This avoids the double-selector CSS specificity bug.
+### Language selector implementation
+- **Desktop**: native `<select>` — use `[selected]="lang.code === langService.current"` on each `<option>` (NOT `[value]` on `<select>` — that doesn't work without FormsModule)
+- **Mobile**: pill `<button>` elements calling `switchLang(lang.code)` directly — never use a `<select>` in the mobile drawer (it opens downward off-screen)
 
 ---
 
-## 12. Scroll to top
+## 13. Service card — tags feature
 
-`AppComponent.initScrollToTop()` subscribes to `NavigationEnd` events and calls:
-```typescript
-this.document.defaultView?.scrollTo({ top: 0, behavior: 'instant' });
+### Tag pills
+- Comma-separated string from `services[].tags` in config
+- Shown as frosted-glass pills on lower-left of the card image
+- Max 3 visible; if more, a `...` pill appears as the 4th
+- Clicking `...` opens an overflow panel expanding upward
+
+### Critical DOM structure
+```html
+<article class="service-card">              <!-- NO overflow:hidden -->
+  <div class="service-card__image-zone">    <!-- position:relative, NO overflow -->
+    <div class="service-card__image-wrap">  <!-- overflow:hidden for zoom clip ONLY -->
+      <!-- img or placeholder -->
+    </div>
+    <span class="service-card__badge">...</span>   <!-- positioned to zone -->
+    <div class="service-card__tags">...</div>       <!-- positioned to zone -->
+  </div>
+  <div class="service-card__body">...</div>
+</article>
 ```
-Called in `ngOnInit()` once.
+
+**Why**: If `overflow:hidden` is on `.service-card` or `.service-card__image-wrap`, the overflow panel gets clipped. The `__image-zone` is the positioning anchor; `__image-wrap` only clips the zoom effect.
+
+### Click-outside
+`@HostListener('document:click')` on the component closes the panel when clicking outside. `event.stopPropagation()` on the `...` button prevents immediate re-close.
 
 ---
 
-## 13. Quick-contact FABs
+## 14. Quick-contact FABs
 
 `QuickContactBarComponent` renders:
 - **Desktop**: horizontal row of buttons (WhatsApp, Messenger, Call)
@@ -334,11 +354,11 @@ Called in `ngOnInit()` once.
 
 Used on both the **enquire page** and embedded in **home page**.
 
-WhatsApp button opens a service-picker modal (insurance vs realestate) that sends a pre-filled WhatsApp message via `https://wa.me/{number}?text=...`.
+WhatsApp button opens a service-picker modal that sends a pre-filled WhatsApp message via `https://wa.me/{number}?text=...`.
 
 ---
 
-## 14. SCSS conventions
+## 15. SCSS conventions
 
 ```scss
 // Always use @use, never @import
@@ -367,12 +387,10 @@ CSS custom properties (defined in `_tokens.scss`):
 
 ---
 
-## 15. Lighthouse / performance notes
+## 16. Lighthouse / performance notes
 
 ### Running accurate Lighthouse tests
-`ng serve` (default) serves a **development build** — unminified JS, no tree-shaking.
-Lighthouse on localhost dev build will always flag "Minify JS / reduce unused JS" because that is expected.
-For an accurate score, test against the production build:
+`ng serve` (default) serves a **development build**. For accurate scores:
 
 ```bash
 npm run start:prod    # serves production bundle on localhost
@@ -380,56 +398,49 @@ npm run start:prod    # serves production bundle on localhost
 npm run build:gh      # build to dist/, serve with any static server
 ```
 
-Production build enables: minification, tree-shaking, code-splitting, source-map-free output.
-
 ### WebP images
-The hero uses a `<picture>` element with a WebP `<source>` and JPEG fallback.
-WebP files are NOT auto-generated — you must run this manually when adding/updating images:
-
 ```bash
 npm install --save-dev sharp   # one-time install
 npm run generate-webp          # converts all JPEG/PNG in assets/images/ to WebP
 ```
 
-The script only re-converts files newer than their `.webp` counterpart, so it's safe to run repeatedly.
-
-### Fixed in last Lighthouse pass
+### Fixed issues
 | Issue | Fix applied |
 |-------|------------|
-| Hero image not in initial document | Added `<link rel="preload" as="image" href="assets/images/flor_banner.jpg" fetchpriority="high">` to index.html |
-| Hero image modern format | Switched to `<picture>` with WebP source; `generate-webp.js` creates WebP files |
-| CLS 0.340 on footer/header logo | Added `width="108" height="36"` to both logo SVGs; split Google Fonts — DM Sans uses `display=swap`, Playfair Display uses `display=optional` to prevent font-swap layout shift |
-| Network dependency chain | Added `<link rel="preload" as="fetch" href="assets/config/app.config.en.json">` so config fetch starts before Angular boots |
-| Enquire CTA contrast fail | Changed `--color-accent` from `#d4742e` (3.3:1) to `#9c520d` (5.8:1 vs white) |
-| WhatsApp button contrast fail | Changed from `#25D366` (1.9:1) to `#1a7a3e` (5.4:1 vs white) |
-| Messenger button contrast fail | Changed from `#0084FF` (3.4:1) to `#0057a8` (7.2:1 vs white) |
-
-## 15. Known issues / future work
-
-### Suggested improvements (not yet built)
-- [ ] **Contact form backend** — enquiry form currently has no submit handler wired to an actual service (email/Formspree/etc.)
-- [ ] **Gallery video support** — `gallery.component.html` may need `<video>` element rendering for `.mp4`/`.webm` files (the TS handles them but verify the template)
-- [ ] **Gallery lazy loading** — thumbnails could use `loading="lazy"` and/or `IntersectionObserver` for large collections
-- [ ] **OG image** — currently uses `profilePictureUrl` (portrait photo). A dedicated 1200×630 OG image would perform better on social shares
-- [ ] **Sitemap hash URLs** — `sitemap.xml` uses `/#/` hash URLs which some crawlers treat as fragments. Consider if this matters for the target use case
-- [ ] **Language-aware canonical** — hreflang currently points all alternates to the root `/`. Per-page language URLs are not implemented
-- [ ] **Animation on gallery filter change** — sections/items reappear with no transition when filters change
-- [ ] **app.routes.ts `data` fields** — route-level `data.title` / `data.description` are stale placeholders (original scaffolding). `SeoService` uses `config.seoPages` instead — the route data fields can be cleaned up
-
-### Content still in progress (agent is editing)
-- `app.config.en.json` — text copy being refined
-- `app.config.tl.json` — Tagalog translation being refined
+| Hero image not in initial document | `<link rel="preload">` in index.html |
+| Hero image modern format | `<picture>` with WebP source |
+| CLS on footer/header logo | `width`/`height` on SVGs; Playfair Display uses `display=optional` |
+| Network dependency chain | Config JSON preloaded before Angular boots |
+| Enquire CTA contrast | `--color-accent` → `#9c520d` (5.8:1) |
+| WhatsApp button contrast | `#1a7a3e` (5.4:1) |
+| Messenger button contrast | `#0057a8` (7.2:1) |
 
 ---
 
-## 16. Running the project
+## 17. Known issues / future work
+
+### Suggested improvements (not yet built)
+- [ ] **Contact form backend** — enquiry form opens `mailto:` but has no Formspree/serverless handler
+- [ ] **Gallery video support** — `.mp4`/`.webm` files handled in TS but verify template renders `<video>`
+- [ ] **Gallery lazy loading** — thumbnails could use `IntersectionObserver` for large collections
+- [ ] **OG image** — currently uses portrait photo; dedicated 1200×630 image would perform better on social
+- [ ] **Language-aware canonical** — all hreflang alternates point to root `/`; per-page language URLs not implemented
+- [ ] **Animation on gallery filter change** — no transition when filters change
+- [ ] **app.routes.ts `data` fields** — stale scaffolding placeholders; `SeoService` uses `config.seoPages` instead
+
+### Content status
+- Copy is considered final — grammar and accuracy pass completed in last session
+
+---
+
+## 18. Running the project
 
 ```bash
 # Development
 npm start                  # generates gallery manifest then ng serve
 
-# Production build (GitHub Pages)
-npm run build:gh           # generates manifest + ng build --base-href /ia-marketing/
+# Production build (custom domain)
+npm run build:gh           # generates manifest + ng build --base-href /
 
 # Manual gallery manifest regeneration
 npm run generate-gallery
@@ -438,36 +449,39 @@ npm run generate-gallery
 **Adding gallery images:**
 1. Drop files into `src/assets/gallery/`
 2. Use the filename format: `{type}_{month}_{year}[_{seq}].{ext}`
-3. Run `npm run generate-gallery` (or just `npm start` which does it automatically)
+3. Run `npm run generate-gallery` (or `npm start` which does it automatically)
 
 ---
 
-## 17. File change log (last session)
+## 19. File change log (current session)
 
 | File | What changed |
 |------|-------------|
-| `src/app/app.component.ts` | Added `initScrollToTop()`, full JSON-LD `@graph` schema |
-| `src/app/app.routes.ts` | Added `/gallery` route |
-| `src/app/core/services/seo.service.ts` | Full rewrite — config-driven meta for all 5 pages |
-| `src/app/pages/gallery/gallery.component.ts` | New component — manifest-driven gallery |
-| `src/app/pages/gallery/gallery.component.html` | New template |
-| `src/app/pages/gallery/gallery.component.scss` | New styles |
-| `src/app/pages/enquire/enquire.component.ts` | Added `QuickContactBarComponent` |
-| `src/app/shared/components/header/header.component.html` | Burger left, inline SVG, dual lang selectors, Gallery nav link |
-| `src/app/shared/components/header/header.component.scss` | Mobile slide-from-left, `.drawer-lang`, `.lang-toggle--desktop` rules |
-| `src/app/shared/components/footer/footer.component.ts` | Email modal signals + `selectService()` |
-| `src/app/shared/components/footer/footer.component.html` | Email `<a>` → `<button>`, modal markup |
-| `src/app/shared/components/footer/footer.component.scss` | `.footer__email-btn`, `.email-modal-*` styles |
-| `src/app/shared/components/accessibility-widget/accessibility-widget.component.ts` | Added `ElementRef` + `@HostListener` click-outside |
-| `src/app/shared/models/config.model.ts` | Added `SeoPage`, `GalleryItem`, `GalleryItemType`, `emailModal` UI strings, `seoPages`, `keywords`, `siteUrl`, `twitterHandle` |
-| `src/styles/_logo.scss` | NEW — global SVG logo + gallery placeholder color rules |
-| `src/styles/styles.scss` | Added `@use 'logo'` |
-| `src/assets/config/app.config.en.json` | Added `siteUrl`, `keywords`, `seoPages`, `ui.emailModal`, `ui.gallery`, `ui.nav.gallery` |
-| `src/assets/config/app.config.tl.json` | Same additions in Tagalog |
-| `src/index.html` | Full rewrite — static meta, OG, Twitter, hreflang, webmanifest link |
-| `src/robots.txt` | NEW |
-| `src/sitemap.xml` | NEW |
-| `src/site.webmanifest` | NEW |
-| `angular.json` | Added robots.txt, sitemap.xml, site.webmanifest to assets array |
-| `package.json` | Added `generate-gallery`, `prestart`, `prebuild`, `build:gh` scripts |
-| `scripts/generate-gallery-manifest.js` | NEW — pre-build manifest generator |
+| `src/app/core/services/analytics.service.ts` | NEW — centralised GA4 `cta_click` event wrapper |
+| `src/app/core/services/seo.service.ts` | Added `trackPageView()` firing `gtag page_view` on every `NavigationEnd` |
+| `src/app/shared/components/header/header.component.ts` | Added `switchLang(code)` for mobile pills; `trackBookConsultation()` via AnalyticsService |
+| `src/app/shared/components/header/header.component.html` | Mobile drawer: `<select>` replaced with pill `<button>` elements; desktop `[selected]` fix |
+| `src/app/shared/components/header/header.component.scss` | Added `.drawer-lang__buttons` flex layout + `.drawer-lang__btn` pill styles |
+| `src/app/shared/components/service-card/service-card.component.ts` | Tags feature: `tagList`, `visibleTags`, `overflowTags`, `toggleOverflow`, `@HostListener`; `trackEnquire()` |
+| `src/app/shared/components/service-card/service-card.component.html` | Added `__image-zone` wrapper; badge + tags moved outside `__image-wrap`; `trackEnquire()` on CTA |
+| `src/app/shared/components/service-card/service-card.component.scss` | Removed `overflow:hidden` from card; added `__image-zone`; fixed `__tag-more-wrap` to flex |
+| `src/app/shared/components/quick-contact-bar/quick-contact-bar.component.ts` | `trackMessenger()`, `trackCall()`, analytics in `openWhatsAppModal()` and `selectService()` |
+| `src/app/shared/components/quick-contact-bar/quick-contact-bar.component.html` | Added `(click)` analytics to Messenger and Call links |
+| `src/app/shared/components/footer/footer.component.ts` | `trackPhone()`, `trackWhatsApp()`, `trackSocial()`, analytics in `openEmailModal()` + `selectService()` |
+| `src/app/shared/components/footer/footer.component.html` | Added `(click)` analytics to phone, WhatsApp, all social links |
+| `src/app/pages/home/home.component.ts` | Added `trackHeroCta()` via AnalyticsService |
+| `src/app/pages/home/home.component.html` | Added `(click)` analytics to hero primary and secondary CTAs |
+| `src/app/pages/enquire/enquire.component.ts` | `trackPhone()`, analytics in `openEmailModal()` + `selectEmailService()` |
+| `src/app/pages/enquire/enquire.component.html` | Added `(click)="trackPhone()"` to phone link |
+| `src/app/shared/components/enquiry-form/enquiry-form.component.ts` | Analytics in `onSubmit()` |
+| `src/app/core/services/language.service.ts` | Added `ceb` and `zh` to `SUPPORTED_LANGS` |
+| `src/app/app.config.ts` | Removed `withHashLocation()` — now uses `PathLocationStrategy` |
+| `src/app/shared/models/config.model.ts` | `Lang` type updated to `'en' \| 'tl' \| 'ceb' \| 'zh'`; added `tags?: string` to `ServiceConfig` |
+| `src/index.html` | Added GA4 loader script; added `ceb`/`zh-CN` hreflang; SPA decode script |
+| `src/sitemap.xml` | Updated to 4 hreflang alternates (en, tl, ceb, zh-CN) + x-default for all 5 pages |
+| `404.html` | `segmentCount` changed from `1` → `0` (critical fix for custom domain SPA routing) |
+| `src/assets/config/app.config.en.json` | Grammar fixes; added `tags` to all services; 4-language config; `ceb`+`zh` hreflang |
+| `src/assets/config/app.config.tl.json` | Updated bio/SEO copy; added `accident-insurance` and `condo-living` services; copyright fix |
+| `src/assets/config/app.config.ceb.json` | NEW full Cebuano translation; added missing services in this session |
+| `src/assets/config/app.config.zh.json` | NEW full Chinese translation; added missing services in this session |
+| `CLAUDE.md` | Updated to reflect current state of project (this file) |

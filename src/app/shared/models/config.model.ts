@@ -1,6 +1,6 @@
 // src/app/shared/models/config.model.ts
 
-export type Lang = 'en' | 'tl';
+export type Lang = 'en' | 'tl' | 'ceb' | 'zh';
 
 export interface ServiceConfig {
   id: string;
@@ -9,6 +9,8 @@ export interface ServiceConfig {
   imageAlt: string;
   description: string;
   type: 'insurance' | 'realestate';
+  /** Optional comma-separated tag labels shown as pills on the card image. */
+  tags?: string;
 }
 
 export interface Testimonial {
@@ -89,6 +91,12 @@ export interface UiStrings {
   };
   enquire: {
     heading: string;
+    /** Template for the pre-filled message when arriving from a service card.
+     *  Use {service} as the placeholder for the service title. */
+    servicePrefilledMessage: string;
+    /** Shown in the browser confirm() dialog when the user tries to navigate
+     *  away while the message field has unsaved content. */
+    leavePageWarning: string;
     formLabels: {
       fullName: string;
       email: string;

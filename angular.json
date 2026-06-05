@@ -55,6 +55,11 @@
                 "glob": "404.html",
                 "input": "",
                 "output": ""
+              },  
+              {
+                "glob": "google14463535070400e2.html",
+                "input": "src",
+                "output": ""
               }
             ],
             "styles": [

@@ -17,7 +17,8 @@
 
   <a class="quick-contact__btn quick-contact__btn--messenger"
      [href]="config.facebookMessengerUrl" target="_blank" rel="noopener noreferrer"
-     aria-label="Contact via Facebook Messenger">
+     aria-label="Contact via Facebook Messenger"
+     (click)="trackMessenger()">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/>
     </svg>
@@ -26,7 +27,8 @@
 
   <a class="quick-contact__btn quick-contact__btn--call"
      [href]="telUrl"
-     [attr.aria-label]="ui.call + ' ' + config.agentName">
+     [attr.aria-label]="ui.call + ' ' + config.agentName"
+     (click)="trackCall()">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"/>
     </svg>

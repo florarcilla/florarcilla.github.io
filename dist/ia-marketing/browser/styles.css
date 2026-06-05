@@ -3,8 +3,8 @@
   --color-primary: #7459ca;
   --color-primary-dark: #5c42b0;
   --color-primary-light: #f0ebff;
-  --color-accent: #d4742e;
-  --color-accent-dark: #b35e20;
+  --color-accent: #9c520d;
+  --color-accent-dark: #7e4209;
   --color-surface: #ffffff;
   --color-surface-alt: #f5f7fa;
   --color-surface-raised: #ffffff;
@@ -327,6 +327,24 @@ button {
 [data-theme=dark] .gallery-thumb__placeholder .logo-dot {
   fill: #9b7fda;
 }
+.service-card__placeholder {
+  color: #1a1a1a;
+}
+.service-card__placeholder text {
+  fill: currentColor;
+}
+.service-card__placeholder .logo-dot {
+  fill: #7459ca;
+}
+[data-theme=dark] .service-card__placeholder {
+  color: #f0f0f0;
+}
+[data-theme=dark] .service-card__placeholder text {
+  fill: currentColor;
+}
+[data-theme=dark] .service-card__placeholder .logo-dot {
+  fill: #9b7fda;
+}
 @media (prefers-color-scheme: dark) {
   html:not([data-theme=light]):not([data-theme=dark]) .header__logo,
   html:not([data-theme=light]):not([data-theme=dark]) .footer__logo {
@@ -340,6 +358,15 @@ button {
     color: #f0f0f0;
   }
   html:not([data-theme=light]):not([data-theme=dark]) .gallery-thumb__placeholder .logo-dot {
+    fill: #9b7fda;
+  }
+  html:not([data-theme=light]):not([data-theme=dark]) .service-card__placeholder {
+    color: #f0f0f0;
+  }
+  html:not([data-theme=light]):not([data-theme=dark]) .service-card__placeholder text {
+    fill: currentColor;
+  }
+  html:not([data-theme=light]):not([data-theme=dark]) .service-card__placeholder .logo-dot {
     fill: #9b7fda;
   }
 }

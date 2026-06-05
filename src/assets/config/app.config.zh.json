@@ -1,0 +1,379 @@
+{
+  "agentName": "Flor D. Arcilla",
+  "nickname": "Flor",
+  "tagline": "您值得信赖的保险与房地产伙伴",
+  "profilePictureUrl": "assets/images/flor_banner.webp",
+  "profilePictureAlt": "Flor Arcilla，持牌保险代理人及房地产销售助理",
+  "secondaryProfilePictureUrl": "assets/images/flor_arcilla_office.webp",
+  "secondaryProfilePictureAlt": "Flor Arcilla 在她的办公室",
+  "logoUrl": "assets/images/logo.svg",
+  "logoAlt": "Flor Arcilla - 保险与房地产",
+  "bio": "从房地产到金融服务，多年来我一直协助甲米地及周边地区的家庭和投资者做出令他们安心的决策。无论是寻找合适的住所、增值财富，还是保障他们的积累，我都将全程陪伴您，提供专业指导。凭借ProFriends在甲米地的房产资源和PRULife UK保险方案，我提供涵盖您财务生活两个方面的服务，让您不必独自摸索。",
+  "richTextAbout": "<p>我的职业生涯始于房地产领域，协助买家、卖家和投资者做出自信的市场决策。随后，我将业务扩展至金融服务领域，帮助家庭保障收入、健康和未来。</p><br /><p>我的双重经验意味着我能从两个维度审视您的处境：您今天需要保障什么，以及如何让您的房产为您的明天创造更多价值。</p><br /><p>工作之余，我热衷于指导新晋持牌代理人，培养行业下一代人才。闲暇时，您可能会看到我在慢跑或散步！</p>",
+  "email": "fongarcilla@gmail.com",
+  "phone": "+639055584891",
+  "whatsappNumber": "639055584891",
+  "facebookMessengerUrl": "https://m.me/florarcilla",
+  "linkedinUrl": "https://linkedin.com/in/flor-arcilla-924a8165",
+  "instagramUrl": "https://instagram.com/florarcilla",
+  "facebookUrl": "https://www.facebook.com/profile.php?id=100081236867085",
+  "licences": [
+    "Licensed Insurance Agent Since 2020, PRULife UK License #70111974",
+    "Real Estate Sales Associate Since 2019"
+  ],
+  "servicesPageHero": {
+    "heading": "保障重要的一切。 <br /> 拥有您所应得的一切。",
+    "subCopy": "无论您在国内还是海外，我都将帮助您用正确的计划、合适的房产和可靠的伙伴，守护您的家庭，实现您的置业梦想。",
+    "gradientColor": "rgba(108, 68, 237, 0.28)",
+    "bannerImageUrl": "assets/images/flor_services_banner.webp"
+  },
+  "services": [
+    {
+      "id": "traditional-insurance",
+      "title": "传统保险",
+      "imageUrl": "assets/images/insurance-traditional.webp",
+      "imageAlt": "传统人寿保险保障",
+      "description": "通过定期寿险、终身寿险和储蓄保险计划，为您最重要的人提供坚实可靠的保障。无论您需要短期财务保护还是终身保障，这些计划都能确保您的家人无论发生什么都得到妥善保障，并可随着生活变化灵活定制附加保障。",
+      "type": "insurance",
+      "tags": "Term Life, Whole Life, Endowment, PRULife UK"
+    },
+    {
+      "id": "insurance-with-envestment",
+      "title": "保险与投资",
+      "imageUrl": "assets/images/insurance-investment.webp",
+      "imageAlt": "保险与投资增长",
+      "description": "为何要在保障与财富增长之间做出选择？通过变额联结寿险（VUL）计划，您的保费分别用于人寿保险保障和投资基金，让您在获得保障的同时实现资产增值。非常适合为子女教育、退休或家庭财务目标积累资金。",
+      "type": "insurance",
+      "tags": "VUL, Investment Fund, Wealth Growth, PRULife UK"
+    },
+    {
+      "id": "health-insurance",
+      "title": "医疗保险",
+      "imageUrl": "assets/images/health-insurance.webp",
+      "imageAlt": "个人与家庭医疗保险保障",
+      "description": "在住院、重大疾病和医疗紧急情况的高额费用面前保持财务安全。涵盖癌症、心脏病、中风等重大疾病的个人和家庭健康计划，让您专注于康复，而不是账单。计划可供家庭成员共享，提供更广泛的保障。",
+      "type": "insurance",
+      "tags": "Hospitalization, Critical Illness, Cancer Cover, Family Plan"
+    },
+    {
+      "id": "accident-insurance",
+      "title": "意外保障",
+      "imageUrl": "assets/images/insurance-accident.webp",
+      "imageAlt": "Personal accident insurance coverage",
+      "description": "意外无法预测，但其财务影响不必如此。PRULife UK保险计划下的个人意外附加保障涵盖意外身故、伤残、断肢及医疗费用报销。可轻松附加到现有保单，为您和家人在生命意外时刻提供额外的经济安全保障。",
+      "type": "insurance",
+      "tags": "Personal Accident, ADD Rider, Accidental Death, Disablement, Medical Expense Reimbursement"
+    },
+    {
+      "id": "pre-selling",
+      "title": "楼花期房",
+      "imageUrl": "assets/images/real-estate-preselling.webp",
+      "imageAlt": "楼花期房蓝图和模型",
+      "description": "提前入市，在房产建成前锁定最优价格。楼花单位提供较低的起售价、灵活的付款条款，以及在交房时随房产增值而获益的机会。我将全程陪伴您，从选房、预订到完成整个购买流程。",
+      "type": "realestate",
+      "tags": "Pre-Selling, Flexible Terms, Low Down Payment, ProFriends"
+    },
+    {
+      "id": "ready-for-occupancy",
+      "title": "现房（RFO）",
+      "imageUrl": "assets/images/real-estate-rfo.webp",
+      "imageAlt": "即可入住的现房",
+      "description": "想立即入住？现房（RFO）已竣工完毕，随时可交房，无需等待，省去烦恼。我将帮助您找到符合预算、生活方式和地理位置偏好的理想房屋或公寓，让您立即开启人生新篇章。",
+      "type": "realestate",
+      "tags": "Move-In Ready, House & Lot, Condo, No Waiting"
+    },
+    {
+      "id": "home-buying",
+      "title": "购房协助",
+      "imageUrl": "assets/images/real-estate-home-buying.webp",
+      "imageAlt": "快乐的夫妇接过钥匙",
+      "description": "购买第一套或下一套房产是人生大事，您不必独自摸索。从寻找合适房产、计算月供，到办理银行或Pag-IBIG融资，我将全程陪伴您走好每一步，助您做出自信、明智的决定。",
+      "type": "realestate",
+      "tags": "First Home, Pag-IBIG, Bank Financing, Full Assistance"
+    },
+    {
+      "id": "property-investment",
+      "title": "房产投资",
+      "imageUrl": "assets/images/real-estate-property-investment.webp",
+      "imageAlt": "不断增长的房产投资组合",
+      "description": "房地产始终是菲律宾最可靠的投资方式之一。无论您是想长线持有、通过租金获利，还是实现投资多元化，我都将帮助您找到高增长地区和升值潜力强的房产，包括ProFriends的综合卫星城项目。",
+      "type": "realestate",
+      "tags": "Buy & Hold, Rental Income, ProFriends, Township"
+    },
+    {
+      "id": "condo-living",
+      "title": "公寓社区",
+      "imageUrl": "assets/images/real-estate-condo.webp",
+      "imageAlt": "Modern condominium village in Cavite by ProFriends",
+      "description": "ProFriends正在通过两个公寓社区将现代垂直住宅带入甲米地——位于General Trias的Lancaster New City内的Westwind，以及位于Tanza的Micara Estates内的Lamore。提供单间至三居室单位，配备度假式设施，通过CAVITEX和CALAX便捷到达，适合年轻专业人士、OFW、小家庭和投资者。",
+      "type": "realestate",
+      "tags": "Westwind, Lamore, Condo, General Trias, Tanza, CAVITEX, OFW, Studio to 3BR"
+    },
+    {
+      "id": "ofw-property-buying",
+      "title": "OFW购房协助",
+      "imageUrl": "assets/images/real-estate-ofw.webp",
+      "imageAlt": "OFW家庭远程购房",
+      "description": "身在海外并不妨碍您在国内投资置业。我专注于帮助海外劳工（OFW）远程锁定梦想房产，从虚拟看房和在线预订，到办理Pag-IBIG OFW贷款，以及与国内家属协调联络，全程为您服务。",
+      "type": "realestate",
+      "tags": "OFW, Remote Buying, Pag-IBIG OFW, Virtual Tour"
+    },
+    {
+      "id": "financing-assistance",
+      "title": "融资与贷款协助",
+      "imageUrl": "assets/images/real-estate-loan-application.webp",
+      "imageAlt": "贷款文件与财务规划",
+      "description": "不确定哪种付款方案最适合您？我将帮助您比较所有可用选项，包括Pag-IBIG基金（HDMF）、银行融资或开发商分期付款。我将协助处理文件要求、贷款申请和还款计算，让您的购房财务部分尽可能顺畅。",
+      "type": "realestate",
+      "tags": "Pag-IBIG, Bank Loan, In-House, Loan Computation"
+    },
+    {
+      "id": "property-tripping",
+      "title": "看房服务",
+      "imageUrl": "assets/images/real-estate-tripping.webp",
+      "imageAlt": "客户参观房产现场",
+      "description": "签约前先亲眼看房。我安排现场和虚拟看房，让您亲身体验社区环境，查看实际单位或地块，做出有把握的决定。从甲米地的Lancaster New City到宿雾及伊洛伊洛的ProFriends项目，我按您的时间安排看房，周末也可以。",
+      "type": "realestate",
+      "tags": "Virtual Tour, On-Site Visit, No Pressure, Weekends OK"
+    },
+    {
+      "id": "after-sales-support",
+      "title": "售后支持",
+      "imageUrl": "assets/images/real-estate-after-sales.webp",
+      "imageAlt": "代理人协助业主处理文件",
+      "description": "我的工作不止于成交。我将继续协助您处理购房后的各项事宜，包括跟进交房时间表和产权转让，以及与ProFriends物业管理协调，处理维修、社区问题以及通过买家门户进行账户更新。",
+      "type": "realestate",
+      "tags": "Post-Purchase, Turnover, Title Transfer, ProFriends Portal"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "t1",
+      "name": "Anonymous 1",
+      "avatarUrl": "",
+      "avatarAlt": "匿名客户",
+      "rating": 5,
+      "text": "Flor帮助我们在同一个月内购买了第一套住房并办理了人寿保险。由一位值得信赖的专业人士统筹协调，省去了大量麻烦。她在我们提问之前就预见到了每一个问题。",
+      "date": "2025年3月"
+    },
+    {
+      "id": "t2",
+      "name": "Anonymous 2",
+      "avatarUrl": "",
+      "avatarAlt": "匿名客户",
+      "rating": 5,
+      "text": "我找Flor咨询投资房产。她不仅以低于要价的价格帮我找到了一套出色的房产，还发现我现有保险存在重大保障缺口。两次都为我省下了一大笔钱。",
+      "date": "2025年1月"
+    },
+    {
+      "id": "t3",
+      "name": "Anonymous 3",
+      "avatarUrl": "",
+      "avatarAlt": "匿名客户",
+      "rating": 5,
+      "text": "离婚后，我需要重新整理一切——健康计划、人寿保险，还要出售家庭住房。Flor以极大的同理心和专业态度处理了所有事务。我从未感觉自己只是一笔交易。",
+      "date": "2024年11月"
+    },
+    {
+      "id": "t4",
+      "name": "Anonymous 4",
+      "avatarUrl": "",
+      "avatarAlt": "匿名客户",
+      "rating": 4,
+      "text": "在房地产和保险方面都非常专业。Flor帮助我们出售了公寓，并将所得款项用于购买新的终身保险，作为退休计划的一部分。响应及时，考虑周全。",
+      "date": "2024年9月"
+    },
+    {
+      "id": "t5",
+      "name": "Anonymous 5",
+      "avatarUrl": "",
+      "avatarAlt": "匿名客户",
+      "rating": 5,
+      "text": "我从外地搬来，感到不知所措。Flor向我发送了个性化的社区对比报告，并在过户当天就准备好了住宅保险报价。服务令人印象深刻。",
+      "date": "2024年7月"
+    },
+    {
+      "id": "t6",
+      "name": "Anonymous 6",
+      "avatarUrl": "",
+      "avatarAlt": "匿名客户",
+      "rating": 5,
+      "text": "Flor帮助我们的小企业以实惠的价格为六名员工获得了团体医疗保险。讲解清晰、诚实守信、毫无压力。我们已经推荐了三位同事。",
+      "date": "2024年5月"
+    }
+  ],
+  "footerLinks": [
+    { "label": "首页", "href": "/" },
+    { "label": "服务项目", "href": "/services" },
+    { "label": "关于我", "href": "/about" },
+    { "label": "相册", "href": "/gallery" },
+    { "label": "联系我", "href": "/enquire" }
+  ],
+  "copyrightText": "© 2026 Flor. 版权所有。由 <a href='https://eleazerarcilla.com' target='_blank'>eleazpogi</a> 制作",
+  "enquiryFormIntro": "准备好迈出下一步了吗？请填写以下表格，我将在一个工作日内回复您。",
+  "homeContactSectionHeading": "联系我们",
+  "homeContactSectionCopy": "有简单的问题，还是准备好开始了？请以最方便您的方式联系我。",
+  "siteUrl": "https://florarcilla.com",
+  "twitterHandle": "@florarcilla",
+  "keywords": [
+    "菲律宾保险", "人寿保险菲律宾", "菲律宾保险代理人",
+    "PruLife UK", "PRU Life UK代理", "菲律宾房地产",
+    "VUL保险菲律宾", "变额联结寿险",
+    "ProFriends房产", "菲律宾置业", "菲律宾公寓",
+    "OFW房产投资", "OFW置业菲律宾", "Pag-IBIG贷款",
+    "Flor Arcilla", "Flor Arcilla保险房地产"
+  ],
+  "seoPages": {
+    "home": {
+      "title": "Flor D. Arcilla - 菲律宾持牌保险代理人及房地产销售助理",
+      "description": "Flor D. Arcilla 是菲律宾持牌保险代理人（PruLife UK）及房地产销售助理（ProFriends），专为菲律宾家庭及海外劳工提供保险保障和房产投资服务。"
+    },
+    "services": {
+      "title": "保险与房地产服务 - Flor D. Arcilla 菲律宾",
+      "description": "人寿保险、VUL、医疗保险、楼花期房、现房、OFW购房协助、Pag-IBIG贷款及ProFriends房地产，一站式服务。"
+    },
+    "about": {
+      "title": "关于 Flor D. Arcilla - 菲律宾持牌保险及房地产代理",
+      "description": "认识 Flor D. Arcilla，持牌PRULife UK保险代理人及ProFriends房地产销售助理，多年来专注于帮助菲律宾家庭及海外劳工建立财务保障和置业投资。"
+    },
+    "enquire": {
+      "title": "预约免费咨询 - Flor D. Arcilla 保险与房地产",
+      "description": "预约与 Flor D. Arcilla 的免费咨询，获取人寿保险、VUL计划、楼花期房、OFW住房贷款等专业建议。一个工作日内回复。"
+    },
+    "gallery": {
+      "title": "相册 - 里程碑与成功案例 - Flor D. Arcilla",
+      "description": "浏览 Flor D. Arcilla 在菲律宾保险与房地产业务中的真实里程碑、客户成功案例和房产成交记录。"
+    }
+  },
+  "metaDefaults": {
+    "title": "Flor D. Arcilla - 菲律宾保险代理人及房地产销售助理",
+    "description": "Flor D. Arcilla 通过PruLife UK保险和ProFriends房地产，帮助菲律宾家庭及海外劳工保障未来、投资置业。"
+  },
+  "ui": {
+    "nav": {
+      "gallery": "相册",
+      "home": "首页",
+      "services": "服务项目",
+      "about": "关于我",
+      "bookConsultation": "立即咨询!"
+    },
+    "hero": {
+      "roleLabel": "持牌保险代理人及房地产销售助理",
+      "ctaPrimary": "立即咨询!",
+      "ctaSecondary": "查看服务"
+    },
+    "testimonials": {
+      "heading": "客户评价"
+    },
+    "services": {
+      "enquireButton": "咨询",
+      "insuranceBadge": "保险",
+      "realestateBadge": "房地产",
+      "insuranceCategory": "保险",
+      "realestateCategory": "房地产"
+    },
+    "about": {
+      "sectionLabel": "关于我",
+      "credentialsHeading": "执照与资质",
+      "contactHeading": "联系我",
+      "contactCopy": "最好的交流从一声简单的问候开始。请以您最方便的方式联系我。"
+    },
+    "enquire": {
+      "heading": "立即联系",
+      "servicePrefilledMessage": "您好！我对您的{service}服务感兴趣，能否提供更多详情？",
+      "leavePageWarning": "您有未完成的咨询表单。确定要离开吗？您的留言将会丢失。",
+      "formLabels": {
+        "fullName": "全名",
+        "email": "电子邮件地址",
+        "phone": "电话号码",
+        "phoneOptional": "（选填）",
+        "enquiryType": "咨询类型",
+        "message": "留言",
+        "required": "必填",
+        "submit": "提交咨询"
+      },
+      "enquiryTypes": {
+        "general": "一般咨询",
+        "insurance": "保险",
+        "realestate": "房地产"
+      },
+      "validation": {
+        "nameRequired": "请填写全名。",
+        "nameMinLength": "姓名至少需要2个字符。",
+        "emailRequired": "请填写电子邮件地址。",
+        "emailInvalid": "请输入有效的电子邮件地址。",
+        "phoneInvalid": "请输入有效的电话号码。",
+        "messageRequired": "请填写留言内容。",
+        "messageMinLength": "留言至少需要10个字符。",
+        "messageMaxLength": "留言不得超过2000个字符。",
+        "formError": "请正确填写所有必填项。"
+      },
+      "success": {
+        "heading": "您的咨询已发送！",
+        "body": "您的邮件客户端已打开并预填了您的留言。请发送邮件以完成咨询。我将在一个工作日内回复您。",
+        "reset": "再次提交咨询"
+      }
+    },
+    "quickContact": {
+      "whatsapp": "WhatsApp",
+      "messenger": "Messenger",
+      "call": "致电"
+    },
+    "accessibility": {
+      "openMenu": "打开无障碍菜单",
+      "closeMenu": "关闭无障碍菜单",
+      "label": "无障碍",
+      "lightMode": "浅色",
+      "darkMode": "深色",
+      "autoTheme": "自动",
+      "smallText": "小字体",
+      "defaultText": "默认",
+      "largeText": "大字体",
+      "highContrast": "高对比度"
+    },
+    "whatsappModal": {
+      "title": "我能帮您做什么？",
+      "subtitle": "请选择一个主题，我将为您打开预填好的WhatsApp消息。",
+      "insurance": "人寿与健康保险",
+      "realestate": "房地产",
+      "cancel": "取消",
+      "messageInsurance": "您好 Flor！我对您的人寿与健康保险服务感兴趣，能否提供更多信息？",
+      "messageRealestate": "您好 Flor！我对您的房地产服务感兴趣，能否提供更多信息？"
+    },
+    "emailModal": {
+      "title": "发送邮件给我",
+      "subtitle": "请选择主题，我将为您准备预填好的邮件草稿。",
+      "insurance": "人寿与健康保险",
+      "realestate": "房地产",
+      "cancel": "取消",
+      "subjectInsurance": "咨询：人寿与健康保险",
+      "subjectRealestate": "咨询：房地产",
+      "bodyInsurance": "您好 Flor，\n\n我对您的人寿与健康保险服务感兴趣，请问能否提供更多信息？\n\n感谢！",
+      "bodyRealestate": "您好 Flor，\n\n我对您的房地产服务感兴趣，请问能否提供更多信息？\n\n感谢！"
+    },
+    "gallery": {
+      "heading": "相册",
+      "subheading": "成功里程碑与美好回忆",
+      "filterType": "类型",
+      "filterYear": "年份",
+      "allTypes": "全部",
+      "allYears": "所有年份",
+      "sections": {
+        "general": "综合",
+        "insurance": "保险",
+        "realestate": "房地产"
+      },
+      "lightbox": {
+        "close": "关闭",
+        "prev": "上一张",
+        "next": "下一张",
+        "download": "下载"
+      },
+      "noItems": "没有找到符合所选筛选条件的照片。"
+    },
+    "footer": {
+      "quickLinksHeading": "快速链接",
+      "contactHeading": "联系方式"
+    }
+  }
+}

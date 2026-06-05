@@ -1,8 +1,18 @@
 // src/app/shared/components/enquiry-form/enquiry-form.component.ts
 
-import { Component, Input, OnInit, inject, signal } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  Input,
+  OnInit,
+  ViewChild,
+  inject,
+  signal,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ConfigService } from '../../../core/services/config.service';
+import { AnalyticsService } from '../../../core/services/analytics.service';
 import { UiStrings } from '../../models/config.model';
 
 type EnquiryType = 'insurance' | 'realestate' | 'general';
@@ -16,9 +26,16 @@ type EnquiryType = 'insurance' | 'realestate' | 'general';
 })
 export class EnquiryFormComponent implements OnInit {
   @Input() defaultType: EnquiryType = 'general';
+  /** Pre-filled text for the message field (e.g. from a service card click). */
+  @Input() prefillMessage = '';
+  /** When true, focus the Full Name field after init. */
+  @Input() autoFocus = false;
 
-  private readonly fb = inject(FormBuilder);
+  @ViewChild('fullNameInput') fullNameInput?: ElementRef<HTMLInputElement>;
+
+  private readonly fb            = inject(FormBuilder);
   private readonly configService = inject(ConfigService);
+  private readonly analytics     = inject(AnalyticsService);
 
   readonly submitted = signal(false);
   readonly formError = signal('');
@@ -41,8 +58,32 @@ export class EnquiryFormComponent implements OnInit {
       email:       ['', [Validators.required, Validators.email]],
       phone:       ['', [Validators.pattern(/^[\d\s\+\-\(\)]{7,20}$/)]],
       enquiryType: [this.defaultType, Validators.required],
-      message:     ['', [Validators.required, Validators.minLength(10), Validators.maxLength(2000)]],
+      message:     [
+        this.prefillMessage,
+        [Validators.required, Validators.minLength(10), Validators.maxLength(2000)],
+      ],
     });
+
+    if (this.autoFocus) {
+      // Defer so the element is rendered before we try to focus it
+      setTimeout(() => this.fullNameInput?.nativeElement.focus(), 0);
+    }
+  }
+
+  /** Returns true when the message field has user-entered content. */
+  hasUnsavedMessage(): boolean {
+    const msg = (this.form?.get('message')?.value as string) ?? '';
+    return msg.trim().length > 0 && !this.submitted();
+  }
+
+  @HostListener('window:beforeunload', ['$event'])
+  onBeforeUnload(event: BeforeUnloadEvent): void {
+    if (this.hasUnsavedMessage()) {
+      event.preventDefault();
+      // Modern browsers show their own generic message; setting returnValue
+      // is required for compatibility with older browsers.
+      event.returnValue = this.ui.leavePageWarning;
+    }
   }
 
   hasError(field: string, error?: string): boolean {
@@ -62,9 +103,15 @@ export class EnquiryFormComponent implements OnInit {
       return;
     }
     const { fullName, email, phone, enquiryType, message } = this.form.value as Record<string, string>;
+    this.analytics.trackCta({
+      cta_name:     'Submit Enquiry Form',
+      cta_location: 'enquiry_form',
+      cta_type:     'enquiry',
+      cta_detail:   enquiryType,
+    });
     const recipient = this.configService.config.email;
     const typeLabel = this.getTypeLabel(enquiryType);
-    const subject = encodeURIComponent(`Enquiry: ${typeLabel} — ${fullName}`);
+    const subject = encodeURIComponent(`Enquiry: ${typeLabel} - ${fullName}`);
     const body = encodeURIComponent(
       `Full Name: ${fullName}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\nEnquiry Type: ${typeLabel}\n\nMessage:\n${message}`
     );

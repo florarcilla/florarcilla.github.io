@@ -4,6 +4,7 @@ import { Component, inject, signal, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ConfigService } from '../../../core/services/config.service';
 import { LanguageService, SUPPORTED_LANGS } from '../../../core/services/language.service';
+import { AnalyticsService } from '../../../core/services/analytics.service';
 import { Lang } from '../../models/config.model';
 
 @Component({
@@ -15,6 +16,7 @@ import { Lang } from '../../models/config.model';
 })
 export class HeaderComponent {
   private readonly configService = inject(ConfigService);
+  private readonly analytics     = inject(AnalyticsService);
   readonly langService = inject(LanguageService);
 
   readonly config = this.configService.config;
@@ -36,7 +38,20 @@ export class HeaderComponent {
     this.menuOpen.set(false);
   }
 
+  trackBookConsultation(): void {
+    this.analytics.trackCta({
+      cta_name:     'Book Consultation',
+      cta_location: 'header',
+      cta_type:     'navigation',
+    });
+  }
+
   switchLang(code: Lang): void {
     this.langService.switch(code);
+  }
+
+  switchLangFromEvent(event: Event): void {
+    const value = (event.target as HTMLSelectElement).value as Lang;
+    this.langService.switch(value);
   }
 }

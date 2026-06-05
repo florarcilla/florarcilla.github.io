@@ -7,6 +7,9 @@ import { filter, map } from 'rxjs/operators';
 import { ConfigService } from './config.service';
 import { LanguageService } from './language.service';
 
+// gtag global declared in analytics.service.ts (shared across the app)
+declare function gtag(...args: unknown[]): void;
+
 type PageKey = 'home' | 'services' | 'about' | 'enquire' | 'gallery';
 
 const PATH_TO_KEY: Record<string, PageKey> = {
@@ -30,10 +33,16 @@ export class SeoService {
         filter((e): e is NavigationEnd => e instanceof NavigationEnd),
         map((e: NavigationEnd) => {
           const urlPath = e.urlAfterRedirects.replace(/^[/#]+/, '').split('?')[0].split('/')[0];
-          return PATH_TO_KEY[urlPath] ?? 'home';
+          return {
+            pageKey: PATH_TO_KEY[urlPath] ?? 'home' as PageKey,
+            url: e.urlAfterRedirects,
+          };
         })
       )
-      .subscribe(pageKey => this.applyMeta(pageKey));
+      .subscribe(({ pageKey, url }) => {
+        this.applyMeta(pageKey);
+        this.trackPageView(url);
+      });
   }
 
   // ─── Apply all meta tags for the current page ─────────────────────────────
@@ -78,8 +87,8 @@ export class SeoService {
     this.setMeta('property', 'og:image:width',      '1200');
     this.setMeta('property', 'og:image:height',     '630');
     this.setMeta('property', 'og:image:alt',        c.profilePictureAlt);
-    this.setMeta('property', 'og:locale',           lang === 'tl' ? 'tl_PH' : 'en_PH');
-    this.setMeta('property', 'og:locale:alternate', lang === 'tl' ? 'en_PH' : 'tl_PH');
+    const ogLocaleMap: Record<string, string> = { en: 'en_PH', tl: 'tl_PH', ceb: 'ceb_PH', zh: 'zh_CN' };
+    this.setMeta('property', 'og:locale', ogLocaleMap[lang] ?? 'en_PH');
 
     // ── Twitter / X Card ──────────────────────────────────────────────────
     this.setMeta('name', 'twitter:card',        'summary_large_image');
@@ -96,7 +105,25 @@ export class SeoService {
     this.setLink('canonical', canonical);
     this.setHreflang('en',        `${siteUrl}/`);
     this.setHreflang('tl',        `${siteUrl}/`);
+    this.setHreflang('ceb',       `${siteUrl}/`);
+    this.setHreflang('zh-CN',     `${siteUrl}/`);
     this.setHreflang('x-default', `${siteUrl}/`);
+  }
+
+  // ─── GA4 page-view tracking ───────────────────────────────────────────────
+
+  private trackPageView(url: string): void {
+    if (typeof gtag === 'undefined') return;
+    const c        = this.cfgSvc.config;
+    const siteUrl  = (c.siteUrl ?? '').replace(/\/$/, '');
+    const pageKey  = url.replace(/^[/#]+/, '').split('?')[0].split('/')[0];
+    const seoPage  = c.seoPages?.[PATH_TO_KEY[pageKey] ?? 'home'] ?? c.metaDefaults;
+
+    gtag('event', 'page_view', {
+      page_title:    seoPage.title,
+      page_location: `${siteUrl}${url}`,
+      page_path:     url,
+    });
   }
 
   // ─── DOM helpers ──────────────────────────────────────────────────────────

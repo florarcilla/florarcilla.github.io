@@ -8,7 +8,7 @@
   "secondaryProfilePictureAlt": "Si Flor Arcilla sa kanyang opisina",
   "logoUrl": "assets/images/logo.svg",
   "logoAlt": "Flor Arcilla - Insurance at Real Estate",
-  "bio": "Sa mahigit 10 taon ng karanasan sa paglilingkod sa mga pamilya at mamumuhunan sa buong rehiyon, pinagsasama ko ang malalim na kaalaman sa insurance at matalas na pagtingin sa mga oportunidad sa real estate. Maging ito man ay ang pagprotekta sa pinakamahalagang bagay para sa iyo o ang paghahanap ng iyong susunod na tahanan o investment property, nandito ako upang gabayan ka sa bawat hakbang.",
+  "bio": "Mula sa real estate hanggang sa financial services, ilang taon na akong tumutulong sa mga pamilya at mamumuhunan sa buong Cavite at higit pa na makagawa ng mga desisyon na pakiramdam nilang tama. Maging ito man ay ang paghanap ng tamang tahanan, paglago ng kanilang kayamanan, o pagprotekta ng kanilang mga namuhunan, nandito ako upang gabayan ka sa bawat hakbang. Sa mga ProFriends properties sa Cavite at PRULife UK insurance solutions, nag-aalok ako ng gabay na sumasaklaw sa dalawang bahagi ng iyong financial life, para hindi mo na kailangang alamin ito nang mag-isa.",
   "richTextAbout": "<p>Nagsimula ako sa financial services dahil totoo akong naniniwala na ang proteksyon at matalinong investment ay dapat magkasama at hindi kailangang pumili ng isa lang.</p><p>Mahigit isang dekada na akong tumutulong sa mga pamilyang ma-secure ang kanilang kita, kalusugan, at kinabukasan. At ngayon, bilang licensed din sa real estate, kaya ko na ring tulungan kang mahanap ang bahay o property na angkop sa lifestyle at budget mo.</p><p>Para sa akin, hindi ito basta trabaho lang. Outside work? Health muna. Sa tuwing may time, nag lalakad lakad ako sa weekends para mag-recharge!</p>",
   "email": "fongarcilla@gmail.com",
   "phone": "+639055584891",
@@ -34,7 +34,8 @@
       "imageUrl": "assets/images/insurance-traditional.webp",
       "imageAlt": "Traditional health insurance coverage",
       "description": "Pangalagaan ang mga taong mahalaga sa iyo sa pamamagitan ng term, whole life, at endowment plans na nagbibigay ng maaasahang proteksyon. Maging para sa short-term na pangangailangan o panghabambuhay na seguridad - may plano para sa bawat yugto ng iyong buhay, na may opsyon na i-customize habang nagbabago ang sitwasyon mo.",
-      "type": "insurance"
+      "type": "insurance",
+      "tags": "Term Life, Whole Life, Endowment, PRULife UK"
     },
     {
       "id": "insurance-with-envestment",
@@ -42,7 +43,8 @@
       "imageUrl": "assets/images/insurance-investment.webp",
       "imageAlt": "Insurance with investment growth",
       "description": "Hindi na kailangang pumili sa pagitan ng proteksyon at paglago ng pera. Sa VUL (variable unit-linked) plans, bahagi ng binabayad mo ay napupunta sa insurance coverage, at bahagi naman ay ini-invest - para lumagaki ang pera mo habang protektado ka. Perpekto para sa pagiipon para sa edukasyon ng anak, retirement, o anumang malaking financial goal.",
-      "type": "insurance"
+      "type": "insurance",
+      "tags": "VUL, Investment Fund, Wealth Growth, PRULife UK"
     },
     {
       "id": "health-insurance",
@@ -50,7 +52,17 @@
       "imageUrl": "assets/images/health-insurance.webp",
       "imageAlt": "Health insurance coverage for individuals and families",
       "description": "Huwag hayaang maging hadlang ang gastos sa iyong pagpapagaling. Ang health insurance ay sumasaklaw sa hospitalization, kritikal na sakit tulad ng cancer, heart attack, at stroke - para ikaw at ang iyong pamilya ay hindi mabibigo sa pinansiyal na bahagi ng kalusugan. Mayroon ding mga plano na pwedeng i-share sa mga miyembro ng pamilya.",
-      "type": "insurance"
+      "type": "insurance",
+      "tags": "Hospitalization, Critical Illness, Cancer Cover, Family Plan"
+    },
+    {
+      "id": "accident-insurance",
+      "title": "Proteksyon sa Aksidente",
+      "imageUrl": "assets/images/insurance-accident.webp",
+      "imageAlt": "Personal accident insurance coverage",
+      "description": "Hindi mahuhulaan ang mga aksidente - ngunit hindi kailangang ganun din ang epekto nito sa iyong pananalapi. Ang personal accident riders sa ilalim ng mga plano ng PRULife UK ay sumasaklaw sa accidental death, disablement, dismemberment, at medical expenses. Madaling idagdag sa iyong kasalukuyang polisiya para sa dagdag na seguridad para sa iyong pamilya.",
+      "type": "insurance",
+      "tags": "Personal Accident, ADD Rider, Accidental Death, Disablement, Medical Expense Reimbursement"
     },
     {
       "id": "pre-selling",
@@ -58,7 +70,8 @@
       "imageUrl": "assets/images/real-estate-preselling.webp",
       "imageAlt": "Blueprint and scale model of a pre-selling property",
       "description": "Mag-invest nang maaga at ma-lock in ang pinakamababang presyo bago pa matapos ang property. Ang pre-selling ay nagbibigay ng mas abot-kayang bayad, flexible na payment terms, at malaking tsansa na lumago ang halaga ng investment mo pagdating ng turnover. Gagabayan kita mula sa pagpili ng unit hanggang sa reservation at pagbili.",
-      "type": "realestate"
+      "type": "realestate",
+      "tags": "Pre-Selling, Flexible Terms, Low Down Payment, ProFriends"
     },
     {
       "id": "ready-for-occupancy",
@@ -66,7 +79,8 @@
       "imageUrl": "assets/images/real-estate-rfo.webp",
       "imageAlt": "Move-in ready house and lot",
       "description": "Gusto mo bang makalipat agad? Ang RFO properties ay tapos na itayo at handa nang i-turnover - walang hintayan, walang abala. Tutulungan kita mahanap ang house and lot o condo unit na akma sa budget, lifestyle, at lokasyong gusto mo para makapagsimula ka agad ng bagong kabanata.",
-      "type": "realestate"
+      "type": "realestate",
+      "tags": "Move-In Ready, House & Lot, Condo, No Waiting"
     },
     {
       "id": "home-buying",
@@ -74,7 +88,8 @@
       "imageUrl": "assets/images/real-estate-home-buying.webp",
       "imageAlt": "Happy couple receiving home keys",
       "description": "Ang pagbili ng bahay ay isa sa pinakamalaking desisyon sa buhay - at hindi mo kailangang harapin ito nang mag-isa. Mula sa paghanap ng tamang property at pag-compute ng monthly amortization, hanggang sa pag-process ng bank o Pag-IBIG financing, nandito ako sa bawat hakbang para makapagdesisyon ka nang may kumpiyansa.",
-      "type": "realestate"
+      "type": "realestate",
+      "tags": "First Home, Pag-IBIG, Bank Financing, Full Assistance"
     },
     {
       "id": "property-investment",
@@ -82,7 +97,17 @@
       "imageUrl": "assets/images/real-estate-property-investment.webp",
       "imageAlt": "Growing real estate investment portfolio",
       "description": "Ang real estate ay isa sa pinaka-maaasahang paraan ng pag-invest sa Pilipinas. Kung gusto mong mag-buy and hold, kumita sa rental, o palakasin ang iyong portfolio, tutulungan kita mahanap ang mga lugar at proyekto na may mataas na potensyal na paglago - kasama na ang mga integrated township ng ProFriends.",
-      "type": "realestate"
+      "type": "realestate",
+      "tags": "Buy & Hold, Rental Income, ProFriends, Township"
+    },
+    {
+      "id": "condo-living",
+      "title": "Condo Villages",
+      "imageUrl": "assets/images/real-estate-condo.webp",
+      "imageAlt": "Modern condominium village in Cavite by ProFriends",
+      "description": "Dala ng ProFriends ang modernong pamumuhay sa Cavite sa pamamagitan ng dalawang condo villages - ang Westwind sa Lancaster New City sa General Trias, at ang Lamore sa Micara Estates sa Tanza. Perpekto para sa mga batang propesyonal, OFW, maliliit na pamilya, at mga investor, na may mga unit mula studio hanggang tatlong silid-tulugan at resort-style amenities, na madaling maabot sa pamamagitan ng CAVITEX at CALAX.",
+      "type": "realestate",
+      "tags": "Westwind, Lamore, Condo, General Trias, Tanza, CAVITEX, OFW, Studio to 3BR"
     },
     {
       "id": "ofw-property-buying",
@@ -90,7 +115,8 @@
       "imageUrl": "assets/images/real-estate-ofw.webp",
       "imageAlt": "OFW family buying property remotely",
       "description": "Kahit nasa abroad ka, pwede ka pa ring mag-invest ng property dito sa Pinas. Espesyalista ako sa pagtulong sa mga OFW na mag-reserve ng property nang remote - mula sa virtual tripping at online reservation, hanggang sa pag-process ng Pag-IBIG OFW loan at pakikipag-coordinate sa iyong pamilya dito.",
-      "type": "realestate"
+      "type": "realestate",
+      "tags": "OFW, Remote Buying, Pag-IBIG OFW, Virtual Tour"
     },
     {
       "id": "financing-assistance",
@@ -98,7 +124,8 @@
       "imageUrl": "assets/images/real-estate-loan-application.webp",
       "imageAlt": "Loan documents and financial planning",
       "description": "Hindi sigurado kung anong payment scheme ang pinaka-angkop sa iyo? Tutulungan kita ikumpara ang lahat ng opsyon - Pag-IBIG Fund (HDMF), bank financing, o in-house installment. Aasikasuhin ko ang mga requirements, loan application, at computations para hindi ka na mag-alala sa financial side ng pagbili.",
-      "type": "realestate"
+      "type": "realestate",
+      "tags": "Pag-IBIG, Bank Loan, In-House, Loan Computation"
     },
     {
       "id": "property-tripping",
@@ -106,7 +133,8 @@
       "imageUrl": "assets/images/real-estate-tripping.webp",
       "imageAlt": "Clients touring a property site",
       "description": "Mas maganda ang makita muna bago pumirma. Mag-aayos ako ng on-site o virtual property tour para maranasan mo mismo ang komunidad at makita ang aktwal na unit o lote bago ka magdesisyon. Mula sa Lancaster New City sa Cavite hanggang mga proyekto sa Iloilo - anumang araw, kahit weekend.",
-      "type": "realestate"
+      "type": "realestate",
+      "tags": "Virtual Tour, On-Site Visit, No Pressure, Weekends OK"
     },
     {
       "id": "after-sales-support",
@@ -114,7 +142,8 @@
       "imageUrl": "assets/images/real-estate-after-sales.webp",
       "imageAlt": "Agent assisting homeowner with documents",
       "description": "Hindi natatapos ang trabaho ko sa benta. Patuloy kitang tutulungan pagkatapos ng purchase - mula sa pag-follow up ng turnover schedule at paglipat ng titulo, hanggang sa pakikipag-coordinate sa ProFriends property management para sa repairs, community concerns, at account updates sa buyer's portal.",
-      "type": "realestate"
+      "type": "realestate",
+      "tags": "Post-Purchase, Turnover, Title Transfer, ProFriends Portal"
     }
   ],
   "testimonials": [
@@ -180,7 +209,7 @@
     { "label": "Gallery", "href": "/gallery" },
     { "label": "Makipag-ugnayan", "href": "/enquire" }
   ],
-  "copyrightText": "© 2026 Flor. Lahat ng karapatan ay nakalaan. Ginawa ni <a href='https://eleazerarcilla.com' target='_blank'>Eleazer Arcilla</a>",
+  "copyrightText": "© 2026 Flor. Lahat ng karapatan ay nakalaan. Ginawa ni <a href='https://eleazerarcilla.com' target='_blank'>eleazpogi</a>",
   "enquiryFormIntro": "Libre lang naman ang mag-inquire. Punan mo lang ang form para makapag-usap tayo at malaman kung anong plano ang pinaka-angkop sa iyo.",
   "homeContactSectionHeading": "Mag Usap Tayo",
   "homeContactSectionCopy": "May mabilis na tanong o handa nang magsimula? Makipag-ugnayan sa akin sa paraang pinaka-maginhawa para sa iyo.",
@@ -209,7 +238,7 @@
     },
     "about": {
       "title": "Sino si Flor D. Arcilla? - Insurance at Real Estate Agent Pilipinas",
-      "description": "Si Flor D. Arcilla ay licensed PruLife UK agent at ProFriends real estate associate. Mahigit 10 taon na siyang tumutulong sa mga Pilipino at OFW na mag-invest ng tama."
+      "description": "Si Flor D. Arcilla ay licensed PRULife UK agent at ProFriends real estate associate na maraming taon nang tumutulong sa mga Pilipino at OFW na bumuo ng financial security at magmay-ari ng property."
     },
     "enquire": {
       "title": "Makipag-usap kay Flor - Insurance at Real Estate Consultation",
@@ -255,6 +284,8 @@
     },
     "enquire": {
       "heading": "Makipag-ugnayan Tayo",
+      "servicePrefilledMessage": "Kumusta po! Interesado po ako sa inyong serbisyong {service}. Maaari po ba kayong magbigay ng karagdagang detalye?",
+      "leavePageWarning": "Mayroon kang hindi pa natapos na katanungan. Sigurado ka bang gusto mong umalis? Mawawala ang iyong mensahe.",
       "formLabels": {
         "fullName": "Buong Pangalan",
         "email": "Email Address",

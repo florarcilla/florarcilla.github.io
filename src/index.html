@@ -57,6 +57,8 @@
     <link rel="canonical"  href="https://florarcilla.com/" />
     <link rel="alternate"  hreflang="en"        href="https://florarcilla.com/" />
     <link rel="alternate"  hreflang="tl"        href="https://florarcilla.com/" />
+    <link rel="alternate"  hreflang="ceb"       href="https://florarcilla.com/" />
+    <link rel="alternate"  hreflang="zh-CN"     href="https://florarcilla.com/" />
     <link rel="alternate"  hreflang="x-default" href="https://florarcilla.com/" />
 
     <!-- ── Favicon & web manifest ───────────────────────────────────────────── -->
@@ -71,8 +73,8 @@
       (and the browser) discover the request before any JavaScript executes.
       Both must reference the exact same URL — no Angular binding, no redirect.
     -->
-    <link rel="preload" as="image" href="assets/images/flor_banner.jpg"
-          type="image/jpeg" fetchpriority="high" />
+    <link rel="preload" as="image" href="assets/images/flor_banner.webp"
+          type="image/webp" fetchpriority="high" />
     <!-- Config JSON: starts fetching before Angular boots, shortening the init chain -->
     <link rel="preload" as="fetch" href="assets/config/app.config.en.json" crossorigin="anonymous" />
 
@@ -106,6 +108,38 @@
     </noscript>
 
     <!-- JSON-LD structured data injected at runtime by AppComponent -->
+
+    <!-- ── Google Analytics 4 ───────────────────────────────────────────────── -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWV9P7HC36"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HWV9P7HC36');
+    </script>
+
+    <!--
+      SPA routing on GitHub Pages: 404.html encodes the requested path as ?p=
+      and redirects here. This script decodes it and restores the correct URL
+      via history.replaceState before Angular boots, so the router sees the
+      right path without a full page reload.
+    -->
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var p = params.get('p');
+        if (p) {
+          var q = params.get('q');
+          var base = window.location.pathname.replace(/\/$/, '');
+          window.history.replaceState(
+            null, null,
+            base + p +
+            (q ? '?' + q.replace(/~and~/g, '&') : '') +
+            window.location.hash
+          );
+        }
+      })();
+    </script>
   </head>
   <body>
     <app-root></app-root>

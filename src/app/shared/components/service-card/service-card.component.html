@@ -1,35 +1,70 @@
 <!-- src/app/shared/components/service-card/service-card.component.html -->
 <article class="service-card">
-  <div class="service-card__image-wrap">
+  <!-- __image-zone: positioning anchor for badge + tags (no overflow:hidden) -->
+  <div class="service-card__image-zone">
 
-    @if (!imageError) {
-      <img
-        [src]="service.imageUrl"
-        [alt]="service.imageAlt"
-        class="service-card__image"
-        loading="lazy"
-        (error)="onImageError()"
-      />
-    } @else {
-      <!-- Placeholder shown when image URL is missing or broken -->
-      <div class="service-card__placeholder" aria-hidden="true">
-        <svg class="service-card__placeholder-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" focusable="false">
-          <text
-            x="300" y="158"
-            text-anchor="middle"
-            font-family="'Playfair Display', 'Georgia', 'Times New Roman', serif"
-            font-weight="900"
-            font-size="140"
-            letter-spacing="-4"
-            fill="currentColor"
-          >Flor<tspan class="logo-dot" fill="currentColor">.</tspan></text>
-        </svg>
-      </div>
-    }
+    <!-- __image-wrap: overflow:hidden only — for the zoom clip effect -->
+    <div class="service-card__image-wrap">
+      @if (!imageError) {
+        <img
+          [src]="service.imageUrl"
+          [alt]="service.imageAlt"
+          class="service-card__image"
+          loading="lazy"
+          (error)="onImageError()"
+        />
+      } @else {
+        <!-- Placeholder shown when image URL is missing or broken -->
+        <div class="service-card__placeholder" aria-hidden="true">
+          <svg class="service-card__placeholder-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" focusable="false">
+            <text
+              x="300" y="158"
+              text-anchor="middle"
+              font-family="'Playfair Display', 'Georgia', 'Times New Roman', serif"
+              font-weight="900"
+              font-size="140"
+              letter-spacing="-4"
+              fill="currentColor"
+            >Flor<tspan class="logo-dot" fill="currentColor">.</tspan></text>
+          </svg>
+        </div>
+      }
+    </div>
 
+    <!-- Type badge — top right (outside image-wrap so it's never clipped) -->
     <span class="service-card__badge service-card__badge--{{ service.type }}">
       {{ service.type === 'insurance' ? ui.insuranceBadge : ui.realestateBadge }}
     </span>
+
+    <!-- Tag pills — bottom left (outside image-wrap so overflow panel is never clipped) -->
+    @if (tagList.length > 0) {
+      <div class="service-card__tags">
+        @for (tag of visibleTags; track tag) {
+          <span class="service-card__tag">{{ tag }}</span>
+        }
+
+        @if (hasOverflow) {
+          <div class="service-card__tag-more-wrap">
+            <!-- Overflow panel expands upward, unclipped by image-wrap -->
+            @if (overflowOpen()) {
+              <div class="service-card__tag-overflow-panel">
+                @for (tag of overflowTags; track tag) {
+                  <span class="service-card__tag">{{ tag }}</span>
+                }
+              </div>
+            }
+            <button
+              class="service-card__tag service-card__tag--more"
+              type="button"
+              [attr.aria-expanded]="overflowOpen()"
+              aria-label="Show more tags"
+              (click)="toggleOverflow($event)"
+            >{{ overflowOpen() ? '▴' : '...' }}</button>
+          </div>
+        }
+      </div>
+    }
+
   </div>
 
   <div class="service-card__body">
@@ -37,8 +72,9 @@
     <p class="service-card__desc">{{ service.description }}</p>
     <a class="service-card__cta"
        [routerLink]="['/enquire']"
-       [queryParams]="{ type: service.type }"
-       [attr.aria-label]="ui.enquireButton + ' ' + service.title">
+       [queryParams]="{ type: service.type, service: service.id }"
+       [attr.aria-label]="ui.enquireButton + ' ' + service.title"
+       (click)="trackEnquire()">
       {{ ui.enquireButton }}
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>

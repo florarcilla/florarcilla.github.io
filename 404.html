@@ -1,20 +1,20 @@
 <!doctype html>
 <!-- 404.html — GitHub Pages SPA fallback -->
 <!--
-  GitHub Pages serves this file for any path that doesn't match a real file.
-  The script below extracts the path + query from the URL, encodes it into
-  the query string of the root URL, then redirects there. The index.html
-  redirect script (below) decodes it and restores the original URL via
-  history.replaceState so the Angular router sees the correct path.
+  GitHub Pages serves this file for any path that doesn't match a static file.
+  The script encodes the current path into a query param and redirects to the
+  app root. The decode script in index.html reads it back and calls
+  history.replaceState so Angular's router sees the original path.
 
-  Credit: https://github.com/rafgraph/spa-github-pages
+  segmentCount = 0 // 0 = custom domain (florarcilla.com); use 1 for GitHub project pages (username.github.io/repo)  for a project page  (username.github.io/repo-name/)
+  segmentCount = 0  for a custom domain (florarcilla.com/)
 -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Maria Santos – Insurance Agent &amp; Real Estate Sales Associate</title>
+    <title>Flor D. Arcilla - Insurance Agent &amp; Real Estate Sales Associate</title>
     <script>
-      var segmentCount = 1; // set to 0 for a user-org page, 1 for a project page
+      var segmentCount = 0 // 0 = custom domain (florarcilla.com); use 1 for GitHub project pages (username.github.io/repo);
 
       var l = window.location;
       l.replace(
@@ -26,5 +26,5 @@
       );
     </script>
   </head>
-  <body>Redirecting…</body>
+  <body>Redirecting...</body>
 </html>

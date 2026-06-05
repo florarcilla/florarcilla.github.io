@@ -17,7 +17,7 @@
     </button>
 
     <!-- ── Logo ─────────────────────────────────────────────────────────────── -->
-    <a class="header__logo" routerLink="/" (click)="closeMenu()" [attr.aria-label]="config.agentName + ' – Home'">
+    <a class="header__logo" routerLink="/" (click)="closeMenu()" [attr.aria-label]="config.agentName + ' - Home'">
       <svg class="header__logo-svg" viewBox="0 0 600 200" width="108" height="36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
         <text
           x="300" y="158"
@@ -31,7 +31,7 @@
       </svg>
     </a>
 
-    <!-- ── Primary nav + mobile drawer lang toggle ───────────────────────────── -->
+    <!-- ── Primary nav + mobile drawer lang buttons ──────────────────────────── -->
     <nav id="primary-nav" class="header__nav" aria-label="Primary navigation" [class.header__nav--open]="menuOpen()">
       <ul role="list">
         <li>
@@ -48,17 +48,20 @@
         </li>
       </ul>
 
-      <!-- Only rendered (visible) in mobile drawer via CSS -->
-      <div class="drawer-lang" role="group" [attr.aria-label]="'Language: ' + langService.current.toUpperCase()">
+      <!--
+        Mobile drawer language picker — pill buttons, no dropdown.
+        Buttons sit above the viewport fold so they never need to expand downward.
+        Only visible in mobile via CSS.
+      -->
+      <div class="drawer-lang">
         <span class="drawer-lang__label">Language</span>
-        <div class="lang-toggle">
+        <div class="drawer-lang__buttons" role="group" aria-label="Select language">
           @for (lang of langs; track lang.code) {
             <button
-              class="lang-toggle__btn"
+              class="drawer-lang__btn"
               type="button"
-              [class.lang-toggle__btn--active]="langService.current === lang.code"
+              [class.drawer-lang__btn--active]="langService.current === lang.code"
               [attr.aria-pressed]="langService.current === lang.code"
-              [attr.aria-label]="'Switch to ' + lang.label"
               (click)="switchLang(lang.code)"
             >{{ lang.label }}</button>
           }
@@ -68,21 +71,21 @@
 
     <!-- ── Right-side actions ────────────────────────────────────────────────── -->
     <div class="header__actions">
-      <!-- Desktop-only lang toggle (hidden on mobile via .lang-toggle--desktop) -->
-      <div class="lang-toggle lang-toggle--desktop" role="group" [attr.aria-label]="'Language: ' + langService.current.toUpperCase()">
+      <!--
+        Desktop language dropdown — <select> with [selected] on each <option>
+        so Angular correctly reflects the active lang without FormsModule.
+      -->
+      <select
+        class="lang-select lang-select--desktop"
+        (change)="switchLangFromEvent($event)"
+        [attr.aria-label]="'Language: ' + langService.current.toUpperCase()"
+      >
         @for (lang of langs; track lang.code) {
-          <button
-            class="lang-toggle__btn"
-            type="button"
-            [class.lang-toggle__btn--active]="langService.current === lang.code"
-            [attr.aria-pressed]="langService.current === lang.code"
-            [attr.aria-label]="'Switch to ' + lang.label"
-            (click)="switchLang(lang.code)"
-          >{{ lang.label }}</button>
+          <option [value]="lang.code" [selected]="lang.code === langService.current">{{ lang.label }}</option>
         }
-      </div>
+      </select>
 
-      <a class="btn btn--accent header__cta" routerLink="/enquire" (click)="closeMenu()">
+      <a class="btn btn--accent header__cta" routerLink="/enquire" (click)="closeMenu(); trackBookConsultation()">
         {{ ui.nav.bookConsultation }}
       </a>
     </div>

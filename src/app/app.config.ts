@@ -7,7 +7,6 @@ import {
 } from '@angular/core';
 import {
   provideRouter,
-  withHashLocation,
   withViewTransitions,
 } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
@@ -20,7 +19,7 @@ import { ConfigService } from './core/services/config.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, withHashLocation(), withViewTransitions()),
+    provideRouter(routes, withViewTransitions()),
     provideHttpClient(),
     provideClientHydration(withNoHttpTransferCache()),
     provideAppInitializer(() => {

@@ -22,6 +22,7 @@
           <span class="form-label__required" [attr.aria-label]="ui.formLabels.required">*</span>
         </label>
         <input class="form-input" [class.form-input--error]="hasError('fullName')"
+               #fullNameInput
                id="fullName" type="text" formControlName="fullName" autocomplete="name"
                [placeholder]="ui.formLabels.fullName"
                [attr.aria-describedby]="hasError('fullName') ? 'fullName-error' : null"

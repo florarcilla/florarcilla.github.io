@@ -1,6 +1,7 @@
 // src/app/app.routes.ts
 
 import { Routes } from '@angular/router';
+import { unsavedEnquiryGuard } from './core/guards/unsaved-enquiry.guard';
 
 export const routes: Routes = [
   {
@@ -10,7 +11,7 @@ export const routes: Routes = [
     data: {
       title: 'Home',
       description:
-        'Maria Santos – licensed insurance agent and real estate sales associate. Protecting families and growing wealth across the region.',
+        'Flor D. Arcilla – licensed insurance agent and real estate sales associate. Protecting families and growing wealth across the region.',
     },
   },
   {
@@ -22,7 +23,7 @@ export const routes: Routes = [
     data: {
       title: 'Services',
       description:
-        'Life, health, home and auto insurance plus full-service home buying, selling, and investment real estate. See all services offered by Maria Santos.',
+        'Life, health, home and auto insurance plus full-service home buying, selling, and investment real estate. See all services offered by Flor D. Arcilla.',
     },
   },
   {
@@ -30,9 +31,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/about/about.component').then((m) => m.AboutComponent),
     data: {
-      title: 'About Maria Santos',
+      title: 'About Flor D. Arcilla',
       description:
-        'Learn about Maria Santos – 15+ years of combined insurance and real estate experience, CFP®, and ABR® credentials.',
+        'Learn about Flor D. Arcilla – 10+ years of combined insurance and real estate experience, CFP®, and ABR® credentials.',
     },
   },
   {
@@ -41,10 +42,11 @@ export const routes: Routes = [
       import('./pages/enquire/enquire.component').then(
         (m) => m.EnquireComponent
       ),
+    canDeactivate: [unsavedEnquiryGuard],
     data: {
       title: 'Enquire',
       description:
-        'Get in touch with Maria Santos for insurance or real estate enquiries. Quick response guaranteed within one business day.',
+        'Get in touch with Flor D. Arcilla for insurance or real estate enquiries. Quick response guaranteed within one business day.',
     },
   },
   {

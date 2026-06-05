@@ -12,8 +12,8 @@
       <p class="hero__tagline">{{ config.tagline }}</p>
       <p class="hero__bio">{{ config.bio }}</p>
       <div class="hero__actions">
-        <a class="btn btn--accent" routerLink="/enquire">{{ ui.hero.ctaPrimary }}</a>
-        <a class="btn btn--outline" routerLink="/services">{{ ui.hero.ctaSecondary }}</a>
+        <a class="btn btn--accent" routerLink="/enquire" (click)="trackHeroCta('primary')">{{ ui.hero.ctaPrimary }}</a>
+        <a class="btn btn--outline" routerLink="/services" (click)="trackHeroCta('secondary')">{{ ui.hero.ctaSecondary }}</a>
       </div>
     </div>
 

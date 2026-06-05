@@ -1,0 +1,381 @@
+{
+  "agentName": "Flor D. Arcilla",
+  "nickname": "Flor",
+  "tagline": "Ang Imong Kasaligan nga Kauban sa Insurance ug Real Estate",
+  "profilePictureUrl": "assets/images/flor_banner.webp",
+  "profilePictureAlt": "Si Flor Arcilla, lisensyadong ahente sa insurance ug sales associate sa real estate",
+  "secondaryProfilePictureUrl": "assets/images/flor_arcilla_office.webp",
+  "secondaryProfilePictureAlt": "Si Flor Arcilla sa iyang opisina",
+  "logoUrl": "assets/images/logo.svg",
+  "logoAlt": "Flor Arcilla - Insurance ug Real Estate",
+  "bio": "Gikan sa real estate hangtod sa financial services, daghang tuig na akong nagtabang sa mga pamilya ug mga mamumuhunan sa tibuok Cavite ug higit pa sa pagbuhat og mga desisyon nga ilang gibati nga husto. Bisan pagpangita og hustong balay, pagpatubo sa ilang bahandi, o pagpanalipod sa ilang gitukod, anaa ako aron giyahan ka sa matag lakang. Uban sa mga ProFriends properties sa Cavite ug PRULife UK insurance solutions, naghatag ako og giya nga nasakop ang duha ka bahin sa imong financial life, aron dili na nimo kini kinahanglan nga sulbaron nga nag-inusara.",
+  "richTextAbout": "<p>Nagsugod ako sa real estate, nga nagtabang sa mga buyer, seller, ug investor nga makahimo og mapinanggaon nga mga desisyon. Gikan didto, naglapad ako ngadto sa financial services, nagtabang sa mga pamilya nga mapanalipdan ang ilang kita, kalusugan, ug kaugmaon.</p><br /><p>Ang akong hiniusang kasinatian nagpasabot nga makita nako ang imong sitwasyon pinaagi sa duha ka lente: unsa ang kinahanglan nimong panalipdan karon, ug unsaon sa imong property nga mas maayo nga magtrabaho alang sa imong ugma.</p><br /><p>Sa gawas sa opisina, nalingaw ako sa pagmentoring sa bag-ong lisensyadong mga ahente. Kung dili ko kana buhaton, makit-an mo ako nga naglakaw o nagjogging!</p>",
+  "email": "fongarcilla@gmail.com",
+  "phone": "+639055584891",
+  "whatsappNumber": "639055584891",
+  "facebookMessengerUrl": "https://m.me/florarcilla",
+  "linkedinUrl": "https://linkedin.com/in/flor-arcilla-924a8165",
+  "instagramUrl": "https://instagram.com/florarcilla",
+  "facebookUrl": "https://www.facebook.com/profile.php?id=100081236867085",
+  "licences": [
+    "Licensed Insurance Agent Since 2020, PRULife UK License #70111974",
+    "Real Estate Sales Associate Since 2019"
+  ],
+  "servicesPageHero": {
+    "heading": "Panalipdi ang Hinungdanon. <br /> Angkona ang Imong Bili.",
+    "subCopy": "Naa ka man dinhi o sa abroad, tabangun kita nga mapanalipdan ang imong pamilya ug makuha ang imong dream home sa hustong plano, hustong property, ug kasaligan nga kauban sa matag lakang.",
+    "gradientColor": "rgba(108, 68, 237, 0.28)",
+    "bannerImageUrl": "assets/images/flor_services_banner.webp"
+  },
+  "services": [
+    {
+      "id": "traditional-insurance",
+      "title": "Traditional Insurance",
+      "imageUrl": "assets/images/insurance-traditional.webp",
+      "imageAlt": "Traditional health insurance coverage",
+      "description": "Panalipdi ang mga tawo nga hinungdanon kanimo pinaagi sa term, whole life, ug endowment plans nga naghatag og lig-on, kasaligan nga coverage. Bisan kung kinahanglan nimo ang short-term nga proteksyon o pangtibuok-kinabuhi nga seguridad, kining mga plano siguradohon nga ang imong mga minahal naa sa insurance bisan unsa pa mahitabo.",
+      "type": "insurance",
+      "tags": "PRULife UK, Term Life, Whole Life, Endowment"
+    },
+    {
+      "id": "insurance-with-envestment",
+      "title": "Insurance With Investment",
+      "imageUrl": "assets/images/insurance-investment.webp",
+      "imageAlt": "Insurance with investment growth",
+      "description": "Nganong magpili sa proteksyon o pagpadako sa imong bahandi? Sa variable unit-linked (VUL) plans, ang imong premium gibahin tali sa life insurance coverage ug investment funds - mao nga protektado ka samtang ang imong kwarta nagtrabaho padulong sa imong mga financial goal. Perpekto alang sa edukasyon sa bata, retirement, o pagpatubo sa pamilya.",
+      "type": "insurance",
+      "tags": "PRULife UKVUL, Investment Fund, Wealth Growth"
+    },
+    {
+      "id": "health-insurance",
+      "title": "Health Insurance",
+      "imageUrl": "assets/images/health-insurance.webp",
+      "imageAlt": "Health insurance coverage for individuals and families",
+      "description": "Magpabilin nga financially protected batok sa taas nga gasto sa hospitalization, kritikal nga sakit, ug medikal nga emerhensya. Uban ang individual ug family health plans nga nasakop ang cancer, heart attack, stroke, ug uban pa, makapunting ka sa pagayo kaysa mabalaka sa mga bill.",
+      "type": "insurance",
+      "tags": "Hospitalization, Critical Illness, Cancer Cover, Family Plan"
+    },
+    {
+      "id": "accident-insurance",
+      "title": "Proteksyon sa Aksidente",
+      "imageUrl": "assets/images/insurance-accident.webp",
+      "imageAlt": "Personal accident insurance coverage",
+      "description": "Dili matag-an ang mga aksidente - apan ang ilang epekto sa salapi dili kinahanglan. Ang personal accident riders sa ilalim sa mga plano sa PRULife UK nasakop ang accidental death, disablement, dismemberment, ug medical expenses. Dali nga idugang sa imong karon nga polisiya para sa dugang nga seguridad alang sa imong pamilya sa dili inaasahang mga sandali.",
+      "type": "insurance",
+      "tags": "Personal Accident, ADD Rider, Accidental Death, Disablement, Medical Expense Reimbursement"
+    },
+    {
+      "id": "pre-selling",
+      "title": "Pre-Selling Properties",
+      "imageUrl": "assets/images/real-estate-preselling.webp",
+      "imageAlt": "Blueprint and scale model of a pre-selling property",
+      "description": "Mag-invest nang sayo ug i-lock ang labing maayo nga presyo sa wala pa matapos ang property. Ang pre-selling nga mga yunit naghatag og mas ubos nga introductory rates, flexible nga payment terms, ug higayon sa pagpatubo sa imong investment samtang ang property nagpahalipay sa turnover.",
+      "type": "realestate",
+      "tags": "Pre-Selling, Flexible Terms, Low Down Payment, ProFriends"
+    },
+    {
+      "id": "ready-for-occupancy",
+      "title": "Ready For Occupancy (RFO)",
+      "imageUrl": "assets/images/real-estate-rfo.webp",
+      "imageAlt": "Move-in ready house and lot",
+      "description": "Gusto ka bang mopuyo dayon? Ang mga RFO property hingpit na gitukod ug andam na sa turnover - walay paghulat, walay kalisud. Tabangun kita makit-an ang husto nga balay ug lote o condo unit nga angay sa imong budget, lifestyle, ug lokasyon para makapagsugod ka dayon sa bag-ong kapitulo.",
+      "type": "realestate",
+      "tags": "Move-In Ready, House & Lot, Condo, No Waiting"
+    },
+    {
+      "id": "home-buying",
+      "title": "Home Buying Assistance",
+      "imageUrl": "assets/images/real-estate-home-buying.webp",
+      "imageAlt": "Happy couple receiving home keys",
+      "description": "Ang pagpalit sa balay usa ka dako nga desisyon - ug dili nimo kinahanglan nga haraponon kini nga mag-inusara. Gikan sa pagpangita og husto nga property ug pag-compute sa monthly amortization, hangtod sa pag-process sa bank o Pag-IBIG financing, anaa ako sa matag lakang para makahimo ka og may kumpiyansa nga desisyon.",
+      "type": "realestate",
+      "tags": "First Home, Pag-IBIG, Bank Financing, Full Assistance"
+    },
+    {
+      "id": "property-investment",
+      "title": "Property Investment",
+      "imageUrl": "assets/images/real-estate-property-investment.webp",
+      "imageAlt": "Growing real estate investment portfolio",
+      "description": "Ang real estate nagpabilin nga usa sa labing kasaligan nga pamuhunan sa Pilipinas. Bisan kung gusto kang mag-buy and hold, kumita pinaagi sa rental income, o pag-diversify sa imong portfolio, tabangun kita makit-an ang high-growth nga mga lugar ug properties - lakip ang integrated township developments sa ProFriends.",
+      "type": "realestate",
+      "tags": "Buy & Hold, Rental Income, ProFriends, Township"
+    },
+    {
+      "id": "condo-living",
+      "title": "Condo Villages",
+      "imageUrl": "assets/images/real-estate-condo.webp",
+      "imageAlt": "Modern condominium village in Cavite by ProFriends",
+      "description": "Ginadala sa ProFriends ang modernong vertical living sa Cavite pinaagi sa duha ka condo villages - ang Westwind sa Lancaster New City sa General Trias, ug ang Lamore sa Micara Estates sa Tanza. Perpekto alang sa mga batan-ong propesyonal, OFW, gagmayng pamilya, ug mga investor, nga adunay mga unit gikan sa studio hangtod sa tulo ka bedroom ug resort-style amenities, dali nga maabot pinaagi sa CAVITEX ug CALAX.",
+      "type": "realestate",
+      "tags": "Westwind, Lamore, Condo, General Trias, Tanza, CAVITEX, OFW, Studio to 3BR"
+    },
+    {
+      "id": "ofw-property-buying",
+      "title": "OFW Property Assistance",
+      "imageUrl": "assets/images/real-estate-ofw.webp",
+      "imageAlt": "OFW family buying property remotely",
+      "description": "Ang pagpuyo o pagtrabaho sa abroad dili angay nga makapugong kanimo sa pag-invest sa balay. Espesyalista ako sa pagtabang sa mga OFW nga ma-secure ang ilang dream property nang layo - gikan sa virtual tripping ug online reservations hangtod sa pag-process sa Pag-IBIG OFW loans.",
+      "type": "realestate",
+      "tags": "OFW, Remote Buying, Pag-IBIG OFW, Virtual Tour"
+    },
+    {
+      "id": "financing-assistance",
+      "title": "Financing & Loan Assistance",
+      "imageUrl": "assets/images/real-estate-loan-application.webp",
+      "imageAlt": "Loan documents and financial planning",
+      "description": "Dili sigurado kung unsang payment scheme ang labing angay kanimo? Tabangun kita nga ikumpara ang tanan nga anaa nga opsyon - Pag-IBIG Fund (HDMF), bank financing, o in-house installment plans. Motabang ko sa documentary requirements, loan applications, ug computations para ang financial side sa imong pagpalit mahinay sama sa posible.",
+      "type": "realestate",
+      "tags": "Pag-IBIG, Bank Loan, In-House, Loan Computation"
+    },
+    {
+      "id": "property-tripping",
+      "title": "Property Tripping",
+      "imageUrl": "assets/images/real-estate-tripping.webp",
+      "imageAlt": "Clients touring a property site",
+      "description": "Kitaa una sa wala pa mo-sign. Mag-arrange ako og on-site ug virtual property tours para masinati nimo ang komunidad, makita ang aktwal nga unit o lote, ug makahukom ka nang may kumpiyansa. Gikan sa Lancaster New City sa Cavite hangtod sa mga proyekto sa Iloilo - bisan unsang adlaw, bisan weekend.",
+      "type": "realestate",
+      "tags": "Virtual Tour, On-Site Visit, No Pressure, Weekends OK"
+    },
+    {
+      "id": "after-sales-support",
+      "title": "After-Sales Support",
+      "imageUrl": "assets/images/real-estate-after-sales.webp",
+      "imageAlt": "Agent assisting homeowner with documents",
+      "description": "Dili matapos ang akong trabaho sa pagbaligya. Padayon akong motabang kanimo sa post-purchase nga mga pangangailangan - gikan sa pag-follow up sa turnover schedules ug title transfers, hangtod sa pakig-coordinate sa ProFriends property management para sa repairs ug account updates sa buyer's portal.",
+      "type": "realestate",
+      "tags": "Post-Purchase, Turnover, Title Transfer, ProFriends Portal"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "t1",
+      "name": "Anonymous 1",
+      "avatarUrl": "",
+      "avatarAlt": "Anonymous nga kliyente",
+      "rating": 5,
+      "text": "Gintabangan kami ni Flor nga mapalit ang among unang balay ug mag-set up og life insurance sa samang buwan. Ang pagkaon og usa ka kasaligan nga propesyonal nga nag-koordina sa duha nakalikay kanamo og daghang stress. Gisulbad niya ang matag pangutana sa wala pa namo kini mahunahuna.",
+      "date": "Marso 2025"
+    },
+    {
+      "id": "t2",
+      "name": "Anonymous 2",
+      "avatarUrl": "",
+      "avatarAlt": "Anonymous nga kliyente",
+      "rating": 5,
+      "text": "Miadto ako kay Flor alang sa payo sa investment property. Wala lang siya makit-i ang usa ka maayo nga property sa ilawom sa gihandum nga presyo, kondili giila usab niya ang usa ka dako nga kakulang sa akong patakaran. Nakaampas ako og daghang kwarta sa kaduha.",
+      "date": "Enero 2025"
+    },
+    {
+      "id": "t3",
+      "name": "Anonymous 3",
+      "avatarUrl": "",
+      "avatarAlt": "Anonymous nga kliyente",
+      "rating": 5,
+      "text": "Human sa akong diborsyo kinahanglan nakong i-restructure ang tanan - health plan, life cover, ug ibaligya ang balay sa pamilya. Gidumala ni Flor ang tanan uban ang empatiya ug propesyonalismo. Wala ako mobati nga usa lamang ka transaksyon.",
+      "date": "Nobyembre 2024"
+    },
+    {
+      "id": "t4",
+      "name": "Anonymous 4",
+      "avatarUrl": "",
+      "avatarAlt": "Anonymous nga kliyente",
+      "rating": 4,
+      "text": "Hanas kaayo sa real estate ug insurance. Gintabangan kami ni Flor nga ibaligya ang among condo ug gamiton ang kita alang sa bag-ong whole-life policy isip bahin sa among plano sa pagreretiro. Maabot ug maminaw.",
+      "date": "Setyembre 2024"
+    },
+    {
+      "id": "t5",
+      "name": "Anonymous 5",
+      "avatarUrl": "",
+      "avatarAlt": "Anonymous nga kliyente",
+      "rating": 5,
+      "text": "Nagbalhin ako gikan sa laing dapit ug nalisdan kaayo ko. Nagpadala si Flor og personalisadong pagkumpara sa silingan ug andam na ang akong home insurance quote sa adlaw sa pagsira. Talagsaong serbisyo.",
+      "date": "Hulyo 2024"
+    },
+    {
+      "id": "t6",
+      "name": "Anonymous 6",
+      "avatarUrl": "",
+      "avatarAlt": "Anonymous nga kliyente",
+      "rating": 5,
+      "text": "Gintabangan kami ni Flor nga makakuha og group health coverage alang sa unom ka empleyado sa presyo nga kaya namon. Klaro, matinud-anon, walay presyur. Nag-refer na kami og tulo ka kolega.",
+      "date": "Mayo 2024"
+    }
+  ],
+  "footerLinks": [
+    { "label": "Balay", "href": "/" },
+    { "label": "Mga Serbisyo", "href": "/services" },
+    { "label": "Bahin Nako", "href": "/about" },
+    { "label": "Gallery", "href": "/gallery" },
+    { "label": "Makig-ugnay", "href": "/enquire" }
+  ],
+  "copyrightText": "© 2026 Flor. Tanan nga katungod gigahin. Gihimo ni <a href='https://eleazerarcilla.com' target='_blank'>eleazpogi</a>",
+  "enquiryFormIntro": "Andam na ba ka? Pun-a ang porma sa ubos ug motubag ako sulod sa usa ka adlaw sa negosyo.",
+  "homeContactSectionHeading": "Mag-estorya Kita",
+  "homeContactSectionCopy": "Naa ka bay labing dali nga pangutana o andam nang magsugod? Makig-ugnay kanako sa paagi nga labing komportable para kanimo.",
+  "siteUrl": "https://florarcilla.com",
+  "twitterHandle": "@florarcilla",
+  "keywords": [
+    "insurance sa Pilipinas", "life insurance Bisaya", "ahente sa insurance Cebu",
+    "PruLife UK", "PRU Life UK ahente", "insurance para sa OFW",
+    "VUL insurance Pilipinas", "pamuhunan sa insurance",
+    "real estate Pilipinas", "balay ug lote Pilipinas", "affordable condo Pilipinas",
+    "ProFriends properties", "ProFriends real estate",
+    "pre-selling condo Pilipinas", "RFO properties Pilipinas",
+    "OFW property investment", "OFW balay Pilipinas", "Pag-IBIG loan OFW",
+    "Flor Arcilla", "Flor Arcilla insurance real estate"
+  ],
+  "seoPages": {
+    "home": {
+      "title": "Flor D. Arcilla - Ahente sa Insurance ug Real Estate sa Pilipinas",
+      "description": "Si Flor D. Arcilla usa ka lisensyadong Ahente sa Insurance (PruLife UK) ug Real Estate Sales Associate (ProFriends) nga nagtabang sa mga pamilyang Pilipino ug OFW nga mapanalipdan ang ilang kaugmaon."
+    },
+    "services": {
+      "title": "Mga Serbisyo - Insurance ug Real Estate - Flor D. Arcilla",
+      "description": "Life insurance, VUL, health insurance, pre-selling properties, RFO homes, tabang sa OFW housing loan, Pag-IBIG, ug ProFriends real estate. Usa ra ang gikinahanglan nimo - si Flor."
+    },
+    "about": {
+      "title": "Kinsa si Flor D. Arcilla? - Insurance ug Real Estate Agent Pilipinas",
+      "description": "Si Flor D. Arcilla usa ka lisensyadong PRULife UK agent ug ProFriends real estate associate nga daghang tuig nang nagtabang sa mga Pilipino ug OFW nga magtukod og financial security ug makabaton og property."
+    },
+    "enquire": {
+      "title": "Makig-estorya kang Flor - Insurance ug Real Estate Consultation",
+      "description": "Naa kay pangutana? I-message si Flor D. Arcilla alang sa libre nga consultation bahin sa insurance, VUL, balay, o property investment. Maabot ug mabilis ang tubag."
+    },
+    "gallery": {
+      "title": "Gallery - Mga Kalampusan ug Handumanan - Flor D. Arcilla",
+      "description": "Tan-awa ang mga milestone, client wins, ug property closings ni Flor D. Arcilla sa tibuok Pilipinas."
+    }
+  },
+  "metaDefaults": {
+    "title": "Flor D. Arcilla - Insurance Agent ug Real Estate Sales Associate Pilipinas",
+    "description": "Tabangun ka ni Flor D. Arcilla nga mapanalipdan ang imong pamilya pinaagi sa PruLife UK insurance ug mag-invest sa real estate sa tibuok Pilipinas."
+  },
+  "ui": {
+    "nav": {
+      "gallery": "Gallery",
+      "home": "Balay",
+      "services": "Mga Serbisyo",
+      "about": "Bahin Nako",
+      "bookConsultation": "Mag-inquire Na!"
+    },
+    "hero": {
+      "roleLabel": "Ahente sa Insurance ug Real Estate Sales Associate",
+      "ctaPrimary": "Mag-inquire Na!",
+      "ctaSecondary": "Tan-awa ang Mga Serbisyo"
+    },
+    "testimonials": {
+      "heading": "Unsa ang Giingon sa Mga Kliyente"
+    },
+    "services": {
+      "enquireButton": "Mag-inquire",
+      "insuranceBadge": "Insurance",
+      "realestateBadge": "Real Estate",
+      "insuranceCategory": "Insurance",
+      "realestateCategory": "Real Estate"
+    },
+    "about": {
+      "sectionLabel": "Bahin Nako",
+      "credentialsHeading": "Mga Lisensya ug Kredensyal",
+      "contactHeading": "Makig-ugnay",
+      "contactCopy": "Ang labing maayong pakig-estorya magsugod sa usa ka yano nga kumusta. Makig-ugnay kanako sa paagi nga labing komportable para kanimo."
+    },
+    "enquire": {
+      "heading": "Makig-ugnay Kita",
+      "servicePrefilledMessage": "Kumusta! Interesado ako sa imong serbisyo nga {service}. Mahimo ba kang maghatag og dugang nga detalye?",
+      "leavePageWarning": "Adunay ka pay wala mahuman nga pangutana. Sigurado ka bang gusto mong mobiya? Mawala ang imong mensahe.",
+      "formLabels": {
+        "fullName": "Tibuok Ngalan",
+        "email": "Email Address",
+        "phone": "Numero sa Telepono",
+        "phoneOptional": "(opsyonal)",
+        "enquiryType": "Klase sa Pangutana",
+        "message": "Mensahe",
+        "required": "gikinahanglan",
+        "submit": "Ipadala ang Pangutana"
+      },
+      "enquiryTypes": {
+        "general": "Kinatibuk-ang Pangutana",
+        "insurance": "Insurance",
+        "realestate": "Real Estate"
+      },
+      "validation": {
+        "nameRequired": "Gikinahanglan ang tibuok ngalan.",
+        "nameMinLength": "Ang ngalan kinahanglan adunay labing menos 2 ka karakter.",
+        "emailRequired": "Gikinahanglan ang email address.",
+        "emailInvalid": "Palihug isulod ang balido nga email address.",
+        "phoneInvalid": "Palihug isulod ang balido nga numero sa telepono.",
+        "messageRequired": "Gikinahanglan ang mensahe.",
+        "messageMinLength": "Ang mensahe kinahanglan adunay labing menos 10 ka karakter.",
+        "messageMaxLength": "Ang mensahe dili mahimong molapas sa 2000 ka karakter.",
+        "formError": "Palihug pun-on nang husto ang tanan nga gikinahanglan nga field."
+      },
+      "success": {
+        "heading": "Napadala na ang imong pangutana!",
+        "body": "Nabuksan na ang imong email client nga adunay pre-filled nga mensahe. Palihug ipadala kini aron makompleto ang imong pangutana. Motubag ako sulod sa usa ka adlaw sa negosyo.",
+        "reset": "Magpadala og Laing Pangutana"
+      }
+    },
+    "quickContact": {
+      "whatsapp": "WhatsApp",
+      "messenger": "Messenger",
+      "call": "Tawag"
+    },
+    "accessibility": {
+      "openMenu": "Abrihi ang accessibility menu",
+      "closeMenu": "Isira ang accessibility menu",
+      "label": "Accessibility",
+      "lightMode": "Hayag",
+      "darkMode": "Ngitngit",
+      "autoTheme": "Awtomatiko",
+      "smallText": "Gamay",
+      "defaultText": "Default",
+      "largeText": "Dako",
+      "highContrast": "Taas nga Contrast"
+    },
+    "whatsappModal": {
+      "title": "Unsaon kita magtabang kanimo?",
+      "subtitle": "Pilia ang usa ka pakisayran ug ablihi ko ang pre-filled nga mensahe sa WhatsApp.",
+      "insurance": "Life ug Health Insurance",
+      "realestate": "Real Estate",
+      "cancel": "Kanselahon",
+      "messageInsurance": "Kumusta Flor! Interesado ako sa imong mga serbisyo sa Life ug Health Insurance. Maka-hatag ka ba og dugang nga impormasyon?",
+      "messageRealestate": "Kumusta Flor! Interesado ako sa imong mga serbisyo sa Real Estate. Maka-hatag ka ba og dugang nga impormasyon?"
+    },
+    "emailModal": {
+      "title": "Mag-email kanako",
+      "subtitle": "Pilia ang pakisayran ug mag-andam ako og pre-filled nga email para kanimo.",
+      "insurance": "Life ug Health Insurance",
+      "realestate": "Real Estate",
+      "cancel": "Kanselahon",
+      "subjectInsurance": "Pangutana: Life ug Health Insurance",
+      "subjectRealestate": "Pangutana: Real Estate",
+      "bodyInsurance": "Kumusta Flor,\n\nInteresado ako sa imong mga serbisyo sa Life ug Health Insurance. Maka-hatag ka ba og dugang nga impormasyon?\n\nSalamat!",
+      "bodyRealestate": "Kumusta Flor,\n\nInteresado ako sa imong mga serbisyo sa Real Estate. Maka-hatag ka ba og dugang nga impormasyon?\n\nSalamat!"
+    },
+    "gallery": {
+      "heading": "Gallery",
+      "subheading": "Mga kalampusan ug handumanan",
+      "filterType": "Klase",
+      "filterYear": "Tuig",
+      "allTypes": "Tanan",
+      "allYears": "Tanang Tuig",
+      "sections": {
+        "general": "Kinatibuk-an",
+        "insurance": "Insurance",
+        "realestate": "Real Estate"
+      },
+      "lightbox": {
+        "close": "Isira",
+        "prev": "Nauna",
+        "next": "Sunod",
+        "download": "I-download"
+      },
+      "noItems": "Walay mga litrato para sa mga piniling filter."
+    },
+    "footer": {
+      "quickLinksHeading": "Dali nga Mga Link",
+      "contactHeading": "Makig-ugnay"
+    }
+  }
+}
